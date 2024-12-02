@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
+    "/content/reshad-eds-site/:/",
+    "/content/reshad-eds-site/configuration:/.helix/config.json",
+    "/content/reshad-eds-site/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-boilerplate/"
+    "/content/reshad-eds-site/"
   ]
 }
