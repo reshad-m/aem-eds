@@ -113,6 +113,36 @@
           }
         },
         {
+          "title": "List Cards",
+          "id": "list-cards",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "List Cards",
+                  "filter": "list-cards"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "List Card",
+          "id": "list-card",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "List Card",
+                  "model": "list-card"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "plugins": {
