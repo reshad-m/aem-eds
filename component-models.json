@@ -137,16 +137,13 @@
         "component": "reference",
         "name": "image",
         "label": "Image",
-        "multi": false,
-        "fields": [
-          {
-            "component": "text",
-            "name": "imageAlt",
-            "label": "Alt Text"
-          }
-        ]
+        "multi": false
       },
-    
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      },
       {
         "component": "select",
         "name": "category",
