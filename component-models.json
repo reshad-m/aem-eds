@@ -130,41 +130,44 @@
       }
     ]
   },
-     {
-         "id": "list-card",
+  {
+    "id": "list-card",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false,
         "fields": [
-          {
-            "component": "reference",
-            "name": "image",
-            "label": "Image",
-            "multi": false
-          },
           {
             "component": "text",
             "name": "imageAlt",
             "label": "Alt Text"
-          },
+          }
+        ]
+      },
+    
+      {
+        "component": "select",
+        "name": "category",
+        "label": "Category",
+        "options": [
           {
-            "component": "select",
-            "name": "category",
-            "label": "Category",
-            "options": [
-              {
-                "name": "Audit",
-                "value": "audit"
-              }
-            ]
-          },
-          {
-            "component": "text",
-            "name": "title",
-            "label": "Title"
-          },
-          {
-            "component": "aem-content",
-            "name": "link",
-            "label": "Link"
-          },
+            "name": "Audit",
+            "value": "audit"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link",
+        "fields":[
           {
             "component": "text",
             "name": "linkIcon",
@@ -172,7 +175,9 @@
             "value": ":open:"
           }
         ]
-  },   
+      }
+    ]
+  },
   {
     "id": "columns",
     "fields": [
