@@ -163,15 +163,7 @@
       {
         "component": "aem-content",
         "name": "link",
-        "label": "Link",
-        "fields":[
-          {
-            "component": "text",
-            "name": "linkIcon",
-            "label": "Link icon",
-            "value": ":open:"
-          }
-        ]
+        "label": "Link"
       }
     ]
   },
