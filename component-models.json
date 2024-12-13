@@ -161,14 +161,40 @@
         "label": "Title"
       },
       {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      },
+      {
         "component": "aem-content",
         "name": "link",
         "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "linkText",
-        "label": "link Text"
       },
       {
         "component": "select",
@@ -188,6 +214,11 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "link Text"
       }
     ]
   },
