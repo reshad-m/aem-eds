@@ -15,7 +15,7 @@
     padding-right: 15px;
 }
 
-.audit-row {
+.list-cards-container {
     display: flex;
     flex-wrap: wrap;
     margin-left: -15px;
@@ -23,7 +23,7 @@
 }
 
 .col-left,
-.col-right {
+.list-cards-wrapper {
     width: 50%;
     float: left;
     padding-left: 15px;
@@ -34,7 +34,7 @@
     width: 100%;
 }
 
-.list-cards-container {
+.list-cards.block {
     float: left;
     width: 100%;
 }
@@ -72,7 +72,7 @@
 
 @media (width <= 767px) {
     .col-left,
-    .col-right {
+    .list-cards-wrapper {
         width: 100%;
     }
 }
