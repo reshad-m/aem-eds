@@ -36,7 +36,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/title/v1/title",
+                "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "model": "main-title"
                 }
