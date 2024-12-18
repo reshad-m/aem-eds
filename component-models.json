@@ -184,5 +184,15 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "main-title",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      }
+    ]
   }
 ]
