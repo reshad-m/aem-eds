@@ -208,30 +208,25 @@
         "value": ""
       },
       {
-        "component": "text",
-        "name": "info-action_kicker",
-        "label": "Kicker text"
-      },
-      {
         "component": "richtext",
-        "name": "info-action_text",
+        "name": "block_description",
         "value": "",
         "label": "Text",
         "valueType": "string"
       },
       {
         "component": "aem-content",
-        "name": "info-action_link",
+        "name": "block_link",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "info-action_linkText",
+        "name": "block_linkText",
         "label": "Text"
       },
       {
         "component": "select",
-        "name": "info-action_linkType",
+        "name": "block_linkType",
         "label": "Type",
         "options": [
           {
@@ -250,7 +245,7 @@
       },
       {
         "component": "text",
-        "name": "info-action_linkTitle",
+        "name": "block_linkTitle",
         "label": "Title"
       }
     ]
