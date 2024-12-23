@@ -15,13 +15,19 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "hub-cards"
     ]
   },
   {
     "id": "cards",
     "components": [
-      "card",
+      "card"
+    ]
+  },
+  {
+    "id": "hub-cards",
+    "components": [
       "hub-card"
     ]
   },
