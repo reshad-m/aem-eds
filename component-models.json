@@ -158,11 +158,6 @@
         "label": "Text"
       },
       {
-        "component": "text",
-        "name": "linkTitle",
-        "label": "Title"
-      },
-      {
         "component": "select",
         "name": "linkType",
         "label": "Type",
@@ -180,6 +175,11 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "linkTitle",
+        "label": "Title"
       }
     ]
   },
