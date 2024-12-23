@@ -24,12 +24,9 @@
 .cta-blocks>div>div+div {
     position: absolute;
     align-self: flex-end;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     padding: 0 50px;
     padding-bottom: 36px;
-    background: linear-gradient(182.29deg, rgba(0, 21, 61, 0) 1.84%, rgba(0, 21, 61, 0.8) 59.29%, rgba(0, 21, 61, 0.9) 98.07%);
+    background: linear-gradient(182.29deg, rgb(0 21 61 / 0%) 1.84%, rgb(0 21 61 / 80%) 59.29%, rgb(0 21 61 / 90%) 98.07%);
 }
 
