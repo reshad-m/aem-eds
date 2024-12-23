@@ -142,24 +142,24 @@
       },
       {
         "component": "richtext",
-        "name": "text",
+        "name": "hub-card__info-action_text",
         "value": "",
         "label": "Text",
         "valueType": "string"
       },
       {
         "component": "aem-content",
-        "name": "link",
+        "name": "hub-card__info-action_link",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "linkText",
+        "name": "hub-card__info-action_linkText",
         "label": "Text"
       },
       {
         "component": "select",
-        "name": "linkType",
+        "name": "hub-card__info-action_linkType",
         "label": "Type",
         "options": [
           {
@@ -178,7 +178,7 @@
       },
       {
         "component": "text",
-        "name": "linkTitle",
+        "name": "hub-card__info-action_linkTitle",
         "label": "Title"
       }
     ]
