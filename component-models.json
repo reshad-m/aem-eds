@@ -191,6 +191,66 @@
     ]
   },
   {
+    "id": "cta-block",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "block_description",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "block_link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "block_linkText",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "block_linkType",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "block_linkTitle",
+        "label": "Title"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
