@@ -209,7 +209,7 @@
       },
       {
         "component": "text",
-        "name": "info-action_kickerText",
+        "name": "info-action_kicker",
         "label": "Kicker text"
       },
       {
