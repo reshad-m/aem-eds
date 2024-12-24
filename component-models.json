@@ -247,6 +247,21 @@
         "component": "text",
         "name": "block_linkTitle",
         "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "width",
+        "label": "Block's width",
+        "options": [
+          {
+            "name": "full",
+            "value": "100"
+          },
+          {
+            "name": "50",
+            "value": "50"
+          }
+        ]
       }
     ]
   },
