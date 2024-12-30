@@ -16,13 +16,27 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "hub-cards",
+      "cta-blocks"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "hub-cards",
+    "components": [
+      "hub-card"
+    ]
+  },
+  {
+    "id": "cta-blocks",
+    "components": [
+      "cta-block"
     ]
   },
   {
