@@ -319,5 +319,79 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "main-header",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_imageDesktop",
+        "label": "Image Desktop",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image_imageDesktopAlt",
+        "label": "Alt Desktop",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_imageMobile",
+        "label": "Image Mobile",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image_imageMobileAlt",
+        "label": "Alt Mobile",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "description_titleAndDescription",
+        "value": "",
+        "label": "Title and description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "description_link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "description_linkText",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "description_linkType",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "description_linkTitle",
+        "label": "Title"
+      }
+    ]
   }
 ]
