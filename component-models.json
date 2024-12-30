@@ -321,19 +321,35 @@
     ]
   },
   {
-    "id": "main-title",
+    "id": "main-header",
     "fields": [
       {
+        "component": "reference",
+        "valueType": "string",
+        "name": "imageDesktop",
+        "label": "Image Desktop",
+        "multi": false
+      },
+      {
         "component": "text",
-        "name": "title",
-        "label": "Title"
+        "valueType": "string",
+        "name": "imageDesktopAlt",
+        "label": "Alt Desktop",
+        "value": ""
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
+        "name": "imageMobile",
+        "label": "Image Mobile",
         "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageMobileAlt",
+        "label": "Alt Mobile",
+        "value": ""
       }
     ]
   }
