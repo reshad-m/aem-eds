@@ -350,6 +350,13 @@
         "name": "imageMobileAlt",
         "label": "Alt Mobile",
         "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "titleAndDescription",
+        "value": "",
+        "label": "Title and description",
+        "valueType": "string"
       }
     ]
   }
