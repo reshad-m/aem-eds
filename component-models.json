@@ -326,51 +326,51 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "imageDesktop",
+        "name": "image_imageDesktop",
         "label": "Image Desktop",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageDesktopAlt",
+        "name": "image_imageDesktopAlt",
         "label": "Alt Desktop",
         "value": ""
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "imageMobile",
+        "name": "image_imageMobile",
         "label": "Image Mobile",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "imageMobileAlt",
+        "name": "image_imageMobileAlt",
         "label": "Alt Mobile",
         "value": ""
       },
       {
         "component": "richtext",
-        "name": "titleAndDescription",
+        "name": "description_titleAndDescription",
         "value": "",
         "label": "Title and description",
         "valueType": "string"
       },
       {
         "component": "aem-content",
-        "name": "link",
+        "name": "description_link",
         "label": "Link"
       },
       {
         "component": "text",
-        "name": "linkText",
+        "name": "description_linkText",
         "label": "Text"
       },
       {
         "component": "select",
-        "name": "linkType",
+        "name": "description_linkType",
         "label": "Type",
         "options": [
           {
@@ -389,7 +389,7 @@
       },
       {
         "component": "text",
-        "name": "linkTitle",
+        "name": "description_linkTitle",
         "label": "Title"
       }
     ]
