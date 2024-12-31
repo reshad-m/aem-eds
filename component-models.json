@@ -231,7 +231,7 @@
       }
     ,{
         "component": "select",
-        "name": "width",
+        "name": "theme",
         "label": "Block's width",
         "options": [
           {
