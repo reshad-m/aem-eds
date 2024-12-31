@@ -48,6 +48,12 @@
     ]
   },
   {
+    "id": "tabs",
+    "components": [
+      "tab"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "column"

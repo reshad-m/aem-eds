@@ -334,7 +334,7 @@
     ]
   },
   {
-    "id": "tabs",
+    "id": "tab",
     "fields": [
       {
         "component": "text",
@@ -343,9 +343,9 @@
       },
       {
         "component": "richtext",
-        "name": "cardContent",
+        "name": "tabContent",
         "value": "",
-        "label": "Card Content",
+        "label": "Tab Content",
         "valueType": "string"
       }
     ]
