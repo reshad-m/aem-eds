@@ -306,5 +306,31 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "people-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "cardDescription",
+        "value": "",
+        "label": "Card description",
+        "valueType": "string"
+      }
+    ]
   }
 ]
