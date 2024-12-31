@@ -18,7 +18,8 @@
       "columns",
       "fragment",
       "hub-cards",
-      "cta-blocks"
+      "cta-blocks",
+      "people-cards"
     ]
   },
   {
@@ -31,6 +32,12 @@
     "id": "hub-cards",
     "components": [
       "hub-card"
+    ]
+  },
+  {
+    "id": "people-cards",
+    "components": [
+      "person-card"
     ]
   },
   {
