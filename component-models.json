@@ -210,7 +210,7 @@
       {
         "component": "richtext",
         "name": "block_details",
-        "value": "Block details here ...",
+        "value": "",
         "label": "Block details",
         "valueType": "string"
       },
