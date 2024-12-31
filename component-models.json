@@ -332,5 +332,22 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "tabs",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "cardContent",
+        "value": "",
+        "label": "Card Content",
+        "valueType": "string"
+      }
+    ]
   }
 ]
