@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+.hub-cards img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.hub-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.hub-cards>div {
+    position: relative;
+}
+
+.hub-cards>div>div+div {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(0 21 61 / 60%);
+}
+
+.hub-cards p {
+    color:white;
+}
+
+@media (width <= 767px) {
+    .hub-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (width >= 768px) and (width <= 1023px) {
+    .hub-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
