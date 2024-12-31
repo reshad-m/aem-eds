@@ -308,7 +308,7 @@
     ]
   },
   {
-    "id": "people-card",
+    "id": "person-card",
     "fields": [
       {
         "component": "reference",
