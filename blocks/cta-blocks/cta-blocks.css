@@ -25,10 +25,6 @@
     padding: 0 15px;
 }
 
-.cta-blocks>div>div {
-    height: 290px;
-}
-
 .cta-blocks>div>div+div {
     position: absolute;
     align-self: flex-end;
