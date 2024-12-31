@@ -197,7 +197,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Background image",
         "multi": false
       },
       {
@@ -226,6 +226,36 @@
           {
             "name": "50",
             "value": "50"
+          }
+        ]
+      }
+    ,{
+        "component": "select",
+        "name": "width",
+        "label": "Block's width",
+        "options": [
+          {
+            "name": "full",
+            "value": "100"
+          },
+          {
+            "name": "50",
+            "value": "50"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "theme",
+        "label": "Block's theme",
+        "options": [
+          {
+            "name": "midnightBlue",
+            "value": "midnightBlue"
+          },
+          {
+            "name": "grey",
+            "value": "grey"
           }
         ]
       }
