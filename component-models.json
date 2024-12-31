@@ -343,9 +343,9 @@
       },
       {
         "component": "richtext",
-        "name": "tabContent",
+        "name": "content",
         "value": "",
-        "label": "Tab Content",
+        "label": "Content",
         "valueType": "string"
       }
     ]
