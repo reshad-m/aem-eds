@@ -65,7 +65,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "cta-blocks"
     ]
   }
 ]
