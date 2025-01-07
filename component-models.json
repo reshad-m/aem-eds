@@ -149,44 +149,10 @@
       },
       {
         "component": "richtext",
-        "name": "info-action_text",
+        "name": "cardDescription",
         "value": "",
-        "label": "Text",
+        "label": "Card description",
         "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "info-action_link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "info-action_linkText",
-        "label": "Text"
-      },
-      {
-        "component": "select",
-        "name": "info-action_linkType",
-        "label": "Type",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "name": "info-action_linkTitle",
-        "label": "Title"
       }
     ]
   },
@@ -197,7 +163,7 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Image",
+        "label": "Background image",
         "multi": false
       },
       {
@@ -209,44 +175,10 @@
       },
       {
         "component": "richtext",
-        "name": "block_description",
+        "name": "block_details",
         "value": "",
-        "label": "Text",
+        "label": "Block details",
         "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "block_link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "block_linkText",
-        "label": "Text"
-      },
-      {
-        "component": "select",
-        "name": "block_linkType",
-        "label": "Type",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "name": "block_linkTitle",
-        "label": "Title"
       },
       {
         "component": "select",
@@ -260,6 +192,21 @@
           {
             "name": "50",
             "value": "50"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "theme",
+        "label": "Block's theme",
+        "options": [
+          {
+            "name": "midnightBlue",
+            "value": "midnightBlue"
+          },
+          {
+            "name": "grey",
+            "value": "grey"
           }
         ]
       }
@@ -356,6 +303,49 @@
         "name": "titleAndDescription",
         "value": "",
         "label": "Title and description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "person-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "cardDescription",
+        "value": "",
+        "label": "Card description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tab",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Content",
         "valueType": "string"
       }
     ]

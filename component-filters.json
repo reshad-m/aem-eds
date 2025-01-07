@@ -34,9 +34,21 @@
     ]
   },
   {
+    "id": "people-cards",
+    "components": [
+      "person-card"
+    ]
+  },
+  {
     "id": "cta-blocks",
     "components": [
       "cta-block"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tab"
     ]
   },
   {
