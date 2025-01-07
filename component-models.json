@@ -268,7 +268,7 @@
     ]
   },
   {
-    "id": "main-header",
+    "id": "header-banner",
     "fields": [
       {
         "component": "reference",
