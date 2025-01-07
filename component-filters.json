@@ -12,13 +12,13 @@
       "image",
       "button",
       "title",
-      "main-header",
       "hero",
       "cards",
       "columns",
       "fragment",
       "hub-cards",
-      "cta-blocks"
+      "cta-blocks",
+      "header-banner"
     ]
   },
   {
