@@ -41,8 +41,7 @@
   {
     "id": "columns",
     "components": [
-      "column",
-      "cta-blocks"
+      "column"
     ]
   },
   {
@@ -51,7 +50,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "cta-blocks"
     ]
   }
 ]
