@@ -213,21 +213,17 @@
         "component": "multiselect",
         "name": "classes",
         "value": "",
-        "label": "Background Color",
-        "description": "The title's background color",
+        "label": "Options",
+        "description": "Choose options to update the block's style",
         "valueType": "string",
         "options": [
           {
-            "name": "Red",
-            "value": "bg-red"
+            "name": "Title Background Green",
+            "value": "title-bg-green"
           },
           {
-            "name": "Green",
-            "value": "bg-green"
-          },
-          {
-            "name": "Blue",
-            "value": "bg-blue"
+            "name": "Title Background Blue",
+            "value": "title-bg-blue"
           }
         ]
       },
