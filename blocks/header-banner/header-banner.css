@@ -7,6 +7,9 @@ main>.section>div.header-banner-wrapper {
     max-width: 1440px;
     padding: 0;
 }
+.header-banner .text-wrapper h2 {
+    display: inline-blocks;
+}
 
 .header-banner.title-bg-green .text-wrapper h2 {
     background-color: green;
