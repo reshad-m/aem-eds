@@ -210,6 +210,28 @@
         ]
       },
       {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Options",
+        "description": "Choose options to update the block's style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Title Background Green",
+            "value": "title-bg-green"
+          },
+          {
+            "name": "Title Background Blue",
+            "value": "title-bg-blue"
+          },
+          {
+            "name": "No Background",
+            "value": ""
+          }
+        ]
+      },
+      {
         "component": "richtext",
         "name": "text_description",
         "value": "",
@@ -247,23 +269,6 @@
           {
             "name": "secondary",
             "value": "secondary"
-          }
-        ]
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "Options",
-        "description": "Choose options to update the block's style",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Title Background Green",
-            "value": "title-bg-green"
-          },
-          {
-            "name": "Title Background Blue",
-            "value": "title-bg-blue"
           }
         ]
       }
