@@ -12,24 +12,46 @@ main>.section>div.header-banner-wrapper {
     display: inline-block;
 }
 
-.header-banner.title-bg-green .text-wrapper h2 {
-    background-color: green;
+.text-wrapper {
+    padding-top: 95px;
+    padding-left: 80px;
+    color: white;
 }
 
-.header-banner.title-bg-blue .text-wrapper h2 {
-    background-color: blue;
+.header-banner.title-bg-green .text-wrapper {
+    background-color: #3F9C35;
+}
+
+.header-banner.title-bg-blue .text-wrapper {
+    background-color: #009CDE;
 }
 
 .header-banner {
     position: relative;
 }
 
-.text-wrapper {
-    position: absolute;
-    inset: 0;
-    padding-top: 95px;
-    padding-left: 80px;
-    color: white;
+
+@media (width >= 769px) {
+    .text-wrapper {
+        position: absolute;
+        inset: 0;
+    }
+
+    .header-banner.title-bg-green .text-wrapper {
+        background-color: transparent;
+    }
+    
+    .header-banner.title-bg-blue .text-wrapper {
+        background-color: transparent;
+    }
+
+    .header-banner.title-bg-green .text-wrapper h2 {
+        background-color: #3F9C35;
+    }
+    
+    .header-banner.title-bg-blue .text-wrapper h2 {
+        background-color: #009CDE;
+    }
 }
 
 .desktop-image-wrapper {
