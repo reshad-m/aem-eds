@@ -210,6 +210,17 @@
         ]
       },
       {
+        "component": "select",
+        "name": "text_titleBackground",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "green",
+            "value": "green"
+          }
+        ]
+      },
+      {
         "component": "richtext",
         "name": "text_description",
         "value": "",
