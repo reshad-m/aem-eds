@@ -179,7 +179,7 @@
         "value": ""
       },
       {
-        "component": "multiselect",
+        "component": "select",
         "name": "text_titleType",
         "label": "Title Type",
         "options": [
@@ -210,7 +210,7 @@
         ]
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
         "value": "",
         "label": "Background Color",
