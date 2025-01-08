@@ -46,6 +46,7 @@ main>.section>div.header-banner-wrapper {
         left: 0;
         right: 0;
         margin-top: -95px;
+        padding: 0;
     }
 
     .text-wrapper div {
