@@ -144,17 +144,6 @@
     "id": "header-banner",
     "fields": [
       {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          }
-        ]
-      },
-      {
         "component": "reference",
         "valueType": "string",
         "name": "image_imageDesktop",
@@ -220,7 +209,28 @@
           }
         ]
       },
-      
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Background Color",
+        "description": "The title's background color",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Red",
+            "value": "bg-red"
+          },
+          {
+            "name": "Green",
+            "value": "bg-green"
+          },
+          {
+            "name": "Blue",
+            "value": "bg-blue"
+          }
+        ]
+      },
       {
         "component": "richtext",
         "name": "text_description",
