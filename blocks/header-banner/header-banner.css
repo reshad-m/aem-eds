@@ -8,11 +8,11 @@ main>.section>div.header-banner-wrapper {
     padding: 0;
 }
 
-.header-banner.title-bg-green .text-wrapper div > :first-child {
+.header-banner.title-bg-green .text-wrapper h2 {
     background-color: green;
 }
 
-.header-banner.title-bg-blue .text-wrapper div > :first-child {
+.header-banner.title-bg-blue .text-wrapper h2 {
     background-color: blue;
 }
 
