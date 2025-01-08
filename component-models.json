@@ -144,6 +144,17 @@
     "id": "header-banner",
     "fields": [
       {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
+      },
+      {
         "component": "reference",
         "valueType": "string",
         "name": "image_imageDesktop",
@@ -209,21 +220,7 @@
           }
         ]
       },
-      {
-        "component": "select",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "titleBgGreen",
-            "value": "green"
-          },
-          {
-            "name": "titleBgBlue",
-            "value": "blue"
-          }
-        ]
-      },
+      
       {
         "component": "richtext",
         "name": "text_description",
