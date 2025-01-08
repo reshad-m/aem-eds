@@ -212,7 +212,6 @@
       {
         "component": "select",
         "name": "classes",
-        "value": "",
         "label": "Options",
         "description": "Choose options to update the block's style",
         "valueType": "string",
