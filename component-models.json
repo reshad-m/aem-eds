@@ -179,6 +179,11 @@
         "value": ""
       },
       {
+        "component": "text",
+        "name": "text_titleType",
+        "value": "h1"
+      },
+      {
         "component": "richtext",
         "name": "text_description",
         "value": "",

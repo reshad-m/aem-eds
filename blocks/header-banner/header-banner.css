@@ -1,0 +1,36 @@
+.header-banner img {
+    width: 100%;
+    height: auto;
+}
+
+main>.section>div.header-banner-wrapper {
+    max-width: 1440px;
+    padding: 0;
+}
+
+.header-banner {
+    position: relative;
+}
+
+.text-wrapper {
+    position: absolute;
+    inset: 0;
+}
+
+.desktop-image-wrapper {
+    display: block;
+}
+
+.mobile-image-wrapper {
+    display: none;
+}
+
+@media (width <= 768px) {
+    .desktop-image-wrapper {
+        display: none;
+    }
+
+    .mobile-image-wrapper {
+        display: block;
+    }
+}
