@@ -211,12 +211,16 @@
       },
       {
         "component": "select",
-        "name": "text_titleBackground",
-        "label": "Title Type",
+        "name": "style",
+        "label": "Style",
         "options": [
           {
-            "name": "green",
+            "name": "titleBgGreen",
             "value": "green"
+          },
+          {
+            "name": "titleBgBlue",
+            "value": "blue"
           }
         ]
       },
