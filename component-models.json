@@ -210,7 +210,7 @@
         ]
       },
       {
-        "component": "multiselect",
+        "component": "select",
         "name": "classes",
         "value": "",
         "label": "Options",
