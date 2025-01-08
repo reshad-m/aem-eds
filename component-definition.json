@@ -122,7 +122,6 @@
                 "template": {
                   "name": "header-banner",
                   "model": "header-banner",
-                  "image_imageDesktop": "/content/reshad-eds-site/media_16fa60d469b540e06aec47b95df65e756a45c1296.png",
                   "text_title": "Title",
                   "text_description": "Description..."
                 }
