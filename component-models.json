@@ -148,7 +148,8 @@
         "valueType": "string",
         "name": "image_imageDesktop",
         "label": "Image Desktop",
-        "multi": false
+        "multi": false,
+        "required": true
       },
       {
         "component": "text",
