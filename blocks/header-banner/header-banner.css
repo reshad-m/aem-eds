@@ -8,6 +8,14 @@ main>.section>div.header-banner-wrapper {
     padding: 0;
 }
 
+.header-banner.title-bg-green .text-wrapper div > :first-child {
+    background-color: green;
+}
+
+.header-banner.title-bg-blue .text-wrapper div > :first-child {
+    background-color: blue;
+}
+
 .header-banner {
     position: relative;
 }
@@ -28,7 +36,7 @@ main>.section>div.header-banner-wrapper {
     display: none;
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
     .desktop-image-wrapper {
         display: none;
     }
