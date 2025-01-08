@@ -179,7 +179,7 @@
         "value": ""
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "text_titleType",
         "label": "Title Type",
         "options": [
