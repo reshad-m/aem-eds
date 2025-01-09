@@ -23,6 +23,7 @@ main>.section>div.header-banner-wrapper {
 .text-wrapper {
     color: white;
     padding: 20px 25px;
+    background-color: #009CDE;
 }
 
 .header-banner.title-bg-green .text-wrapper {
