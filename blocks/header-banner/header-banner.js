@@ -1,30 +1,41 @@
 export default function decorate(block) {
+  if (!block) return;
   const [imagesWrapper, textWrapper] = block.children;
+
+  if (!imagesWrapper || !textWrapper) return;
 
   imagesWrapper.className = 'images-wrapper';
   textWrapper.className = 'text-wrapper';
-  if (textWrapper.children.length === 1) textWrapper.children[0].className = 'text-container';
 
   if (textWrapper.children.length === 1 && textWrapper.children[0].innerHTML.trim() === '') {
     block.removeChild(textWrapper);
   }
 
-  [...imagesWrapper.children].forEach((div) => {
+  if (textWrapper.children.length === 1) {
+    textWrapper.children[0].className = 'text-container';
+  }
+
+  const imageDivs = [...imagesWrapper.children];
+
+  imageDivs.forEach((div) => {
     if (div.children.length === 1 && div.querySelector('picture')) {
       const picture = div.querySelector('picture');
-      const desktopImage = picture;
-      desktopImage.className = 'desktop-image';
+      picture.className = 'desktop-image';
+
       imagesWrapper.innerHTML = '';
-      imagesWrapper.appendChild(desktopImage);
+      imagesWrapper.appendChild(picture);
     }
+
     if (div.children.length === 2 && div.querySelector('picture')) {
       const desktopImage = div.children[0].querySelector('picture');
       const mobileImage = div.children[1].querySelector('picture');
-      desktopImage.className = 'desktop-image';
-      mobileImage.className = 'mobile-image';
+
+      if (desktopImage) desktopImage.className = 'desktop-image';
+      if (mobileImage) mobileImage.className = 'mobile-image';
+
       imagesWrapper.innerHTML = '';
-      imagesWrapper.appendChild(desktopImage);
-      imagesWrapper.appendChild(mobileImage);
+      if (desktopImage) imagesWrapper.appendChild(desktopImage);
+      if (mobileImage) imagesWrapper.appendChild(mobileImage);
     }
   });
 }
