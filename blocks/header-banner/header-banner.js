@@ -3,15 +3,28 @@ export default function decorate(block) {
 
   imagesWrapper.className = 'images-wrapper';
   textWrapper.className = 'text-wrapper';
+  if (textWrapper.children.length === 1) textWrapper.children[0].className = 'text-container';
 
-  const pictureElements = imagesWrapper.querySelectorAll('p picture');
-  const desktopImage = pictureElements[0];
-  const mobileImage = pictureElements[1];
+  if (textWrapper.children.length === 1 && textWrapper.children[0].innerHTML.trim() === '') {
+    block.removeChild(textWrapper);
+  }
 
-  desktopImage.classList.add('desktop-image-wrapper');
-  mobileImage.classList.add('mobile-image-wrapper');
-
-  imagesWrapper.innerHTML = '';
-  imagesWrapper.appendChild(desktopImage);
-  imagesWrapper.appendChild(mobileImage);
+  [...imagesWrapper.children].forEach((div) => {
+    if (div.children.length === 1 && div.querySelector('picture')) {
+      const picture = div.querySelector('picture');
+      const desktopImage = picture;
+      desktopImage.className = 'desktop-image';
+      imagesWrapper.innerHTML = '';
+      imagesWrapper.appendChild(desktopImage);
+    }
+    if (div.children.length === 2 && div.querySelector('picture')) {
+      const desktopImage = div.children[0].querySelector('picture');
+      const mobileImage = div.children[1].querySelector('picture');
+      desktopImage.className = 'desktop-image';
+      mobileImage.className = 'mobile-image';
+      imagesWrapper.innerHTML = '';
+      imagesWrapper.appendChild(desktopImage);
+      imagesWrapper.appendChild(mobileImage);
+    }
+  });
 }

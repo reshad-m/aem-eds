@@ -1,9 +1,9 @@
 /* Mobile First - Base Styles */
-.header-banner .desktop-image-wrapper {
+.header-banner .desktop-image {
     display: none;
 }
 
-.header-banner .mobile-image-wrapper {
+.header-banner .mobile-image {
     display: block;
 }
 
@@ -52,7 +52,7 @@ main > .section > div.header-banner-wrapper {
         background-color: transparent;
     }
 
-    .header-banner .text-wrapper div {
+    .header-banner .text-wrapper .text-container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 32px;
@@ -75,11 +75,11 @@ main > .section > div.header-banner-wrapper {
     }
 
     /* Desktop-specific Image Wrapper */
-    .header-banner .desktop-image-wrapper {
+    .header-banner .desktop-image {
         display: block;
     }
 
-    .header-banner .mobile-image-wrapper {
+    .header-banner .mobile-image {
         display: none;
     }
 }
