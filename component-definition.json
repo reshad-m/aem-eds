@@ -122,6 +122,7 @@
                 "template": {
                   "name": "header-banner",
                   "model": "header-banner",
+                  "image_imageDesktop": "/content/dam/banner.png",
                   "text_title": "Title",
                   "text_titleType": "h2",
                   "text_description": "Description..."
