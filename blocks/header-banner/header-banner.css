@@ -31,6 +31,10 @@ main > .section > div.header-banner-wrapper {
     background-color: #009CDE;
 }
 
+.header-banner.title-bg-midnight-blue .text-wrapper {
+    background-color: #00153D;
+}
+
 .header-banner {
     position: relative;
 }
@@ -80,6 +84,11 @@ main > .section > div.header-banner-wrapper {
     .header-banner.title-bg-blue .text-wrapper h2 {
         background-color: #009CDE;
     }
+
+    .header-banner.title-bg-midnight-blue .text-wrapper h2 {
+        background-color: #00153D;
+    }
+
 
     .header-banner .desktop-image {
         display: block;

@@ -227,6 +227,10 @@
             "value": "title-bg-blue"
           },
           {
+            "name": "Title Background Midnight Blue",
+            "value": "title-bg-midnight-blue"
+          },
+          {
             "name": "No Background",
             "value": ""
           }
