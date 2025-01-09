@@ -123,6 +123,7 @@
                   "name": "header-banner",
                   "model": "header-banner",
                   "text_title": "Title",
+                  "text_titleType": "h2",
                   "text_description": "Description..."
                 }
               }
