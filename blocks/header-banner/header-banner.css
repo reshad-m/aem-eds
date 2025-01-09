@@ -77,6 +77,10 @@ main > .section > div.header-banner-wrapper {
         background-color: transparent;
     }
 
+    .header-banner.title-bg-midnight-blue .text-wrapper {
+        background-color: transparent;
+    }
+
     .header-banner.title-bg-green .text-wrapper h2 {
         background-color: #3F9C35;
     }
