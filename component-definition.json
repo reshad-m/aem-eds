@@ -123,9 +123,9 @@
                   "name": "header-banner",
                   "model": "header-banner",
                   "image_imageDesktop": "/content/dam/banner.png",
-                  "text_title": "Title",
+                  "text_title": "Example Title Here",
                   "text_titleType": "h2",
-                  "text_description": "Description..."
+                  "text_description": "This is a placeholder description. You can replace it with your own content. It provides a brief overview of the topic, providing just enough information to give context. The description should be concise and informative, offering details that are relevant to the title and content that follows."
                 }
               }
             }
