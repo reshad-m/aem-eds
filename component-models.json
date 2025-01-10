@@ -238,8 +238,8 @@
       },
       {
         "component": "boolean",
-        "label": "Is this the homepage banner?",
-        "name": "isHomepage",
+        "label": "Is this the Banner Variant 1?",
+        "name": "isVariant1",
         "valueType": "boolean"
       },
       {
@@ -248,31 +248,31 @@
         "value": "",
         "label": "Description",
         "valueType": "string",
-        "condition": { "===": [{"var" : "isHomepage"}, false] }
+        "condition": { "===": [{"var" : "isVariant1"}, false] }
       },
       {
         "component": "aem-content",
         "name": "text_link",
         "label": "Link",
-        "condition": { "===": [{"var" : "isHomepage"}, false] }
+        "condition": { "===": [{"var" : "isVariant1"}, false] }
       },
       {
         "component": "text",
         "name": "text_linkText",
         "label": "Text",
-        "condition": { "===": [{"var" : "isHomepage"}, false] }
+        "condition": { "===": [{"var" : "isVariant1"}, false] }
       },
       {
         "component": "text",
         "name": "text_linkTitle",
         "label": "Title",
-        "condition": { "===": [{"var" : "isHomepage"}, false] }
+        "condition": { "===": [{"var" : "isVariant1"}, false] }
       },
       {
         "component": "select",
         "name": "text_linkType",
         "label": "Type",
-        "condition": { "===": [{"var" : "isHomepage"}, false] },
+        "condition": { "===": [{"var" : "isVariant1"}, false] },
         "options": [
           {
             "name": "default",
