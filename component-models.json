@@ -240,7 +240,8 @@
         "component": "boolean",
         "label": "Is this the Banner Variant 2?",
         "name": "isVariant2",
-        "valueType": "boolean"
+        "valueType": "boolean",
+        "value": false
       },
       {
         "component": "richtext",
