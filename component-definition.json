@@ -123,7 +123,7 @@
                   "name": "header-banner",
                   "model": "header-banner",
                   "image_imageDesktop": "/content/dam/banner.png",
-                  "image_imageMobile": "/content/dam/mobile-banner.png",
+                  "image_imageMobile": "/content/dam/banner-mobile.png",
                   "text_title": "Example Title Here",
                   "text_titleType": "h2",
                   "text_description": "This is a placeholder description. You can replace it with your own content.",
