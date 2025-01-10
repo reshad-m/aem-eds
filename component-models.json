@@ -241,7 +241,7 @@
         "label": "Is this the Banner Variant 2?",
         "name": "isVariant2",
         "valueType": "boolean",
-        "value": false
+        "value": true
       },
       {
         "component": "richtext",
