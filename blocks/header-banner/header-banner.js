@@ -1,13 +1,11 @@
 export default function decorate(block) {
-  if (!block) return;
+  if (!block || block.children.length < 2) return;
+
   const [imagesWrapper, textWrapper] = block.children;
-
-  if (!imagesWrapper || !textWrapper) return;
-
   imagesWrapper.className = 'images-wrapper';
   textWrapper.className = 'text-wrapper';
 
-  if (textWrapper.children.length === 1 && textWrapper.children[0].innerHTML.trim() === '') {
+  if (textWrapper.children.length === 1 && !textWrapper.children[0].innerHTML.trim()) {
     block.removeChild(textWrapper);
   }
 
@@ -15,27 +13,25 @@ export default function decorate(block) {
     textWrapper.children[0].className = 'text-container';
   }
 
-  const imageDivs = [...imagesWrapper.children];
+  const images = [...imagesWrapper.children];
+  if (!images.length) return;
 
-  imageDivs.forEach((div) => {
-    if (div.children.length === 1 && div.querySelector('picture')) {
-      const picture = div.querySelector('picture');
-      picture.className = 'desktop-image';
+  imagesWrapper.innerHTML = '';
 
-      imagesWrapper.innerHTML = '';
-      imagesWrapper.appendChild(picture);
-    }
+  const firstDiv = images[0];
+  if (!firstDiv) return;
 
-    if (div.children.length === 2 && div.querySelector('picture')) {
-      const desktopImage = div.children[0].querySelector('picture');
-      const mobileImage = div.children[1].querySelector('picture');
+  const pictures = firstDiv.querySelectorAll('picture');
 
-      if (desktopImage) desktopImage.className = 'desktop-image';
-      if (mobileImage) mobileImage.className = 'mobile-image';
-
-      imagesWrapper.innerHTML = '';
-      if (desktopImage) imagesWrapper.appendChild(desktopImage);
-      if (mobileImage) imagesWrapper.appendChild(mobileImage);
-    }
-  });
+  if (pictures.length === 1) {
+    const desktopImage = pictures[0];
+    desktopImage.className = 'desktop-image';
+    imagesWrapper.appendChild(desktopImage);
+  } else if (pictures.length === 2) {
+    const [desktopImage, mobileImage] = pictures;
+    desktopImage.className = 'desktop-image';
+    mobileImage.className = 'mobile-image';
+    imagesWrapper.appendChild(desktopImage);
+    imagesWrapper.appendChild(mobileImage);
+  }
 }
