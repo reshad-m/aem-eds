@@ -211,6 +211,12 @@
         ]
       },
       {
+        "component": "boolean",
+        "label": "Is this the homepage banner?",
+        "name": "reveal",
+        "valueType": "boolean"
+      },
+      {
         "component": "select",
         "name": "classes",
         "value": "",
@@ -241,27 +247,32 @@
         "name": "text_description",
         "value": "",
         "label": "Description",
-        "valueType": "string"
+        "valueType": "string",
+        "condition": { "===": [{"var" : "reveal"}, true] }
       },
       {
         "component": "aem-content",
         "name": "text_link",
-        "label": "Link"
+        "label": "Link",
+        "condition": { "===": [{"var" : "reveal"}, true] }
       },
       {
         "component": "text",
         "name": "text_linkText",
-        "label": "Text"
+        "label": "Text",
+        "condition": { "===": [{"var" : "reveal"}, true] }
       },
       {
         "component": "text",
         "name": "text_linkTitle",
-        "label": "Title"
+        "label": "Title",
+        "condition": { "===": [{"var" : "reveal"}, true] }
       },
       {
         "component": "select",
         "name": "text_linkType",
         "label": "Type",
+        "condition": { "===": [{"var" : "reveal"}, true] },
         "options": [
           {
             "name": "default",
