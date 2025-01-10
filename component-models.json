@@ -211,12 +211,6 @@
         ]
       },
       {
-        "component": "boolean",
-        "label": "Is this the homepage banner?",
-        "name": "reveal",
-        "valueType": "boolean"
-      },
-      {
         "component": "select",
         "name": "classes",
         "value": "",
@@ -243,36 +237,42 @@
         ]
       },
       {
+        "component": "boolean",
+        "label": "Is this the homepage banner?",
+        "name": "isHomepage",
+        "valueType": "boolean"
+      },
+      {
         "component": "richtext",
         "name": "text_description",
         "value": "",
         "label": "Description",
         "valueType": "string",
-        "condition": { "===": [{"var" : "reveal"}, true] }
+        "condition": { "===": [{"var" : "isHomepage"}, false] }
       },
       {
         "component": "aem-content",
         "name": "text_link",
         "label": "Link",
-        "condition": { "===": [{"var" : "reveal"}, true] }
+        "condition": { "===": [{"var" : "isHomepage"}, false] }
       },
       {
         "component": "text",
         "name": "text_linkText",
         "label": "Text",
-        "condition": { "===": [{"var" : "reveal"}, true] }
+        "condition": { "===": [{"var" : "isHomepage"}, false] }
       },
       {
         "component": "text",
         "name": "text_linkTitle",
         "label": "Title",
-        "condition": { "===": [{"var" : "reveal"}, true] }
+        "condition": { "===": [{"var" : "isHomepage"}, false] }
       },
       {
         "component": "select",
         "name": "text_linkType",
         "label": "Type",
-        "condition": { "===": [{"var" : "reveal"}, true] },
+        "condition": { "===": [{"var" : "isHomepage"}, false] },
         "options": [
           {
             "name": "default",
