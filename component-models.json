@@ -366,6 +366,14 @@
             "value": "secondary"
           }
         ]
+      },
+      {
+        "component": "boolean",
+        "name": "enableGradient",
+        "label": "Enable Gradient Overlay",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Toggle to enable/disable gradient overlay"
       }
     ]
   },
