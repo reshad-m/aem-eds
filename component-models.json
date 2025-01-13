@@ -328,10 +328,44 @@
       },
       {
         "component": "richtext",
-        "name": "cardDescription",
+        "name": "text_cardDescription",
         "value": "",
         "label": "Card description",
         "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "text_link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "text_linkText",
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "name": "text_linkTitle",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "text_linkType",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
       }
     ]
   },
