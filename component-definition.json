@@ -165,7 +165,8 @@
                   "text_cardDescription": "This is a placeholder description. You can replace it with your own content.",
                   "text_link": "#",
                   "text_linkText": "Call to action",
-                  "text_linkType": "default"
+                  "text_linkType": "default",
+                  "enableGradient": true
                 }
               }
             }
