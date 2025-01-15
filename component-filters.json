@@ -18,8 +18,7 @@
       "fragment",
       "hub-cards",
       "cta-blocks",
-      "header-banner",
-      "tabs"
+      "header-banner"
     ]
   },
   {
@@ -44,12 +43,6 @@
     "id": "cta-blocks",
     "components": [
       "cta-block"
-    ]
-  },
-  {
-    "id": "tabs",
-    "components": [
-      "tab"
     ]
   },
   {

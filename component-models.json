@@ -248,31 +248,66 @@
         "value": "",
         "label": "Description",
         "valueType": "string",
-        "condition": { "===": [{"var" : "isVariant2"}, true] }
+        "condition": {
+          "===": [
+            {
+              "var": "isVariant2"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "aem-content",
         "name": "text_link",
         "label": "Link",
-        "condition": { "===": [{"var" : "isVariant2"}, true] }
+        "condition": {
+          "===": [
+            {
+              "var": "isVariant2"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "text",
         "name": "text_linkText",
         "label": "Text",
-        "condition": { "===": [{"var" : "isVariant2"}, true] }
+        "condition": {
+          "===": [
+            {
+              "var": "isVariant2"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "text",
         "name": "text_linkTitle",
         "label": "Title",
-        "condition": { "===": [{"var" : "isVariant2"}, true] }
+        "condition": {
+          "===": [
+            {
+              "var": "isVariant2"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "select",
         "name": "text_linkType",
         "label": "Type",
-        "condition": { "===": [{"var" : "isVariant2"}, true] },
+        "condition": {
+          "===": [
+            {
+              "var": "isVariant2"
+            },
+            true
+          ]
+        },
         "options": [
           {
             "name": "default",
@@ -490,15 +525,8 @@
     "fields": [
       {
         "component": "text",
-        "name": "title",
-        "label": "Title"
-      },
-      {
-        "component": "richtext",
-        "name": "content",
-        "value": "",
-        "label": "Content",
-        "valueType": "string"
+        "name": "tab-title",
+        "label": "Tab title"
       }
     ]
   }
