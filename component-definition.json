@@ -296,7 +296,7 @@
         },
         {
           "title": "Featured Tab Section",
-          "id": "featured-tab-section",
+          "id": "featured-tab",
           "plugins": {
             "xwalk": {
               "page": {
