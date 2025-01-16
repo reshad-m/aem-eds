@@ -562,6 +562,12 @@
       },
       {
         "component": "text",
+        "name": "tabNav_title",
+        "label": "Navigation Title",
+        "required": true
+      },
+      {
+        "component": "text",
         "name": "tabContent_title",
         "label": "Tab Title",
         "required": true

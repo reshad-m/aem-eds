@@ -197,7 +197,7 @@
                 "template": {
                   "name": "Person Card",
                   "filter": "person-card",
-                  "model":"person-card"
+                  "model": "person-card"
                 }
               }
             }
@@ -319,12 +319,24 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Featured Tab",
-                  "model": "featured-tab"
+                  "model": "featured-tab",
+                  "heading": "UK quarterly economic outlook",
+                  "headingType": "h2",
+                  "style": "blue-gradient",
+                  "tabNav_title": "UK quarterly economic outlook",
+                  "tabContent_title": "UK quarterly economic outlook - Q3 2024",
+                  "tabContent_description": "<p>RSM provides unique insights into the UK's real economy.</p>",
+                  "tabContent_cta": "/uk-economic-outlook",
+                  "tabContent_ctaText": "UK quarterly economic outlook",
+                  "tabContent_ctaTitle": "View economic outlook",
+                  "tabContent_ctaType": "primary",
+                  "image": "/content/dam/cta-image.png",
+                  "imageAlt": "Economic graph visualization"
                 }
               }
             }
           }
-        }       
+        }
       ]
     }
   ]
