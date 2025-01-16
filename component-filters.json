@@ -3,6 +3,7 @@
     "id": "main",
     "components": [
       "section",
+      "featured-tabs",
       "tab"
     ]
   },
@@ -59,6 +60,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "featured-tabs",
+    "components": [
+      "featured-tab"
     ]
   }
 ]

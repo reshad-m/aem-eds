@@ -529,5 +529,96 @@
         "label": "Tab title"
       }
     ]
+  },
+  {
+    "id": "featured-tab",
+    "fields": [
+      {
+        "component": "text",
+        "name": "heading",
+        "label": "Main Block Title",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "headingType",
+        "label": "Heading Type",
+        "value": "h2"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Block Style",
+        "options": [
+          {
+            "name": "Blue Gradient",
+            "value": "blue-gradient"
+          },
+          {
+            "name": "Dark Theme",
+            "value": "dark"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "tabContent_title",
+        "label": "Tab Title",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "tabContent_description",
+        "label": "Tab Description",
+        "valueType": "string"
+      },
+      {
+        "component": "aem-content",
+        "name": "tabContent_cta1",
+        "label": "CTA Link"
+      },
+      {
+        "component": "text",
+        "name": "tabContent_cta1Text",
+        "label": "CTA Text"
+      },
+      {
+        "component": "text",
+        "name": "tabContent_cta1Title",
+        "label": "CTA Title"
+      },
+      {
+        "component": "select",
+        "name": "tabContent_cta1Type",
+        "label": "CTA Style",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Background Image Alt Text",
+        "valueType": "string"
+      }
+    ]
   }
 ]
