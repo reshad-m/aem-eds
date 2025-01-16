@@ -3,7 +3,6 @@
     "id": "main",
     "components": [
       "section",
-      "featured-tabs",
       "tab"
     ]
   },
@@ -20,7 +19,8 @@
       "fragment",
       "hub-cards",
       "cta-blocks",
-      "header-banner"
+      "header-banner",
+      "featured-tabs"
     ]
   },
   {
