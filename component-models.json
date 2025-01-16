@@ -574,22 +574,22 @@
       },
       {
         "component": "aem-content",
-        "name": "tabContent_cta1",
+        "name": "tabContent_cta",
         "label": "CTA Link"
       },
       {
         "component": "text",
-        "name": "tabContent_cta1Text",
+        "name": "tabContent_ctaText",
         "label": "CTA Text"
       },
       {
         "component": "text",
-        "name": "tabContent_cta1Title",
+        "name": "tabContent_ctaTitle",
         "label": "CTA Title"
       },
       {
         "component": "select",
-        "name": "tabContent_cta1Type",
+        "name": "tabContent_ctaType",
         "label": "CTA Style",
         "options": [
           {
