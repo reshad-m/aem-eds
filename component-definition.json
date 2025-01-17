@@ -198,7 +198,7 @@
                   "name": "Person Card",
                   "filter": "person-card",
                   "model": "person-card",
-                  "image": "/content/dam/profile-placeholder.png",
+                  "image": "/content/dam/rsm-eds/profile-placeholder.png",
                   "imageAlt": "Profile photo of the team member",
                   "profileInfo_firstName": "Enter the team member's first name",
                   "profileInfo_lastName": "Enter the team member's last name",
