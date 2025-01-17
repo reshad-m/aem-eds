@@ -674,7 +674,7 @@
       {
         "component": "select",
         "name": "profile_linkType",
-        "label": "CTA Style",
+        "label": "Profile Link Type",
         "options": [
           {
             "name": "Default",
