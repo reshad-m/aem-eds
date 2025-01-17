@@ -596,7 +596,7 @@
         "name": "image",
         "label": "Background Image",
         "valueType": "string",
-        "multi": 2
+        "multi": false
       },
       {
         "component": "text",
@@ -611,6 +611,19 @@
         "valueType": "boolean",
         "default": true,
         "description": "Toggle to enable/disable gradient overlay"
+      },
+      {
+        "component": "reference",
+        "name": "sideImage",
+        "label": "Side Image",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "sideImageAlt",
+        "label": "Side Image Alt Text",
+        "valueType": "string"
       }
     ]
   }
