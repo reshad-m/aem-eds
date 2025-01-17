@@ -319,16 +319,16 @@
                 "template": {
                   "name": "Featured Tab",
                   "model": "featured-tab",
-                  "tabNav_title": "UK quarterly economic outlook",
-                  "tabContent_title": "UK quarterly economic outlook - Q3 2024",
+                  "tabNav_title": "Add the navigation title here",
+                  "tabContent_title": "Add the main content title here",
                   "tabContent_titleType": "h2",
-                  "tabContent_description": "<p>RSM provides unique insights into the UK's real economy.</p>",
-                  "tabContent_cta": "/uk-economic-outlook",
-                  "tabContent_ctaText": "UK quarterly economic outlook",
-                  "tabContent_ctaTitle": "View economic outlook",
+                  "tabContent_description": "Provide a brief description of the content here",
+                  "tabContent_cta": "#",
+                  "tabContent_ctaText": "Add the call-to-action text here (e.g., 'Read more', 'Learn more', etc.)",
+                  "tabContent_ctaTitle": "Provide a tooltip or additional description for the CTA button here",
                   "tabContent_ctaType": "primary",
                   "image": "/content/dam/cta-image.png",
-                  "imageAlt": "Economic graph visualization",
+                  "imageAlt": "Provide a brief description of the image here",
                   "enableGradient": true
                 }
               }
