@@ -102,7 +102,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.7), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(to bottom right, rgb(30 58 138 / 70%), rgb(0 0 0 / 70%));
   pointer-events: none;
 }
 

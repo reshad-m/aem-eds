@@ -1,4 +1,3 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
@@ -43,16 +42,10 @@ export default function decorate(block) {
     if (contentDiv) {
       const contentWrapper = document.createElement('div');
       contentWrapper.className = 'featured-tabs-content';
-      
+
       // Move all elements from contentDiv to contentWrapper
       while (contentDiv.firstChild) {
-        if (contentDiv.firstChild.tagName === 'H2') {
-          // Move h2 attributes
-          const h2 = contentDiv.firstChild;
-          contentWrapper.appendChild(h2);
-        } else {
-          contentWrapper.appendChild(contentDiv.firstChild);
-        }
+        contentWrapper.appendChild(contentDiv.firstChild);
       }
       panel.append(contentWrapper);
     }
@@ -63,13 +56,13 @@ export default function decorate(block) {
       if (picture) {
         const pictureWrapper = document.createElement('div');
         pictureWrapper.className = 'featured-tabs-image';
-        
+
         // Add gradient class if enabled
         const enableGradient = enableGradientDiv?.querySelector('p')?.textContent === 'true';
         if (enableGradient) {
           pictureWrapper.classList.add('gradient-overlay');
         }
-        
+
         pictureWrapper.append(picture);
         panel.append(pictureWrapper);
       }
