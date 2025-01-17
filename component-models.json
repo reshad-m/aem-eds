@@ -495,32 +495,6 @@
     ]
   },
   {
-    "id": "person-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "cardDescription",
-        "value": "",
-        "label": "Card description",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
     "id": "tab",
     "fields": [
       {
@@ -644,6 +618,75 @@
         "component": "text",
         "name": "sideImageAlt",
         "label": "Side Image Alt Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "person-card",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Profile Image",
+        "valueType": "string",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Profile Image Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "profileInfo_firstName",
+        "label": "First Name",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "profileInfo_lastName",
+        "label": "Last Name",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "profileInfo_jobTitle",
+        "label": "Job Title",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "aem-content",
+        "name": "profile_link",
+        "label": "Profile Link"
+      },
+      {
+        "component": "text",
+        "name": "profile_linkText",
+        "label": "Profile Link Text",
+        "value": "View profile"
+      },
+      {
+        "component": "text",
+        "name": "contact_email",
+        "label": "Email Address",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "contact_emailText",
+        "label": "Contact Button Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "contact_phone",
+        "label": "Phone Number",
         "valueType": "string"
       }
     ]
