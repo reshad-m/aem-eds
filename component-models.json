@@ -535,33 +535,6 @@
     "fields": [
       {
         "component": "text",
-        "name": "heading",
-        "label": "Main Block Title",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "headingType",
-        "label": "Heading Type",
-        "value": "h2"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Block Style",
-        "options": [
-          {
-            "name": "Blue Gradient",
-            "value": "blue-gradient"
-          },
-          {
-            "name": "Dark Theme",
-            "value": "dark"
-          }
-        ]
-      },
-      {
-        "component": "text",
         "name": "tabNav_title",
         "label": "Navigation Title",
         "required": true
@@ -571,6 +544,12 @@
         "name": "tabContent_title",
         "label": "Tab Title",
         "required": true
+      },
+      {
+        "component": "text",
+        "name": "tabContent_titleType",
+        "label": "Tab Title Type",
+        "value": "h2"
       },
       {
         "component": "richtext",
@@ -624,6 +603,14 @@
         "name": "imageAlt",
         "label": "Background Image Alt Text",
         "valueType": "string"
+      },
+      {
+        "component": "boolean",
+        "name": "enableGradient",
+        "label": "Enable Gradient Overlay",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Toggle to enable/disable gradient overlay"
       }
     ]
   }
