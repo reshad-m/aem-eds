@@ -679,12 +679,6 @@
       },
       {
         "component": "text",
-        "name": "contact_emailText",
-        "label": "Contact Button Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
         "name": "contact_phone",
         "label": "Phone Number",
         "valueType": "string"
