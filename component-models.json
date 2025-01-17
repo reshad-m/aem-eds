@@ -596,7 +596,7 @@
         "name": "image",
         "label": "Background Image",
         "valueType": "string",
-        "multi": false
+        "multi": 2
       },
       {
         "component": "text",
