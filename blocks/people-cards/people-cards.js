@@ -17,7 +17,7 @@ export default function decorate(block) {
     // Image section
     const imageWrapper = document.createElement('div');
     imageWrapper.className = 'person-card-image';
-    if (imageDiv.querySelector('picture')) {
+    if (imageDiv?.querySelector('picture')) {
       imageWrapper.appendChild(imageDiv.querySelector('picture'));
     }
     article.appendChild(imageWrapper);
@@ -30,13 +30,14 @@ export default function decorate(block) {
     const infoWrapper = document.createElement('div');
     infoWrapper.className = 'person-card-info';
 
-    // Extract name and role from info div
-    const [firstName, lastName, jobRole] = [...infoDiv.querySelectorAll('p')].map((p) => p.textContent);
+    // Extract name and role from info div with safe fallbacks
+    const infoTexts = [...(infoDiv?.querySelectorAll('p') || [])].map((p) => p?.textContent || '');
+    const [firstName = '', lastName = '', jobRole = ''] = infoTexts;
 
     // Create name heading
     const nameHeading = document.createElement('h3');
     nameHeading.className = 'person-card-name';
-    nameHeading.textContent = `${firstName} ${lastName}`;
+    nameHeading.textContent = `${firstName} ${lastName}`.trim();
 
     // Create role paragraph
     const roleText = document.createElement('p');
@@ -47,8 +48,8 @@ export default function decorate(block) {
     contentWrapper.appendChild(infoWrapper);
 
     // Profile link section
-    if (profileDiv.querySelector('a')) {
-      const profileLink = profileDiv.querySelector('a');
+    const profileLink = profileDiv?.querySelector('a');
+    if (profileLink) {
       profileLink.className = 'profile-link';
 
       // Add screen reader text
@@ -71,45 +72,54 @@ export default function decorate(block) {
       const contactWrapper = document.createElement('div');
       contactWrapper.className = 'person-card-contact';
 
-      const [email, phone] = [...contactDiv.querySelectorAll('p')].map((p) => p.textContent);
+      const contactTexts = [...(contactDiv.querySelectorAll('p') || [])].map((p) => p?.textContent || '');
+      const [email = '', phone = ''] = contactTexts;
 
-      // Create email link
-      const emailLink = document.createElement('a');
-      emailLink.className = 'contact-link';
-      emailLink.href = `mailto:${email}`;
+      if (email) {
+        // Create email link
+        const emailLink = document.createElement('a');
+        emailLink.className = 'contact-link';
+        emailLink.href = `mailto:${email}`;
 
-      const emailIcon = document.createElement('span');
-      emailIcon.className = 'contact-icon';
-      emailIcon.setAttribute('aria-hidden', 'true');
-      emailIcon.textContent = '✉';
+        const emailIcon = document.createElement('span');
+        emailIcon.className = 'contact-icon';
+        emailIcon.setAttribute('aria-hidden', 'true');
+        emailIcon.textContent = '✉';
 
-      emailLink.append(
-        emailIcon,
-        document.createTextNode(`Contact ${firstName} ${lastName}`),
-      );
+        emailLink.append(
+          emailIcon,
+          document.createTextNode(`Contact ${firstName}`),
+        );
+        contactWrapper.appendChild(emailLink);
+      }
 
-      // Create phone link
-      const phoneLink = document.createElement('a');
-      phoneLink.className = 'phone-link';
-      phoneLink.href = `tel:${phone.replace(/\s/g, '-')}`;
+      if (phone) {
+        // Create phone link
+        const phoneLink = document.createElement('a');
+        phoneLink.className = 'phone-link';
+        const formattedPhone = phone.replace(/\s+/g, '-').replace(/[()]/g, '');
+        phoneLink.href = `tel:${formattedPhone}`;
 
-      const phoneIcon = document.createElement('span');
-      phoneIcon.className = 'phone-icon';
-      phoneIcon.setAttribute('aria-hidden', 'true');
-      phoneIcon.textContent = '📞';
+        const phoneIcon = document.createElement('span');
+        phoneIcon.className = 'phone-icon';
+        phoneIcon.setAttribute('aria-hidden', 'true');
+        phoneIcon.textContent = '📞';
 
-      const srPhone = document.createElement('span');
-      srPhone.className = 'sr-only';
-      srPhone.textContent = `Call ${firstName} ${lastName}`;
+        const srPhone = document.createElement('span');
+        srPhone.className = 'sr-only';
+        srPhone.textContent = `Call ${firstName} ${lastName}`;
 
-      phoneLink.append(
-        phoneIcon,
-        document.createTextNode(phone),
-        srPhone,
-      );
+        phoneLink.append(
+          phoneIcon,
+          document.createTextNode(phone),
+          srPhone,
+        );
+        contactWrapper.appendChild(phoneLink);
+      }
 
-      contactWrapper.append(emailLink, phoneLink);
-      contentWrapper.appendChild(contactWrapper);
+      if (email || phone) {
+        contentWrapper.appendChild(contactWrapper);
+      }
     }
 
     article.appendChild(contentWrapper);
