@@ -669,7 +669,26 @@
         "component": "text",
         "name": "profile_linkText",
         "label": "Profile Link Text",
-        "value": "View profile"
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "profile_linkType",
+        "label": "CTA Style",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          }
+        ]
       },
       {
         "component": "text",

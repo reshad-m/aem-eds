@@ -197,7 +197,8 @@
                 "template": {
                   "name": "Person Card",
                   "filter": "person-card",
-                  "model": "person-card"
+                  "model": "person-card",
+                  "profile_linkText": "View profile"
                 }
               }
             }
