@@ -655,7 +655,7 @@
       },
       {
         "component": "text",
-        "name": "profileInfo_jobTitle",
+        "name": "profileInfo_jobRole",
         "label": "Job Title",
         "valueType": "string",
         "required": true
