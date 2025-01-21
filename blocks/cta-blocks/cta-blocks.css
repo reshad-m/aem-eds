@@ -1,0 +1,141 @@
+/* cta-blocks/cta-blocks.css */
+.cta-blocks-container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cta-blocks-wrapper {
+    margin: 0;
+  }
+  
+  .cta-blocks-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  
+  /* CTA Block Base */
+  .cta-block {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Background */
+  .cta-block-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .cta-block-background picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cta-block-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Gradient Overlay */
+  .cta-block[data-gradient="true"] .cta-block-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgb(0 0 0 / 70%), rgb(0 0 0 / 30%));
+    pointer-events: none;
+  }
+  
+  /* Content */
+  .cta-block-content {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 2rem;
+    max-width: 600px;
+  }
+  
+  /* Typography */
+  .cta-block-eyebrow {
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+    opacity: 0.8;
+  }
+  
+  .cta-block h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
+  }
+  
+  .cta-block-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+  }
+  
+  /* Theme Colors */
+  .cta-block[data-theme="dark"] {
+    color: white;
+  }
+  
+  .cta-block:not([data-theme="dark"]) {
+    color: #333;
+  }
+  
+  /* CTA Link */
+  .cta-block-link a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid currentcolor;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-block-link a:hover {
+    background: rgb(255 255 255 / 10%);
+  }
+  
+  /* Responsive Layout */
+  @media (width >= 900px) {
+    /* Handle width variations */
+    .cta-block:not([data-full-width="true"]) {
+      width: 50%;
+    }
+  
+    .cta-blocks-grid {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+  
+    .cta-block-content {
+      padding: 4rem 3rem;
+    }
+  
+    .cta-block h2 {
+      font-size: 3rem;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .cta-block {
+      break-inside: avoid;
+      border: 1px solid #eee;
+    }
+  
+    .cta-block[data-gradient="true"] .cta-block-background::after {
+      display: none;
+    }
+  }
