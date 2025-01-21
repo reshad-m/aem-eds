@@ -446,7 +446,8 @@
         "component": "text",
         "name": "heading_mainType",
         "label": "Main Heading Type",
-        "value": "h2"
+        "value": "h2",
+        "hidden": true
       },
       {
         "component": "richtext",
