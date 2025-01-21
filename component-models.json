@@ -417,54 +417,71 @@
     "fields": [
       {
         "component": "reference",
-        "valueType": "string",
         "name": "image",
-        "label": "Background image",
-        "multi": false
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false,
+        "required": true
       },
       {
         "component": "text",
-        "valueType": "string",
         "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "block_details",
-        "value": "",
-        "label": "Block details",
+        "label": "Background Image Alt Text",
         "valueType": "string"
       },
       {
-        "component": "select",
-        "name": "width",
-        "label": "Block's width",
-        "options": [
-          {
-            "name": "full",
-            "value": "100"
-          },
-          {
-            "name": "50",
-            "value": "50"
-          }
-        ]
+        "component": "text",
+        "name": "heading_eyebrow",
+        "label": "Small Heading (Above Main)",
+        "valueType": "string"
       },
       {
-        "component": "select",
-        "name": "theme",
-        "label": "Block's theme",
-        "options": [
-          {
-            "name": "midnightBlue",
-            "value": "midnightBlue"
-          },
-          {
-            "name": "grey",
-            "value": "grey"
-          }
-        ]
+        "component": "text",
+        "name": "heading_main",
+        "label": "Main Heading",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "heading_mainType",
+        "label": "Main Heading Type",
+        "value": "h2"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description Text",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "cta_link",
+        "label": "CTA Link"
+      },
+      {
+        "component": "boolean",
+        "name": "isFullWidth",
+        "label": "Make block full width",
+        "valueType": "boolean",
+        "default": false,
+        "description": "Toggle to switch between half width (default) and full width"
+      },
+      {
+        "component": "boolean",
+        "name": "enableGradient",
+        "label": "Enable Gradient Overlay",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Toggle to enable/disable gradient overlay on the background image"
+      },
+      {
+        "component": "boolean",
+        "name": "isDarkTheme",
+        "label": "Use Dark Theme",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Toggle between dark theme (default) and light theme"
       }
     ]
   },
