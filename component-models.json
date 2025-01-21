@@ -720,5 +720,64 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "carousel",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Slide Image",
+        "valueType": "string",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Image Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "content_title",
+        "label": "Slide Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content_description",
+        "label": "Slide Description",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "content_align",
+        "label": "Content Alignment",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          },
+          {
+            "name": "Justify",
+            "value": "justify"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "content_link",
+        "label": "Call to Action"
+      }
+    ]
   }
 ]

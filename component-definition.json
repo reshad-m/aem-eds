@@ -354,6 +354,27 @@
               }
             }
           }
+        },
+        {
+          "title": "Carousel",
+          "id": "carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Carousel",
+                  "model": "carousel",
+                  "image": "/content/dam/carousel-placeholder.png",
+                  "imageAlt": "Add descriptive text about the slide image",
+                  "content_title": "Add slide title here",
+                  "content_description": "Add descriptive text for the slide.",
+                  "content_align": "left",
+                  "content_link": "Call to action</p>"
+                }
+              }
+            }
+          }
         }
       ]
     }
