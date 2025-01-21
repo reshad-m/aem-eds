@@ -244,7 +244,7 @@
                   "heading_main": "Add your main heading here",
                   "heading_mainType": "h2",
                   "description": "Add your descriptive text here.",
-                  "cta_link": "Add call to action text",
+                  "cta_link": "Add call-to-action text and specify your button/link type.",
                   "isFullWidth": false,
                   "enableGradient": true,
                   "isDarkTheme": true
