@@ -763,7 +763,7 @@
       },
       {
         "component": "select",
-        "name": "content_classes",
+        "name": "align",
         "label": "Content Alignment",
         "options": [
           {
