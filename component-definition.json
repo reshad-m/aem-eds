@@ -380,7 +380,7 @@
                 "template": {
                   "name": "Slide",
                   "model": "slide",
-                  "image": "/content/dam/carousel-placeholder.png",
+                  "image": "/content/dam/slide-placeholder.png",
                   "imageAlt": "Add descriptive text about the slide image",
                   "content_title": "Add slide title here",
                   "content_description": "Add descriptive text for the slide.",
