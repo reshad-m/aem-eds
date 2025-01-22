@@ -757,32 +757,14 @@
         "valueType": "string"
       },
       {
-        "component": "select",
-        "name": "align",
-        "label": "Content Alignment",
-        "options": [
-          {
-            "name": "Left",
-            "value": "left"
-          },
-          {
-            "name": "Center",
-            "value": "center"
-          },
-          {
-            "name": "Right",
-            "value": "right"
-          },
-          {
-            "name": "Justify",
-            "value": "justify"
-          }
-        ]
-      },
-      {
         "component": "richtext",
         "name": "content_link",
         "label": "Call to Action"
+      },
+      {
+        "component": "text",
+        "name": "tab-title",
+        "label": "Tab title"
       }
     ]
   }
