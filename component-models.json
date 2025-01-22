@@ -763,8 +763,7 @@
       },
       {
         "component": "text",
-        "name": "tab-title",
-        "label": "Tab title"
+        "name": "align"
       }
     ]
   }
