@@ -383,6 +383,7 @@
                   "image": "/content/dam/slide-placeholder.png",
                   "imageAlt": "Add descriptive text about the slide image",
                   "content_title": "Add slide title here",
+                  "content_titleType": "h2",
                   "content_description": "Add descriptive text for the slide.",
                   "content_align": "left",
                   "content_link": "Call to action"

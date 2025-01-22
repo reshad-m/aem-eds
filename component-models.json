@@ -745,6 +745,12 @@
         "valueType": "string"
       },
       {
+        "component": "text",
+        "name": "content_titleType",
+        "label": "Slide Title Type",
+        "hidden": true
+      },
+      {
         "component": "richtext",
         "name": "content_description",
         "label": "Slide Description",
