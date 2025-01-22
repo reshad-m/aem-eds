@@ -758,7 +758,7 @@
       },
       {
         "component": "select",
-        "name": "content_align",
+        "name": "align",
         "label": "Content Alignment",
         "options": [
           {
