@@ -757,13 +757,8 @@
         "valueType": "string"
       },
       {
-        "component": "richtext",
-        "name": "content_link",
-        "label": "Call to Action"
-      },
-      {
         "component": "select",
-        "name": "align",
+        "name": "content_align",
         "label": "Content Alignment",
         "options": [
           {
@@ -783,6 +778,11 @@
             "value": "justify"
           }
         ]
+      },
+      {
+        "component": "richtext",
+        "name": "content_link",
+        "label": "Call to Action"
       }
     ]
   }
