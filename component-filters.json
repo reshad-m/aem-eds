@@ -69,5 +69,11 @@
     "components": [
       "featured-tab"
     ]
+  },
+  {
+    "id": "carousel",
+    "components": [
+      "slide"
+    ]
   }
 ]
