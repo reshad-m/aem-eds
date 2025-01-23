@@ -140,6 +140,7 @@ export default async function decorate(block) {
     }
     // row.remove();
   });
+  rows.append(slidesWrapper);
 
   container.append(slidesWrapper);
   block.prepend(container);
