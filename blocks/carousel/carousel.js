@@ -78,7 +78,8 @@ function createSlide(row, slideIndex, carouselId) {
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
-    slide.append(column);
+    // slide.append(column);
+    row.append(column);
   });
 
   const labeledBy = slide.querySelector('h1, h2, h3, h4, h5, h6');
@@ -138,7 +139,7 @@ export default async function decorate(block) {
       indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
       slideIndicators.append(indicator);
     }
-    row.remove();
+    // row.remove();
   });
 
   container.append(slidesWrapper);
