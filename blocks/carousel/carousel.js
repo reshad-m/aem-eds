@@ -79,7 +79,6 @@ function createSlide(row, slideIndex, carouselId) {
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
     slide.append(column);
-    row.append(column);
   });
 
   const labeledBy = slide.querySelector('h1, h2, h3, h4, h5, h6');
