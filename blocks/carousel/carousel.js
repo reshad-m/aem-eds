@@ -130,7 +130,7 @@ export default async function decorate(block) {
   rows.forEach((row, idx) => {
     const slide = createSlide(row, idx, carouselId);
     slidesWrapper.append(slide);
-
+  
     if (slideIndicators) {
       const indicator = document.createElement('li');
       indicator.classList.add('carousel-slide-indicator');
@@ -138,9 +138,10 @@ export default async function decorate(block) {
       indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
       slideIndicators.append(indicator);
     }
-    // row.remove();
+    
+    // Append the row back to the block
+    block.append(row);
   });
-  rows.append(slidesWrapper);
 
   container.append(slidesWrapper);
   block.prepend(container);
