@@ -138,9 +138,7 @@ export default async function decorate(block) {
       indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
       slideIndicators.append(indicator);
     }
-
-    // Append the row back to the block
-    block.append(row);
+    // row.remove();
   });
 
   container.append(slidesWrapper);
