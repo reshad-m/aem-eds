@@ -32,5 +32,5 @@ indices:
         select: head > meta[name="author"]
         value: attribute(el, "content")
       date:
-        select: head > meta[name="publication-date"]
+        select: head > meta[name="published-time"]
         value: attribute(el, "content")
