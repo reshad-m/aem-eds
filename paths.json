@@ -2,7 +2,8 @@
   "mappings": [
     "/content/reshad-eds-site/:/",
     "/content/reshad-eds-site/configuration:/.helix/config.json",
-    "/content/reshad-eds-site/metadata:/metadata.json"
+    "/content/reshad-eds-site/metadata:/metadata.json",
+    "/content/reshad-eds-site.resource/news-index.json:/news-index.json"
   ],
   "includes": [
     "/content/reshad-eds-site/"

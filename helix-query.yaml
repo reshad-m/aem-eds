@@ -14,3 +14,23 @@ indices:
       robots:
         select: head > meta[name="robots"]
         value: attribute(el, "content")
+  news:
+    include:
+      - '/news/**'
+    target: /news-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      author:
+        select: head > meta[name="author"]
+        value: attribute(el, "content")
+      date:
+        select: head > meta[name="publication-date"]
+        value: attribute(el, "content")

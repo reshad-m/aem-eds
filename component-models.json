@@ -750,7 +750,7 @@
     ]
   },
   {
-    "id": "slide",
+    "id": "slide-main",
     "fields": [
       {
         "component": "reference",
