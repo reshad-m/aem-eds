@@ -813,5 +813,9 @@
         "label": "Call to Action"
       }
     ]
+  },
+  {
+    "id": "carousel",
+    "fields": []
   }
 ]
