@@ -4,9 +4,9 @@ export default async function decorate(block) {
   // Fetch and parse news data
   const response = await fetch('/news-index.json');
   const json = await response.json();
-  
+
   const articles = json.data
-    .filter(item => item.path.startsWith('/news/') && item.path !== '/news/')
+    .filter((item) => item.path.startsWith('/news/') && item.path !== '/news/')
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const SLIDES_PER_VIEW = 3;
@@ -15,7 +15,7 @@ export default async function decorate(block) {
   // Create carousel structure
   const carousel = document.createElement('div');
   carousel.className = 'carousel';
-  
+
   const slidesContainer = document.createElement('div');
   slidesContainer.className = 'slides-container';
 
@@ -23,15 +23,15 @@ export default async function decorate(block) {
   for (let i = 0; i < articles.length; i += SLIDES_PER_VIEW) {
     const slideGroup = document.createElement('div');
     slideGroup.className = 'slide-group';
-    
+
     // Add slides to group
-    for (let j = i; j < i + SLIDES_PER_VIEW && j < articles.length; j++) {
+    for (let j = i; j < i + SLIDES_PER_VIEW && j < articles.length; j += 1) {
       const article = articles[j];
       const slide = document.createElement('div');
       slide.className = 'slide';
-      
+
       const image = createOptimizedPicture(article.image, article.title);
-      
+
       slide.innerHTML = `
         <a href="${article.path}" class="slide-content">
           ${image.outerHTML}
@@ -42,10 +42,10 @@ export default async function decorate(block) {
           </div>
         </a>
       `;
-      
+
       slideGroup.appendChild(slide);
     }
-    
+
     slidesContainer.appendChild(slideGroup);
   }
 
@@ -60,7 +60,7 @@ export default async function decorate(block) {
 
   // Navigation dots (one per group)
   const dots = nav.querySelector('.dots');
-  for (let i = 0; i < totalGroups; i++) {
+  for (let i = 0; i < totalGroups; i += 1) {
     const dot = document.createElement('button');
     dot.className = 'dot';
     dot.setAttribute('data-group', i);
@@ -69,7 +69,7 @@ export default async function decorate(block) {
   }
 
   let currentGroup = 0;
-  
+
   const updateSlides = () => {
     slidesContainer.style.transform = `translateX(-${currentGroup * 100}%)`;
     dots.querySelectorAll('.dot').forEach((dot, index) => {
@@ -111,6 +111,6 @@ export default async function decorate(block) {
   carousel.appendChild(slidesContainer);
   carousel.appendChild(nav);
   block.appendChild(carousel);
-  
+
   updateSlides();
 }
