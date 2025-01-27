@@ -10,9 +10,6 @@ import {
   loadSection,
   loadSections,
   loadCSS,
-  buildBlock,
-  decorateBlock,
-  loadBlock,
 } from './aem.js';
 
 /**
@@ -65,24 +62,11 @@ async function loadFonts() {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks(main) {
+function buildAutoBlocks() {
   try {
-    if (window.location.pathname === '/') {
-      document.querySelectorAll('header .news-carousel, footer .news-carousel').forEach((el) => el.remove());
-
-      if (!main.querySelector('.news-carousel')) {
-        const carouselBlock = buildBlock('news-carousel', [['Loading news carousel...']]);
-        const heroSection = main.querySelector('.hero-container');
-        if (heroSection) {
-          heroSection.before(carouselBlock);
-        } else {
-          main.prepend(carouselBlock);
-        }
-        decorateBlock(carouselBlock);
-        loadBlock(carouselBlock); // Add this line
-      }
-    }
+    // TODO: add auto block, if needed
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
 }
