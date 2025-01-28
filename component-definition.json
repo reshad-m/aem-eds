@@ -380,7 +380,7 @@
                 "template": {
                   "name": "Query Carousel",
                   "model": "query-carousel",
-                  "indexSource": "news",
+                  "indexSource": "news-index",
                   "itemsPerPage": 3,
                   "startIndex": 0
                 }
