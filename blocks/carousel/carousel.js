@@ -1,8 +1,21 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
+  // Extract values from the nested structure
+  const [targetDiv, limitDiv] = [...block.children];
+  const target = targetDiv?.querySelector('p')?.textContent || '';
+  const limit = limitDiv?.querySelector('p')?.textContent || '';
+
+  const targetValue = target || '';
+  const limitValue = parseInt(limit, 10) || 3;
+
+  // Remove both configuration divs from the block
+  targetDiv?.remove();
+  limitDiv?.remove();
+
   // Fetch and parse news data
-  const response = await fetch('/news-index.json');
+  // const response = await fetch('/news-index.json');
+  const response = await fetch(`/${targetValue}.json?limit=${limitValue}`);
   const json = await response.json();
 
   const articles = json.data
