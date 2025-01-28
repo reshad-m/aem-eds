@@ -106,20 +106,6 @@ export default async function decorate(block) {
     }
   });
 
-  // Auto advance
-  const autoAdvance = setInterval(() => {
-    currentGroup = (currentGroup + 1) % totalGroups;
-    updateSlides();
-  }, 5000);
-
-  carousel.addEventListener('mouseenter', () => clearInterval(autoAdvance));
-  carousel.addEventListener('mouseleave', () => {
-    setInterval(() => {
-      currentGroup = (currentGroup + 1) % totalGroups;
-      updateSlides();
-    }, 5000);
-  });
-
   carousel.appendChild(slidesContainer);
   carousel.appendChild(nav);
   block.appendChild(carousel);
