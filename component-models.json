@@ -816,6 +816,19 @@
   },
   {
     "id": "carousel",
-    "fields": []
+    "fields": [
+      {
+        "component": "text",
+        "name": "target",
+        "label": "Target of index",
+        "required": true
+      },
+      {
+        "component": "number",
+        "name": "limit",
+        "label": "Query limit",
+        "required": true
+      }
+    ]
   }
 ]
