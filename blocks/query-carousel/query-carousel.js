@@ -2,7 +2,6 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
   // Extract values from the nested structure
-  // Extract values from the nested structure
   const [indexSourceDiv, itemsPerPageDiv, startIndexDiv] = [...block.children];
   const indexSource = indexSourceDiv?.querySelector('p')?.textContent || 'news';
   const itemsPerPage = parseInt(itemsPerPageDiv?.querySelector('p')?.textContent, 10) || 3;
