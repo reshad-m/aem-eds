@@ -828,6 +828,45 @@
         "name": "limit",
         "label": "Query limit",
         "required": true
+      },
+      {
+        "component": "number",
+        "name": "offset",
+        "label": "Offset",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "query-carousel",
+    "title": "Query Carousel",
+    "description": "A carousel component that displays items from any specified index source",
+    "fields": [
+      {
+        "component": "text",
+        "name": "indexSource",
+        "label": "Index Source",
+        "description": "The source index to fetch items from (e.g., 'news', 'products', 'blogs')",
+        "required": true
+      },
+      {
+        "component": "number",
+        "name": "itemsPerPage",
+        "label": "Items Per Page",
+        "description": "Number of items to display in the carousel",
+        "required": true,
+        "default": 3,
+        "min": 1,
+        "max": 12
+      },
+      {
+        "component": "number",
+        "name": "startIndex",
+        "label": "Start Index",
+        "description": "Starting position in the index (offset)",
+        "required": true,
+        "default": 0,
+        "min": 0
       }
     ]
   }
