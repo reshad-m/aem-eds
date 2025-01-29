@@ -1,0 +1,111 @@
+/* Mobile First - Base Styles */
+.main-banner .desktop-image {
+    display: none;
+}
+
+.main-banner .mobile-image {
+    display: block;
+}
+
+.main-banner img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+main > .section > div.main-banner-wrapper {
+    max-width: 100%;
+    padding: 0;
+}
+
+.main-banner .text-wrapper {
+    color: white;
+    padding: 20px 25px;
+    background-color: #009CDE;
+}
+
+.main-banner.title-bg-green .text-wrapper {
+    background-color: #3F9C35;
+}
+
+.main-banner.title-bg-blue .text-wrapper {
+    background-color: #009CDE;
+}
+
+.main-banner.title-bg-midnight-blue .text-wrapper {
+    background-color: #00153D;
+}
+
+.main-banner {
+    position: relative;
+}
+
+.main-banner .text-wrapper h2 {
+    display: inline-block;
+}
+
+/* Media Queries - Tablet and Above */
+@media (width >= 600px) {
+    .main-banner .text-wrapper {
+        padding: 30px 35px;
+    }
+}
+
+/* Media Queries - Desktop and Above */
+@media (width >= 900px) {
+    .main-banner .text-wrapper {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        margin-top: -50px;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    .main-banner .text-wrapper .text-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    .main-banner.title-bg-green .text-wrapper {
+        background-color: transparent;
+    }
+
+    .main-banner.title-bg-blue .text-wrapper {
+        background-color: transparent;
+    }
+
+    .main-banner.title-bg-midnight-blue .text-wrapper {
+        background-color: transparent;
+    }
+
+    .main-banner.title-bg-green .text-wrapper h2 {
+        background-color: #3F9C35;
+    }
+
+    .main-banner.title-bg-blue .text-wrapper h2 {
+        background-color: #009CDE;
+    }
+
+    .main-banner.title-bg-midnight-blue .text-wrapper h2 {
+        background-color: #00153D;
+    }
+
+
+    .main-banner .desktop-image {
+        display: block;
+    }
+
+    .main-banner .mobile-image {
+        display: none;
+    }
+}
+
+/* Media Queries - Large Desktop and Above */
+@media (width >= 1200px) {
+    .main-banner .text-wrapper {
+        margin-top: -95px;
+    }
+}

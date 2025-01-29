@@ -122,9 +122,9 @@
                 "template": {
                   "name": "main-banner",
                   "model": "main-banner",
-                  "image_imageDesktop": "/content/dam/banner.png",
-                  "image_imageMobile": "/content/dam/banner-mobile.png",
-                  "text_heading": "Example Title Here",
+                  "image_imageDesktop": "/content/dam/rsm-eds/banner.png",
+                  "image_imageMobile": "/content/dam/rsm-eds/banner-mobile.png",
+                  "text_heading": "Title Here",
                   "text_headingType": "h2",
                   "text_text": "This is a placeholder description. You can replace it with your own content.",
                   "text_link": "Call to action"
