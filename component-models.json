@@ -282,7 +282,8 @@
         "valueType": "string",
         "name": "image",
         "label": "Image",
-        "multi": false
+        "multi": false,
+        "required": true
       },
       {
         "component": "text",
@@ -293,52 +294,26 @@
       },
       {
         "component": "richtext",
-        "name": "text_cardDescription",
+        "name": "text_text",
         "value": "",
-        "label": "Card description",
+        "label": "Text",
         "valueType": "string"
       },
       {
-        "component": "aem-content",
+        "component": "richtext",
         "name": "text_link",
-        "label": "Link"
-      },
-      {
-        "component": "text",
-        "name": "text_linkText",
-        "label": "Text"
-      },
-      {
-        "component": "text",
-        "name": "text_linkTitle",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "text_linkType",
-        "label": "Type",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
-          }
-        ]
+        "value": "",
+        "label": "Link",
+        "valueType": "string",
+        "required": true
       },
       {
         "component": "boolean",
         "name": "enableGradient",
-        "label": "Enable Gradient Overlay",
+        "label": "Toggle Gradient Overlay",
         "valueType": "boolean",
-        "default": true,
-        "description": "Toggle to enable/disable gradient overlay"
+        "default": false,
+        "description": "Switch on for overlay over the background image, off for no overlay."
       }
     ]
   },

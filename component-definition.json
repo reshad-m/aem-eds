@@ -159,11 +159,7 @@
                   "name": "Hub Card",
                   "model": "hub-card",
                   "image": "/content/dam/hub-card.png",
-                  "text_cardDescription": "This is a placeholder description. You can replace it with your own content.",
-                  "text_link": "#",
-                  "text_linkText": "Call to action",
-                  "text_linkType": "default",
-                  "enableGradient": true
+                  "enableGradient": false
                 }
               }
             }
