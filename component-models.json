@@ -228,7 +228,7 @@
         "component": "multiselect",
         "name": "classes",
         "value": "",
-        "label": "Heading Text Background and Banner Overlay",
+        "label": "Select Heading Text Background and Banner Overlay",
         "valueType": "string",
         "options": [
           {
