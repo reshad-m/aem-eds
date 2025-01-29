@@ -233,42 +233,15 @@
         "options": [
           {
             "name": "Title Background Green",
-            "value": "title-bg-green",
-            "condition": {
-              "not": {
-                "in": [
-                  "title-bg-blue",
-                  "title-bg-midnight-blue"
-                ],
-                "var": "classes"
-              }
-            }
+            "value": "title-bg-green"
           },
           {
             "name": "Title Background Blue",
-            "value": "title-bg-blue",
-            "condition": {
-              "not": {
-                "in": [
-                  "title-bg-green",
-                  "title-bg-midnight-blue"
-                ],
-                "var": "classes"
-              }
-            }
+            "value": "title-bg-blue"
           },
           {
             "name": "Title Background Midnight Blue",
-            "value": "title-bg-midnight-blue",
-            "condition": {
-              "not": {
-                "in": [
-                  "title-bg-green",
-                  "title-bg-blue"
-                ],
-                "var": "classes"
-              }
-            }
+            "value": "title-bg-midnight-blue"
           },
           {
             "name": "No Background",
@@ -276,27 +249,11 @@
           },
           {
             "name": "Blue Pattern of Progress",
-            "value": "overlay-blue",
-            "condition": {
-              "not": {
-                "in": [
-                  "overlay-green"
-                ],
-                "var": "classes"
-              }
-            }
+            "value": "overlay-blue"
           },
           {
             "name": "Green Pattern of Progress",
-            "value": "overlay-green",
-            "condition": {
-              "not": {
-                "in": [
-                  "overlay-blue"
-                ],
-                "var": "classes"
-              }
-            }
+            "value": "overlay-green"
           },
           {
             "name": "No Overlay",
