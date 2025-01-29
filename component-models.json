@@ -427,86 +427,37 @@
     ]
   },
   {
-    "id": "featured-tab",
+    "id": "feature-tab",
     "fields": [
       {
         "component": "text",
-        "name": "tabNav_title",
-        "label": "Navigation Title",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "tabContent_title",
+        "name": "tab_title",
         "label": "Tab Title",
         "required": true
       },
       {
-        "component": "select",
-        "name": "tabContent_titleType",
-        "label": "Tab Title Type",
-        "options": [
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
+        "component": "text",
+        "name": "tabContent_heading",
+        "label": "Tab Contents Heading",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "tabContent_headingType",
+        "valueType": "string",
+        "value": "h2"
       },
       {
         "component": "richtext",
-        "name": "tabContent_description",
-        "label": "Tab Description",
+        "name": "tabContent_text",
+        "label": "Tab Contents Text",
         "valueType": "string"
       },
       {
-        "component": "aem-content",
-        "name": "tabContent_cta",
-        "label": "CTA Link"
-      },
-      {
-        "component": "text",
-        "name": "tabContent_ctaText",
-        "label": "CTA Text"
-      },
-      {
-        "component": "text",
-        "name": "tabContent_ctaTitle",
-        "label": "CTA Title"
-      },
-      {
-        "component": "select",
-        "name": "tabContent_ctaType",
-        "label": "CTA Style",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          }
-        ]
+        "component": "richtext",
+        "name": "tabContent_link",
+        "label": "Link",
+        "valueType": "string"
       },
       {
         "component": "reference",
@@ -524,23 +475,10 @@
       {
         "component": "boolean",
         "name": "enableGradient",
-        "label": "Enable Gradient Overlay",
+        "label": "Toggle Gradient Overlay",
         "valueType": "boolean",
-        "default": true,
-        "description": "Toggle to enable/disable gradient overlay"
-      },
-      {
-        "component": "reference",
-        "name": "sideImage",
-        "label": "Side Image",
-        "valueType": "string",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "sideImageAlt",
-        "label": "Side Image Alt Text",
-        "valueType": "string"
+        "default": false,
+        "description": "Switch on for overlay over the background image, off for no overlay"
       }
     ]
   },

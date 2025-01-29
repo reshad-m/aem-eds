@@ -20,7 +20,7 @@
       "hub-cards",
       "cta-blocks",
       "main-banner",
-      "featured-tabs",
+      "feature-tabs",
       "people-cards",
       "carousel",
       "query-carousel",
@@ -67,9 +67,9 @@
     ]
   },
   {
-    "id": "featured-tabs",
+    "id": "feature-tabs",
     "components": [
-      "featured-tab"
+      "feature-tab"
     ]
   }
 ]
