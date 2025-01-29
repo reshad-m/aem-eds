@@ -141,13 +141,13 @@
     ]
   },
   {
-    "id": "header-banner",
+    "id": "main-banner",
     "fields": [
       {
         "component": "reference",
         "valueType": "string",
         "name": "image_imageDesktop",
-        "label": "Image Desktop",
+        "label": "Banner Image - Desktop",
         "multi": false,
         "required": true
       },
@@ -155,34 +155,34 @@
         "component": "text",
         "valueType": "string",
         "name": "image_imageDesktopAlt",
-        "label": "Alt Desktop",
+        "label": "Banner Image - Desktop Alt Text",
         "value": ""
       },
       {
         "component": "reference",
         "valueType": "string",
         "name": "image_imageMobile",
-        "label": "Image Mobile",
+        "label": "Banner Image - Mobile",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "image_imageMobileAlt",
-        "label": "Alt Mobile",
+        "label": "Banner Image - Mobile Alt Text",
         "value": ""
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "text_title",
-        "label": "Title",
+        "name": "text_heading",
+        "label": "Heading Text",
         "value": ""
       },
       {
         "component": "select",
-        "name": "text_titleType",
-        "label": "Title Type",
+        "name": "text_headingType",
+        "label": "Heading Type",
         "options": [
           {
             "name": "h1",
@@ -211,115 +211,96 @@
         ]
       },
       {
-        "component": "select",
+        "component": "richtext",
+        "name": "text_text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text_link",
+        "value": "",
+        "label": "Link",
+        "valueType": "string"
+      },
+      {
+        "component": "multiselect",
         "name": "classes",
         "value": "",
-        "label": "Options",
-        "description": "Choose options to update the block's style",
+        "label": "Heading Text Background and Banner Overlay",
         "valueType": "string",
         "options": [
           {
             "name": "Title Background Green",
-            "value": "title-bg-green"
+            "value": "title-bg-green",
+            "condition": {
+              "not": {
+                "in": [
+                  "title-bg-blue",
+                  "title-bg-midnight-blue"
+                ],
+                "var": "classes"
+              }
+            }
           },
           {
             "name": "Title Background Blue",
-            "value": "title-bg-blue"
+            "value": "title-bg-blue",
+            "condition": {
+              "not": {
+                "in": [
+                  "title-bg-green",
+                  "title-bg-midnight-blue"
+                ],
+                "var": "classes"
+              }
+            }
           },
           {
             "name": "Title Background Midnight Blue",
-            "value": "title-bg-midnight-blue"
+            "value": "title-bg-midnight-blue",
+            "condition": {
+              "not": {
+                "in": [
+                  "title-bg-green",
+                  "title-bg-blue"
+                ],
+                "var": "classes"
+              }
+            }
           },
           {
             "name": "No Background",
             "value": ""
-          }
-        ]
-      },
-      {
-        "component": "boolean",
-        "label": "Is this the Banner Variant 2?",
-        "name": "isVariant2",
-        "valueType": "boolean"
-      },
-      {
-        "component": "richtext",
-        "name": "text_description",
-        "value": "",
-        "label": "Description",
-        "valueType": "string",
-        "condition": {
-          "===": [
-            {
-              "var": "isVariant2"
-            },
-            true
-          ]
-        }
-      },
-      {
-        "component": "aem-content",
-        "name": "text_link",
-        "label": "Link",
-        "condition": {
-          "===": [
-            {
-              "var": "isVariant2"
-            },
-            true
-          ]
-        }
-      },
-      {
-        "component": "text",
-        "name": "text_linkText",
-        "label": "Text",
-        "condition": {
-          "===": [
-            {
-              "var": "isVariant2"
-            },
-            true
-          ]
-        }
-      },
-      {
-        "component": "text",
-        "name": "text_linkTitle",
-        "label": "Title",
-        "condition": {
-          "===": [
-            {
-              "var": "isVariant2"
-            },
-            true
-          ]
-        }
-      },
-      {
-        "component": "select",
-        "name": "text_linkType",
-        "label": "Type",
-        "condition": {
-          "===": [
-            {
-              "var": "isVariant2"
-            },
-            true
-          ]
-        },
-        "options": [
+          },
           {
-            "name": "default",
+            "name": "Blue Pattern of Progress",
+            "value": "overlay-blue",
+            "condition": {
+              "not": {
+                "in": [
+                  "overlay-green"
+                ],
+                "var": "classes"
+              }
+            }
+          },
+          {
+            "name": "Green Pattern of Progress",
+            "value": "overlay-green",
+            "condition": {
+              "not": {
+                "in": [
+                  "overlay-blue"
+                ],
+                "var": "classes"
+              }
+            }
+          },
+          {
+            "name": "No Overlay",
             "value": ""
-          },
-          {
-            "name": "primary",
-            "value": "primary"
-          },
-          {
-            "name": "secondary",
-            "value": "secondary"
           }
         ]
       }
