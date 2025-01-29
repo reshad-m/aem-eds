@@ -158,7 +158,7 @@
                 "template": {
                   "name": "Hub Card",
                   "model": "hub-card",
-                  "image": "/content/dam/hub-card.png",
+                  "image": "/content/dam/rsm-eds/hub-card.png",
                   "enableGradient": false
                 }
               }
