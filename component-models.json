@@ -244,20 +244,12 @@
             "value": "title-bg-midnight-blue"
           },
           {
-            "name": "No Background",
-            "value": ""
-          },
-          {
             "name": "Blue Pattern of Progress",
             "value": "overlay-blue"
           },
           {
             "name": "Green Pattern of Progress",
             "value": "overlay-green"
-          },
-          {
-            "name": "No Overlay",
-            "value": ""
           }
         ]
       }
