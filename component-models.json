@@ -445,7 +445,8 @@
         "component": "text",
         "name": "tabContent_headingType",
         "valueType": "string",
-        "value": "h2"
+        "value": "h2",
+        "hidden": true
       },
       {
         "component": "richtext",
