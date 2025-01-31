@@ -711,6 +711,12 @@
         "required": true,
         "default": 0,
         "min": 0
+      },
+      {
+        "component": "aem-tag",
+        "label": "AEM Tag Picker",
+        "name": "cq:tags",
+        "valueType": "string"
       }
     ]
   },
