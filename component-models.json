@@ -856,8 +856,7 @@
         "component": "aem-tag",
         "label": "Filter by Tags",
         "name": "tags",
-        "valueType": "string",
-        "multi": true
+        "valueType": "string"
       }
     ]
   }
