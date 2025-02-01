@@ -6,11 +6,12 @@ export default async function decorate(block) {
   const indexSource = indexSourceDiv?.querySelector('p')?.textContent || 'news-index';
   const itemsToShow = parseInt(itemsToShowDiv?.querySelector('p')?.textContent, 10) || 6;
   const startingPoint = parseInt(startingPointDiv?.querySelector('p')?.textContent, 10) || 0;
-  const selectedTags = tagsDiv?.querySelector('p')?.textContent?.split(',').map((tag) => tag.trim()) || [];
+  const selectedTags = tagsDiv?.querySelector('p')?.textContent?.split(',') || [];
 
-  // Remove configuration divs
+  // Clear block content
   block.textContent = '';
 
+  // Fetch data
   const response = await fetch(`/${indexSource}.json?limit=${itemsToShow}&offset=${startingPoint}`);
   const json = await response.json();
 
@@ -24,7 +25,7 @@ export default async function decorate(block) {
 
       // Tag filtering if tags are selected
       if (selectedTags.length > 0 && item.tags) {
-        const articleTags = item.tags.split(',').map((tag) => tag.trim());
+        const articleTags = item.tags.split(',');
         return selectedTags.some((tag) => articleTags.includes(tag));
       }
 
@@ -36,11 +37,11 @@ export default async function decorate(block) {
     return;
   }
 
-  // Create cards grid
-  const cardsGrid = document.createElement('div');
-  cardsGrid.className = 'article-cards-grid';
+  // Create grid
+  const grid = document.createElement('div');
+  grid.className = 'article-cards-grid';
 
-  // Create cards
+  // Create article cards
   articles.forEach((article) => {
     const card = document.createElement('div');
     card.className = 'article-card';
@@ -49,7 +50,6 @@ export default async function decorate(block) {
       { width: '750' },
     ]);
 
-    // Format date
     const publishDate = article.publishedTime
       ? new Date(article.publishedTime).toLocaleDateString('en-GB', {
         day: 'numeric',
@@ -57,21 +57,24 @@ export default async function decorate(block) {
         year: 'numeric',
       }) : '';
 
-    card.innerHTML = `
-        <a href="${article.path}" class="article-card-link">
-          ${image.outerHTML}
-          <div class="article-card-content">
-            <h3>${article.title}</h3>
-            <div class="article-card-meta">
-              ${article.author ? `<p class="author">${article.author}</p>` : ''}
-              ${publishDate ? `<p class="date">${publishDate}</p>` : ''}
-            </div>
-          </div>
-        </a>
-      `;
+    const authorList = article.author ? article.author.split(',').map((author) => author.trim()) : [];
+    const authorHtml = authorList.length ? `<p class="author">${authorList.join(', ')}</p>` : '';
 
-    cardsGrid.appendChild(card);
+    card.innerHTML = `
+       <a href="${article.path}" class="article-card-link">
+         ${image.outerHTML}
+         <div class="article-card-content">
+           <h3>${article.title}</h3>
+           <div class="article-card-meta">
+             ${authorHtml}
+             ${publishDate ? `<p class="date">${publishDate}</p>` : ''}
+           </div>
+         </div>
+       </a>
+     `;
+
+    grid.appendChild(card);
   });
 
-  block.appendChild(cardsGrid);
+  block.appendChild(grid);
 }
