@@ -820,5 +820,45 @@
         ]
       }
     ]
+  },
+  {
+    "id": "article-cards",
+    "title": "Article Cards",
+    "description": "A grid of article cards from any specified index source",
+    "fields": [
+      {
+        "component": "text",
+        "name": "indexSource",
+        "label": "Index Source",
+        "description": "The source index to fetch items from (e.g., 'news-index')",
+        "required": true
+      },
+      {
+        "component": "number",
+        "name": "itemsToShow",
+        "label": "Number of Items",
+        "description": "How many articles would you like to show?",
+        "required": true,
+        "default": 6,
+        "min": 1,
+        "max": 12
+      },
+      {
+        "component": "number",
+        "name": "startingPoint",
+        "label": "Starting Position",
+        "description": "Which item would you like to start from? (0 means start from beginning)",
+        "required": true,
+        "default": 0,
+        "min": 0
+      },
+      {
+        "component": "aem-tag",
+        "label": "Filter by Tags",
+        "name": "tags",
+        "valueType": "string",
+        "multi": true
+      }
+    ]
   }
 ]
