@@ -864,9 +864,10 @@
     "id": "page-metadata",
     "fields": [
       {
-        "component": "boolean",
-        "name": "breadcrumbs",
-        "label": "Show Breadcrumbs"
+        "component": "text",
+        "name": "author",
+        "label": "Author",
+        "valueType": "string"
       }
     ]
   }
