@@ -403,7 +403,7 @@
                   "name": "Article Cards",
                   "model": "article-cards",
                   "indexSource": "news-index",
-                  "itemsToShow": 6,
+                  "cardsToShow": 6,
                   "startingPoint": 0
                 }
               }
