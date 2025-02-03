@@ -835,9 +835,9 @@
       },
       {
         "component": "number",
-        "name": "itemsToShow",
-        "label": "Number of Items",
-        "description": "How many articles would you like to show?",
+        "name": "cardsToShow",
+        "label": "Number of Cards",
+        "description": "How many cards would you like to show?",
         "required": true,
         "default": 6,
         "min": 1,
@@ -847,7 +847,7 @@
         "component": "number",
         "name": "startingPoint",
         "label": "Starting Position",
-        "description": "Which item would you like to start from? (0 means start from beginning)",
+        "description": "Which card would you like to start from? (0 means start from beginning)",
         "required": true,
         "default": 0,
         "min": 0
