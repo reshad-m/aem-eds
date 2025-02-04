@@ -864,9 +864,9 @@
     "id": "page-metadata",
     "fields": [
       {
-        "component": "text",
+        "component": "aem-tag",
         "name": "author",
-        "label": "Author",
+        "label": "Select Author",
         "valueType": "string"
       }
     ]
