@@ -870,5 +870,43 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "featured-block",
+    "title": "Featured Block",
+    "fields": [
+      {
+        "component": "text",
+        "name": "indexSource",
+        "label": "Index Source",
+        "description": "Source index to fetch articles from",
+        "default": "news-index",
+        "required": true
+      },
+      {
+        "component": "number",
+        "name": "articlesCount",
+        "label": "Number of Articles",
+        "description": "Total number of articles to display",
+        "default": 4,
+        "min": 1,
+        "max": 6
+      },
+      {
+        "component": "number",
+        "name": "startingPoint",
+        "label": "Starting Position",
+        "description": "Which article to start from (0 means start from beginning)",
+        "default": 0,
+        "min": 0
+      },
+      {
+        "component": "aem-tag",
+        "name": "tags",
+        "label": "Filter by Tags",
+        "description": "Filter articles by specific AEM tags",
+        "valueType": "string"
+      }
+    ]
   }
 ]
