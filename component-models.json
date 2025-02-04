@@ -881,7 +881,7 @@
         "label": "Index Source",
         "default": "news-index",
         "required": true,
-        "description": "The source index to fetch items from (e.g., 'news-index')",
+        "description": "The source index to fetch items from (e.g., 'news-index')"
       },
       {
         "component": "number",
