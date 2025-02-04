@@ -879,9 +879,9 @@
         "component": "text",
         "name": "indexSource",
         "label": "Index Source",
-        "description": "Source index to fetch articles from",
         "default": "news-index",
-        "required": true
+        "required": true,
+        "description": "The source index to fetch items from (e.g., 'news-index')",
       },
       {
         "component": "number",
@@ -896,7 +896,7 @@
         "component": "number",
         "name": "startingPoint",
         "label": "Starting Position",
-        "description": "Which article to start from (0 means start from beginning)",
+        "description": "Which item would you like to start from? (0 means start from beginning)",
         "default": 0,
         "min": 0
       },
@@ -904,7 +904,7 @@
         "component": "aem-tag",
         "name": "tags",
         "label": "Filter by Tags",
-        "description": "Filter articles by specific AEM tags",
+        "description": "Filter by specific AEM tags",
         "valueType": "string"
       }
     ]
