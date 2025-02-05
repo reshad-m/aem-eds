@@ -496,15 +496,8 @@
       },
       {
         "component": "text",
-        "name": "profileInfo_firstName",
-        "label": "First Name",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "profileInfo_lastName",
-        "label": "Last Name",
+        "name": "profileInfo_name",
+        "label": "Name",
         "valueType": "string",
         "required": true
       },
