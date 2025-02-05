@@ -21,12 +21,12 @@
       "cta-blocks",
       "main-banner",
       "feature-tabs",
-      "people-cards",
       "carousel",
       "related-carousel",
       "hero-banner",
       "article-cards",
-      "featured-block"
+      "featured-block",
+      "person-card"
     ]
   },
   {
@@ -39,12 +39,6 @@
     "id": "hub-cards",
     "components": [
       "hub-card"
-    ]
-  },
-  {
-    "id": "people-cards",
-    "components": [
-      "person-card"
     ]
   },
   {

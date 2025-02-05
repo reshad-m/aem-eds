@@ -496,12 +496,6 @@
       },
       {
         "component": "text",
-        "name": "imageAlt",
-        "label": "Profile Image Alt Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
         "name": "profileInfo_firstName",
         "label": "First Name",
         "valueType": "string",
@@ -522,6 +516,13 @@
         "required": true
       },
       {
+        "component": "text",
+        "name": "contact_phone",
+        "label": "Phone Number",
+        "valueType": "string",
+        "description": "+44 (0) XXX XXX XXXX"
+      },
+      {
         "component": "richtext",
         "name": "link_twitter",
         "label": "Twitter"
@@ -530,19 +531,6 @@
         "component": "richtext",
         "name": "link_LinkedIn",
         "label": "LinkedIn"
-      },
-      {
-        "component": "text",
-        "name": "contact_email",
-        "label": "Email Address",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "contact_phone",
-        "label": "Phone Number",
-        "valueType": "string",
-        "description": "+44 (0) XXX XXX XXXX"
       }
     ]
   },
