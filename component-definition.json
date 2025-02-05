@@ -191,16 +191,7 @@
                   "name": "Person Card",
                   "filter": "person-card",
                   "model": "person-card",
-                  "image": "/content/dam/rsm-eds/profile-placeholder.png",
-                  "imageAlt": "Profile photo of the team member",
-                  "profileInfo_firstName": "Enter the team member's first name",
-                  "profileInfo_lastName": "Enter the team member's last name",
-                  "profileInfo_jobRole": "Enter the job title",
-                  "profile_link": "/our-people/team-member",
-                  "profile_linkText": "View profile",
-                  "profile_linkType": "primary",
-                  "contact_email": "firstname.lastname@example.com",
-                  "contact_phone": "+44 (0) XXX XXX XXXX"
+                  "image": "/content/dam/rsm-eds/profile-placeholder.png"
                 }
               }
             }

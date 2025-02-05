@@ -522,34 +522,9 @@
         "required": true
       },
       {
-        "component": "aem-content",
+        "component": "richtext",
         "name": "profile_link",
         "label": "Profile Link"
-      },
-      {
-        "component": "text",
-        "name": "profile_linkText",
-        "label": "Profile Link Text",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "profile_linkType",
-        "label": "Profile Link Type",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "Primary",
-            "value": "primary"
-          },
-          {
-            "name": "Secondary",
-            "value": "secondary"
-          }
-        ]
       },
       {
         "component": "text",
@@ -561,7 +536,8 @@
         "component": "text",
         "name": "contact_phone",
         "label": "Phone Number",
-        "valueType": "string"
+        "valueType": "string",
+        "description": "+44 (0) XXX XXX XXXX"
       }
     ]
   },
