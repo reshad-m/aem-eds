@@ -523,8 +523,13 @@
       },
       {
         "component": "richtext",
-        "name": "profile_link",
-        "label": "Profile Link"
+        "name": "link_twitter",
+        "label": "Twitter"
+      },
+      {
+        "component": "richtext",
+        "name": "link_LinkedIn",
+        "label": "LinkedIn"
       },
       {
         "component": "text",
