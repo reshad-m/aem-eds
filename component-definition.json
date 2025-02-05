@@ -301,7 +301,9 @@
                 "template": {
                   "name": "Tab",
                   "model": "tab",
-                  "filter": "section"
+                  "filter": "section",
+                  "tab-title": "New Tab"
+
                 }
               }
             }
