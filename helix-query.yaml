@@ -60,10 +60,10 @@ indices:
       jobRole:
         select: "main div.people-cards > div div:nth-child(2) p:nth-child(3)"
         value: textContent(el)
-      linkTwitter:
+      twitter:
         select: "main div.people-cards > div div:nth-child(3) p:nth-child(1)"
         value: textContent(el)
-      linkLinkedIn:
+      linkedIn:
         select: "main div.people-cards > div div:nth-child(3) p:nth-child(2)"
         value: textContent(el)
       email:
