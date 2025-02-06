@@ -532,8 +532,12 @@
         "description": "Select the primary contact category for this person",
         "valueType": "string",
         "rootPath": "inquiry-categories",
-        "selectionCount": "single",
-        "multi": false
+        "raw": {
+          "selectionMode": true,
+          "selectionCount": "single",
+          "pickerSrc": "/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html",
+          "granite:class": "cq-dialog-dropdown-showhide"
+        }
       }
     ]
   },
