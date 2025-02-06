@@ -534,7 +534,9 @@
         "multi": false,
         "required": true,
         "validation": {
-          "rootPath": "rsm-uk"
+          "rootPath": "rsm-uk",
+          "targetCollection": "rsm-uk",
+          "path": "rsm-uk"
         },
         "value": "rsm-uk:inquiry-categories"  
       }
