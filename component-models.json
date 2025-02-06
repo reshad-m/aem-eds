@@ -534,14 +534,13 @@
         "multi": false,
         "required": true,
         "validation": {
-          "rootPath": "rsm-uk:inquiry-categories"
+          "rootPath": "/content/cq:tags/rsm-uk"
         },
         "raw": {
           "pickerSrc": "/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html",
-          "root": "/content/cq:tags/rsm-uk/inquiry-categories",  
+          "root": "/content/cq:tags/rsm-uk",  
           "selectionCount": "single"
-        },
-        "value": "rsm-uk:inquiry-categories/new-business-enquiry"
+        }
       }
     ]
   },
