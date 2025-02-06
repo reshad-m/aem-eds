@@ -532,13 +532,7 @@
         "description": "Select the primary contact category for this person",
         "valueType": "string",
         "rootPath": "/content/cq:tags/inquiry-categories",
-        "raw": {
-          "pickerSrc": "/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html",
-          "selectionCount": "single",
-          "componentPath": "/mnt/overlay/granite/ui/components/coral/foundation/form/tagfield",
-          "rootPath": "/content/cq:tags/rsm-uk/inquiry-categories",
-          "selectionMode": "single"
-        }
+        "multiple": false
       }
     ]
   },
