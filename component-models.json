@@ -533,10 +533,10 @@
         "multi": false,  
         "required": true,
         "validation": {
-          "rootPath": "/content/cq:tags/rsm/inquiry-categories"  
+          "rootPath": "/content/cq:news:not-for-profit"  
         },
         "description": "Select the primary inquiry category for this person",
-        "value": "rsm:inquiry-categories/new-business-enquiry"
+        "value": "news:not-for-profit"
       }
     ]
   },

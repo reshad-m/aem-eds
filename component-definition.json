@@ -176,7 +176,8 @@
                   "name": "Person Card",
                   "filter": "person-card",
                   "model": "person-card",
-                  "image": "/content/dam/rsm-eds/profile-placeholder.png"
+                  "image": "/content/dam/rsm-eds/profile-placeholder.png",
+                  "inquiry_category": "news:not-for-profit"
                 }
               }
             }
