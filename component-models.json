@@ -532,9 +532,16 @@
         "description": "Select the primary contact category for this person",
         "valueType": "string",
         "multi": false,
+        "required": true,
         "validation": {
-          "rootPath": "/content/cq:tags/rsm-uk/"
-        }
+          "rootPath": "rsm-uk:inquiry-categories"
+        },
+        "raw": {
+          "pickerSrc": "/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html",
+          "root": "/content/cq:tags/rsm-uk/inquiry-categories",  
+          "selectionCount": "single"
+        },
+        "value": "rsm-uk:inquiry-categories/new-business-enquiry"
       }
     ]
   },
