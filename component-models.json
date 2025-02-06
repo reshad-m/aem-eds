@@ -511,10 +511,11 @@
       {
         "component": "text",
         "name": "contact_phone",
-        "label": "Phone Number",
+        "label": "Phone Number(s)",
         "valueType": "string",
-        "description": "+44 (0) XXX XXX XXXX"
-      },
+        "description": "Enter one or more phone numbers, separated by commas.",
+        "placeholder": "+44 (0) XXX XXX XXXX, +44 (0) YYY YYY YYYY"
+      },      
       {
         "component": "richtext",
         "name": "link_twitter",
@@ -524,15 +525,6 @@
         "component": "richtext",
         "name": "link_LinkedIn",
         "label": "LinkedIn"
-      },
-      {
-        "component": "aem-tag",
-        "name": "inquiry_category",
-        "label": "Contact Category",
-        "description": "Select the primary contact category for this person",
-        "valueType": "string",
-        "rootPath": "/content/cq:tags/inquiry-categories",
-        "selectionCount": "single"
       }
     ]
   },
