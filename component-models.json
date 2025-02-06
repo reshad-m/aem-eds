@@ -484,7 +484,7 @@
     ]
   },
   {
-    "id": "person-card",
+    "id": "contact-block",
     "fields": [
       {
         "component": "reference",
