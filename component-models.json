@@ -531,9 +531,9 @@
         "label": "Contact Category",
         "description": "Select the primary contact category for this person",
         "valueType": "string",
-        "multi": false,
         "required": true,
-        "rootPath": "inquiry-categories"
+        "rootPath": "inquiry-categories",
+        "selectionCount": "single"
       }
     ]
   },
