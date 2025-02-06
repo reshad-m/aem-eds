@@ -534,9 +534,9 @@
         "multi": false,
         "required": true,
         "validation": {
-          "rootPath": "/content/cq:tags/rsm-uk/inquiry-categories"
+          "rootPath": "/content/cq:tags/rsm-uk/"
         },
-        "value": "/content/cq:tags/rsm-uk/inquiry-categories"  
+        "value": "rsm-uk:inquiry-categories"  
       }
     ]
   },
