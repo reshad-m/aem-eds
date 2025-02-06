@@ -533,7 +533,7 @@
         "multi": false,  
         "required": true,
         "validation": {
-          "rootPath": "/content/cq:news:not-for-profit"  
+          "rootPath": "/content/cq:tags/news"  
         },
         "description": "Select the primary inquiry category for this person",
         "value": "news:not-for-profit"
