@@ -533,11 +533,8 @@
         "valueType": "string",
         "multi": false,
         "required": true,
-        "validation": {
-          "rootPath": "rsm-uk",
-          "targetCollection": "rsm-uk",
-          "path": "rsm-uk"
-        },
+        "rootPath": "/content/cq:tags/rsm-uk",
+        "path": "/content/cq:tags/rsm-uk",
         "value": "rsm-uk:inquiry-categories"  
       }
     ]
