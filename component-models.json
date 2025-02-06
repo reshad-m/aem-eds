@@ -524,6 +524,19 @@
         "component": "richtext",
         "name": "link_LinkedIn",
         "label": "LinkedIn"
+      },
+      {
+        "component": "aem-tag",
+        "name": "inquiry_category",
+        "label": "Inquiry Category",
+        "valueType": "string",
+        "multi": false,  
+        "required": true,
+        "validation": {
+          "rootPath": "/content/cq:tags/rsm/inquiry-categories"  
+        },
+        "description": "Select the primary inquiry category for this person",
+        "value": "rsm:inquiry-categories/new-business-enquiry"
       }
     ]
   },
