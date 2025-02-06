@@ -528,15 +528,15 @@
       {
         "component": "aem-tag",
         "name": "inquiry_category",
-        "label": "Inquiry Category",
+        "label": "Contact Category",
+        "description": "Select the primary contact category for this person",
         "valueType": "string",
-        "multi": false,  
+        "multi": false,
         "required": true,
         "validation": {
-          "rootPath": "/content/cq:tags/news/tax"
+          "rootPath": "/content/cq:tags/rsm-uk/inquiry-categories"
         },
-        "description": "Select the primary inquiry category for this person",
-        "value": "news:not-for-profit"
+        "value": "rsm-uk:inquiry-categories/new-business-enquiry"  
       }
     ]
   },
