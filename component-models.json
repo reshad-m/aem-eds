@@ -533,6 +533,7 @@
         "valueType": "string",
         "rootPath": "inquiry-categories",
         "path":"inquiry-categories",
+        "targetCollection":"inquiry-categories",
         "selectionCount": "single"
       }
     ]
