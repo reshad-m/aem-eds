@@ -532,9 +532,7 @@
         "description": "Select the primary contact category for this person",
         "valueType": "string",
         "rootPath": "inquiry-categories",
-        "raw": {
-          "selectionCount": "single"
-        }
+        "selectionCount": "single"
       }
     ]
   },
