@@ -534,9 +534,7 @@
         "rootPath": "inquiry-categories",
         "raw": {
           "selectionMode": true,
-          "selectionCount": "single",
-          "pickerSrc": "/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html",
-          "granite:class": "cq-dialog-dropdown-showhide"
+          "selectionCount": "single"
         }
       }
     ]
