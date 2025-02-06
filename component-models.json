@@ -533,7 +533,6 @@
         "valueType": "string",
         "rootPath": "inquiry-categories",
         "raw": {
-          "selectionMode": true,
           "selectionCount": "single"
         }
       }
