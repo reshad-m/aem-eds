@@ -525,6 +525,16 @@
         "component": "richtext",
         "name": "link_LinkedIn",
         "label": "LinkedIn"
+      },
+      {
+        "component": "aem-tag",
+        "name": "inquiry_category",
+        "label": "Contact Category",
+        "description": "Select the primary contact category for this person",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/inquiry-categories",
+        "multiple": false,
+        "pickerSrc": "/mnt/overlay/cq/gui/content/coral/common/form/tagfield/picker.html?selectionCount=single"
       }
     ]
   },
