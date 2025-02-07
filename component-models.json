@@ -656,7 +656,6 @@
   {
     "id": "related-carousel",
     "title": "Related Carousel",
-    "description": "A carousel that displays items from any specified index source",
     "fields": [
       {
         "component": "boolean",
