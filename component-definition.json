@@ -341,9 +341,9 @@
                 "template": {
                   "name": "Related Carousel",
                   "model": "related-carousel",
-                  "indexSource": "news-index",
-                  "slidesToShow": 3,
-                  "startingPoint": 0
+                  "enableAutoPopulate": false,
+                  "slidesToShow": 6,
+                  "startingPage": 0
                 }
               }
             }

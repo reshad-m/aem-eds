@@ -659,34 +659,40 @@
     "description": "A carousel that displays items from any specified index source",
     "fields": [
       {
+        "component": "boolean",
+        "name": "enableAutoPopulate",
+        "label": "Toggle Auto-Populate",
+        "valueType": "boolean",
+        "default": false,
+        "description": "Populates Component with pages from the same section"
+      },
+      {
         "component": "text", 
         "name": "indexSource",
         "label": "Index Source",
-        "description": "The source index to fetch items from (e.g., 'news-index')",
-        "required": true
+        "description": "When not auto-populating use this source for pages"
       },
       {
         "component": "number",
         "name": "slidesToShow",
         "label": "Number of Slides",
-        "description": "How many items would you like to show at once?", 
         "required": true,
-        "default": 3,
-        "min": 1,
-        "max": 12
+        "default": 6,
+        "min": 1
       },
       {
         "component": "number",
-        "name": "startingPoint",
-        "label": "Starting Position",
-        "description": "Which item would you like to start from? (0 means start from beginning)",
+        "name": "startingPage",
+        "label": "Starting Page",
+        "description": "Start the carousel at this page of the results",
         "required": true,
         "default": 0,
         "min": 0
       },
       {
         "component": "aem-tag",
-        "label": "AEM Tag Picker",
+        "label": "Filter by Tags",
+        "description": "Filter pages using these tags",
         "name": "tags",
         "valueType": "string"
       }
