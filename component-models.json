@@ -694,7 +694,8 @@
         "label": "Filter by Tags",
         "description": "Filter pages using these tags",
         "name": "tags",
-        "valueType": "string"
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/news"
       }
     ]
   },
