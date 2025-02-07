@@ -670,7 +670,7 @@
         "name": "indexSource",
         "label": "Index Source",
         "description": "When not auto-populating use this source for pages",
-        "condition": { "===": [{ "var": "enableAutoPopulate" }, true] }
+        "condition": { "===": [{ "var": "enableAutoPopulate" }, false] }
       },
       {
         "component": "number",
