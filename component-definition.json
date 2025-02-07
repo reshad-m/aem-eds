@@ -378,9 +378,10 @@
                 "template": {
                   "name": "Article Cards",
                   "model": "article-cards",
+                  "enableAutoPopulate": false,
                   "indexSource": "news-index",
-                  "cardsToShow": 6,
-                  "startingPoint": 0
+                  "articlesToShow": 6,
+                  "startingPage": 0
                 }
               }
             }
