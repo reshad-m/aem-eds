@@ -852,9 +852,10 @@
       {
         "component": "aem-tag",
         "name": "author",
-        "label": "Select Author",
-        "valueType": "string"
-      }
+        "label": "Select Author(s)",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/authors"
+      }      
     ]
   },
   {
