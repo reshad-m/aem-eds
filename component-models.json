@@ -515,7 +515,7 @@
         "valueType": "string",
         "description": "Enter one or more phone numbers, separated by commas.",
         "placeholder": "+44 (0) XXX XXX XXXX, +44 (0) YYY YYY YYYY"
-      },      
+      },
       {
         "component": "richtext",
         "name": "link_twitter",
@@ -666,10 +666,11 @@
         "description": "Populates Component with pages from the same section"
       },
       {
-        "component": "text", 
+        "component": "text",
         "name": "indexSource",
         "label": "Index Source",
-        "description": "When not auto-populating use this source for pages"
+        "description": "When not auto-populating use this source for pages",
+        "condition": { "===": [{ "var": "enableAutoPopulate" }, true] }
       },
       {
         "component": "number",
