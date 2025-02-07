@@ -379,7 +379,6 @@
                   "name": "Article Cards",
                   "model": "article-cards",
                   "enableAutoPopulate": false,
-                  "indexSource": "news-index",
                   "articlesToShow": 6,
                   "startingPage": 0
                 }
