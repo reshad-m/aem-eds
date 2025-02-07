@@ -1,4 +1,3 @@
-// cta-blocks/cta-blocks.js
 import { moveInstrumentation as moveAemInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
