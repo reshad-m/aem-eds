@@ -855,7 +855,13 @@
         "label": "Select Author(s)",
         "valueType": "string",
         "rootPath": "/content/cq:tags/authors"
-      }      
+      },
+      {
+        "component": "text",
+        "name": "Theme",
+        "valueType": "string",
+        "label": "Theme"
+      }    
     ]
   },
   {
