@@ -419,6 +419,22 @@
               }
             }
           }
+        },
+        {
+          "title": "Text With Icons",
+          "id": "text-with-icons",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/section/v1/section",
+                "template": {
+                  "name": "Text With Icons",
+                  "model": "text-with-icons",
+                  "filter": "section"
+                }
+              }
+            }
+          }
         }
       ]
     }

@@ -946,5 +946,21 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "text-with-icons",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Text with icons",
+            "value": "txt-icon"
+          }
+        ]
+      }
+    ]
   }
 ]
