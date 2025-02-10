@@ -908,14 +908,14 @@
     "fields": [
       {
         "component": "text",
-        "name": "heading_title",
+        "name": "text_heading_title",
         "label": "Title",
         "valueType": "string",
         "required": true
       },
       {
         "component": "text",
-        "name": "heading_titleType",
+        "name": "text_heading_titleType",
         "label": "Heading Level",
         "valueType": "string",
         "default": "h2",
@@ -923,26 +923,26 @@
       },
       {
         "component": "richtext",
-        "name": "description",
+        "name": "text_description",
         "label": "Description",
         "valueType": "string"
       },
       {
         "component": "richtext",
-        "name": "links",
+        "name": "text_links",
         "label": "Links",
         "valueType": "string"
       },
       {
         "component": "reference",
-        "name": "image",
+        "name": "image_image",
         "label": "Background Image",
         "valueType": "string",
         "required": true
       },
       {
         "component": "text",
-        "name": "imageAlt",
+        "name": "image_imageAlt",
         "label": "Image Alt Text",
         "valueType": "string"
       }
