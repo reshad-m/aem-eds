@@ -935,7 +935,7 @@
       {
         "component": "reference",
         "name": "image_image",
-        "label": "Background Image",
+        "label": "Image",
         "valueType": "string",
         "required": true
       },
