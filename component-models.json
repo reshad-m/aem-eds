@@ -928,6 +928,12 @@
         "valueType": "string"
       },
       {
+        "component": "richtext",
+        "name": "links",
+        "label": "Links",
+        "valueType": "string"
+      },
+      {
         "component": "reference",
         "name": "image",
         "label": "Background Image",
@@ -938,12 +944,6 @@
         "component": "text",
         "name": "imageAlt",
         "label": "Image Alt Text",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "links",
-        "label": "Links",
         "valueType": "string"
       }
     ]
