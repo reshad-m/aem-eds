@@ -414,7 +414,7 @@
                 "template": {
                   "name": "Multi-link Block",
                   "model": "multi-link-block",
-                  "heading_titleType": "h2"
+                  "text_heading_titleType": "h2"
                 }
               }
             }

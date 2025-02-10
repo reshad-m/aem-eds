@@ -908,14 +908,14 @@
     "fields": [
       {
         "component": "text",
-        "name": "text_heading_title",
+        "name": "text_title",
         "label": "Title",
         "valueType": "string",
         "required": true
       },
       {
         "component": "text",
-        "name": "text_heading_titleType",
+        "name": "text_titleType",
         "label": "Heading Level",
         "valueType": "string",
         "default": "h2",
