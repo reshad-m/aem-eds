@@ -25,7 +25,9 @@
     flex-direction: unset;
     gap: 24px;
   }
-
+  .section.text-with-icons  .columns > div {
+    align-items: flex-start;
+  }
   .columns > div > div {
     flex: 1;
     order: unset;
