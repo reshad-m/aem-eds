@@ -1,0 +1,47 @@
+{
+    "definitions": [
+      {
+        "title": "Text With Icons",
+        "id": "text-with-icons",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/section/v1/section",
+              "template": {
+                "name": "Text With Icons",
+                "model": "text-with-icons",
+                "filter": "text-with-icons",
+                "style": "text-with-icons"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "text-with-icons",
+        "fields": [
+          {
+            "component": "multiselect",
+            "name": "style",
+            "label": "Style",
+            "options": [
+              {
+                "name": "Text with icons",
+                "value": "text-with-icons"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "filters": [
+      {
+        "id": "text-with-icons",
+        "components": [
+          "text"
+        ]
+      }
+    ]
+  }

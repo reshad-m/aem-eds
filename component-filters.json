@@ -3,7 +3,6 @@
     "id": "main",
     "components": [
       "section",
-      "tab",
       "text-with-icons"
     ]
   },
@@ -17,37 +16,13 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "hub-cards",
-      "cta-blocks",
-      "main-banner",
-      "feature-tabs",
-      "carousel",
-      "related-carousel",
-      "hero-banner",
-      "article-cards",
-      "featured-block",
-      "contact-block",
-      "multi-link-block",
-      "video"
+      "fragment"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
-    ]
-  },
-  {
-    "id": "hub-cards",
-    "components": [
-      "hub-card"
-    ]
-  },
-  {
-    "id": "cta-blocks",
-    "components": [
-      "cta-block"
     ]
   },
   {
@@ -66,9 +41,9 @@
     ]
   },
   {
-    "id": "feature-tabs",
+    "id": "text-with-icons",
     "components": [
-      "feature-tab"
+      "text"
     ]
   }
 ]
