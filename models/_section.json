@@ -47,7 +47,8 @@
         "fragment",
         "main-banner",
         "hero-banner",
-        "profile-block"
+        "profile-block",
+        "feature-tabs"
       ]
     }
   ]

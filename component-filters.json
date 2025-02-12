@@ -19,7 +19,8 @@
       "fragment",
       "main-banner",
       "hero-banner",
-      "profile-block"
+      "profile-block",
+      "feature-tabs"
     ]
   },
   {
@@ -41,6 +42,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "feature-tabs",
+    "components": [
+      "feature-tab"
     ]
   },
   {
