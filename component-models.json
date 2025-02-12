@@ -112,6 +112,59 @@
     ]
   },
   {
+    "id": "article-cards",
+    "title": "Article Cards",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "enableAutoPopulate",
+        "label": "Toggle Auto-Populate",
+        "valueType": "boolean",
+        "default": false,
+        "description": "Populates Component with pages from the same section"
+      },
+      {
+        "component": "text",
+        "name": "indexSource",
+        "label": "Index Source",
+        "description": "When not auto-populating use this source for pages",
+        "condition": {
+          "===": [
+            {
+              "var": "enableAutoPopulate"
+            },
+            false
+          ]
+        }
+      },
+      {
+        "component": "number",
+        "name": "articlesToShow",
+        "label": "Number of Articles",
+        "required": true,
+        "default": 6,
+        "min": 1
+      },
+      {
+        "component": "number",
+        "name": "startingPage",
+        "label": "Starting Page",
+        "description": "Start the carousel at this page of the results",
+        "required": true,
+        "default": 0,
+        "min": 0
+      },
+      {
+        "component": "aem-tag",
+        "label": "Filter by Tags",
+        "description": "Filter pages using these tags",
+        "name": "tags",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/news"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
