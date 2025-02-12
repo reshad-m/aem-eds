@@ -255,7 +255,7 @@
                 "template": {
                   "name": "Related Carousel",
                   "model": "related-carousel",
-                  "enableAutoPopulate": false,
+                  "enableAutoPopulate": true,
                   "slidesToShow": 6,
                   "startingPage": 0
                 }

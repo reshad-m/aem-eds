@@ -480,7 +480,7 @@
         "name": "enableAutoPopulate",
         "label": "Toggle Auto-Populate",
         "valueType": "boolean",
-        "default": false,
+        "default": true,
         "description": "Populates Component with pages from the same section"
       },
       {
