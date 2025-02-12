@@ -138,7 +138,7 @@
                   "name": "Profile Block",
                   "model": "profile-block",
                   "image": "/content/dam/rsm-eds/profile-placeholder.png",
-                  "inquiry_category": "new-business-enquiry"
+                  "inquiry_category": "inquiry-categories:new-business-enquiry"
                 }
               }
             }
