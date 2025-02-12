@@ -308,6 +308,58 @@
     ]
   },
   {
+    "id": "featured-block",
+    "title": "Featured Block",
+    "fields": [
+      {
+        "component": "boolean",
+        "name": "enableAutoPopulate",
+        "label": "Toggle Auto-Populate",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Populates Component with pages from the same section"
+      },
+      {
+        "component": "text",
+        "name": "indexSource",
+        "label": "Index Source",
+        "description": "When not auto-populating use this source for pages",
+        "condition": {
+          "===": [
+            {
+              "var": "enableAutoPopulate"
+            },
+            false
+          ]
+        }
+      },
+      {
+        "component": "number",
+        "name": "articlesCount",
+        "label": "Number of Articles",
+        "default": 4,
+        "min": 1,
+        "max": 6
+      },
+      {
+        "component": "number",
+        "name": "startingPage",
+        "label": "Starting Page",
+        "description": "Start the articles at this page of the results",
+        "default": 0,
+        "min": 0
+      },
+      {
+        "component": "aem-tag",
+        "label": "Filter by Tags",
+        "description": "Filter pages using these tags",
+        "name": "tags",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/news"
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
