@@ -43,7 +43,9 @@
   {
     "id": "text-with-icons",
     "components": [
-      "text"
+      "text",
+      "title",
+      "columns"
     ]
   }
 ]
