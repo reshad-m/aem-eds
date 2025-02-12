@@ -92,7 +92,7 @@
                 "template": {
                   "name": "Article Cards",
                   "model": "article-cards",
-                  "enableAutoPopulate": false,
+                  "enableAutoPopulate": true,
                   "articlesToShow": 6,
                   "startingPage": 0
                 }
