@@ -46,6 +46,7 @@
         "columns",
         "fragment",
         "main-banner",
+        "hero-banner",
         "profile-block"
       ]
     }

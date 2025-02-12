@@ -208,6 +208,68 @@
     ]
   },
   {
+    "id": "hero-banner",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_imageDesktop",
+        "label": "Banner Image - Desktop",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image_imageDesktopAlt",
+        "label": "Banner Image - Desktop Alt Text",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image_imageMobile",
+        "label": "Banner Image - Mobile",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "image_imageMobileAlt",
+        "label": "Banner Image - Mobile Alt Text",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text_heading",
+        "label": "Heading Text",
+        "value": ""
+      },
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "value": "",
+        "label": "Select Heading Text Background and Banner Overlay",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Title Background Green",
+            "value": "title-bg-green"
+          },
+          {
+            "name": "Title Background Blue",
+            "value": "title-bg-blue"
+          },
+          {
+            "name": "Title Background Midnight Blue",
+            "value": "title-bg-midnight-blue"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
