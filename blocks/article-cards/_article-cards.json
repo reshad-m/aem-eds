@@ -10,7 +10,7 @@
               "template": {
                 "name": "Article Cards",
                 "model": "article-cards",
-                "enableAutoPopulate": false,
+                "enableAutoPopulate": true,
                 "articlesToShow": 6,
                 "startingPage": 0
               }
@@ -29,7 +29,7 @@
             "name": "enableAutoPopulate",
             "label": "Toggle Auto-Populate",
             "valueType": "boolean",
-            "default": false,
+            "default": true,
             "description": "Populates Component with pages from the same section"
           },
           {
