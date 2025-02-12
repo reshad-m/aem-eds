@@ -45,7 +45,8 @@
         "cards",
         "columns",
         "fragment",
-        "main-banner"
+        "main-banner",
+        "profile-block"
       ]
     }
   ]
