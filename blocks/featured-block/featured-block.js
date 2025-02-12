@@ -63,7 +63,15 @@ function createArticleElement(article, isPrimary) {
 export default async function decorate(block) {
   try {
     // Extract configuration values
-    const [indexSourceDiv, articlesCountDiv, startingPointDiv, tagsDiv] = [...block.children];
+    const [
+      enableAutoPopulateDiv,
+      indexSourceDiv,
+      articlesCountDiv,
+      startingPointDiv,
+      tagsDiv,
+    ] = [...block.children];
+    const enableAutoPopulate = enableAutoPopulateDiv?.querySelector('p')?.textContent || false;
+    console.log(enableAutoPopulate);
     const config = {
       indexSource: indexSourceDiv?.querySelector('p')?.textContent || 'news-index',
       articlesCount: parseInt(articlesCountDiv?.querySelector('p')?.textContent, 10) || 4,

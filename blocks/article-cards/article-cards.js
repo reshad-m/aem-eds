@@ -2,7 +2,15 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
   // Extract configuration values
-  const [indexSourceDiv, itemsToShowDiv, startingPointDiv, tagsDiv] = [...block.children];
+  const [
+    enableAutoPopulateDiv,
+    indexSourceDiv,
+    itemsToShowDiv,
+    startingPointDiv,
+    tagsDiv,
+  ] = [...block.children];
+  const enableAutoPopulate = enableAutoPopulateDiv?.querySelector('p')?.textContent || false;
+  console.log(enableAutoPopulate);
   const indexSource = indexSourceDiv?.querySelector('p')?.textContent || 'news-index';
   const itemsToShow = parseInt(itemsToShowDiv?.querySelector('p')?.textContent, 10) || 6;
   const startingPoint = parseInt(startingPointDiv?.querySelector('p')?.textContent, 10) || 0;
