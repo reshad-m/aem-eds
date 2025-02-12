@@ -1,38 +1,23 @@
 export default function decorate(block) {
-  if (!block || block.children.length < 2) return;
+  const [bg, fg] = block.children;
+  bg.className = 'background';
+  fg.className = 'content-holder';
 
-  const [imageContainer, contentContainer] = block.children;
+  const [desktop, mobile] = bg.firstElementChild.children;
+  desktop.className = 'desktop-image';
+  mobile.className = 'mobile-image';
 
-  imageContainer.className = 'images-wrapper';
-  contentContainer.className = 'text-wrapper';
+  const images = bg.querySelectorAll('img');
+  images.forEach((element) => {
+    // dev tools performance tab recommends not lazy loading for LCP candidate.
+    element.removeAttribute('loading');
+  });
 
-  if (contentContainer.children.length === 1 && !contentContainer.children[0].innerHTML.trim()) {
-    block.removeChild(contentContainer);
-  }
+  window.addEventListener('breadcrumbs-rendered', () => {
+    const breadcrumbs = document.querySelector('nav.breadcrumbs');
 
-  if (contentContainer.children.length === 1) {
-    contentContainer.children[0].className = 'text-container';
-  }
-
-  const imageDivs = [...imageContainer.children];
-  if (!imageDivs.length) return;
-
-  imageContainer.innerHTML = '';
-
-  const firstImageDiv = imageDivs[0];
-  if (!firstImageDiv) return;
-
-  const pictures = firstImageDiv.querySelectorAll('picture');
-
-  if (pictures.length === 1) {
-    const desktopPicture = pictures[0];
-    desktopPicture.className = 'desktop-image';
-    imageContainer.appendChild(desktopPicture);
-  } else if (pictures.length === 2) {
-    const [desktopPicture, mobilePicture] = pictures;
-    desktopPicture.className = 'desktop-image';
-    mobilePicture.className = 'mobile-image';
-    imageContainer.appendChild(desktopPicture);
-    imageContainer.appendChild(mobilePicture);
-  }
+    if (breadcrumbs) {
+      block.appendChild(breadcrumbs);
+    }
+  });
 }
