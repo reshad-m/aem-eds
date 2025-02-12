@@ -246,6 +246,24 @@
           }
         },
         {
+          "title": "Related Carousel",
+          "id": "related-carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Related Carousel",
+                  "model": "related-carousel",
+                  "enableAutoPopulate": false,
+                  "slidesToShow": 6,
+                  "startingPage": 0
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Text With Icons",
           "id": "text-with-icons",
           "plugins": {

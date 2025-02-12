@@ -48,7 +48,8 @@
         "main-banner",
         "hero-banner",
         "profile-block",
-        "feature-tabs"
+        "feature-tabs",
+        "related-carousel"
       ]
     }
   ]
