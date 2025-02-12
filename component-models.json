@@ -193,6 +193,7 @@
         "name": "style",
         "label": "Style",
         "required": true,
+        "default": "text-with-icons",
         "options": [
           {
             "name": "Text with icons",
