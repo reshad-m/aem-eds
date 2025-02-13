@@ -165,6 +165,18 @@
     ]
   },
   {
+    "id": "authors",
+    "fields": [
+      {
+        "component": "aem-tag",
+        "name": "authors",
+        "label": "Select Author(s)",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/authors"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

@@ -54,7 +54,8 @@
         "featured-block",
         "cta-blocks",
         "multi-link-block",
-        "video"
+        "video",
+        "authors"
       ]
     }
   ]
