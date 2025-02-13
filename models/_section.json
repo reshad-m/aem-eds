@@ -51,7 +51,8 @@
         "feature-tabs",
         "related-carousel",
         "article-cards",
-        "featured-block"
+        "featured-block",
+        "cta-block"
       ]
     }
   ]

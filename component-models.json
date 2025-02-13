@@ -251,6 +251,79 @@
     ]
   },
   {
+    "id": "cta-block",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Background Image",
+        "valueType": "string",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Background Image Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "heading_eyebrow",
+        "label": "Small Heading (Above Main)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "heading_main",
+        "label": "Main Heading",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "heading_mainType",
+        "label": "Main Heading Type",
+        "hidden": true
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description Text",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "cta_link",
+        "label": "CTA Link"
+      },
+      {
+        "component": "boolean",
+        "name": "isFullWidth",
+        "label": "Make block full width",
+        "valueType": "boolean",
+        "default": false,
+        "description": "Toggle to switch between half width (default) and full width"
+      },
+      {
+        "component": "boolean",
+        "name": "enableGradient",
+        "label": "Enable Gradient Overlay",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Toggle to enable/disable gradient overlay on the background image"
+      },
+      {
+        "component": "boolean",
+        "name": "isDarkTheme",
+        "label": "Use Dark Theme",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Toggle between dark theme (default) and light theme"
+      }
+    ]
+  },
+  {
     "id": "feature-tab",
     "fields": [
       {
