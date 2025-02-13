@@ -52,7 +52,8 @@
         "related-carousel",
         "article-cards",
         "featured-block",
-        "cta-blocks"
+        "cta-blocks",
+        "multi-link-block"
       ]
     }
   ]

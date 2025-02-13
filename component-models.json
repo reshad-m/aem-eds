@@ -650,6 +650,51 @@
     ]
   },
   {
+    "id": "multi-link-block",
+    "title": "Multi-link Block",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text_title",
+        "label": "Title",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "text_titleType",
+        "label": "Heading Level",
+        "valueType": "string",
+        "hidden": true
+      },
+      {
+        "component": "richtext",
+        "name": "text_description",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "text_links",
+        "label": "Links",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image_image",
+        "label": "Image",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "image_imageAlt",
+        "label": "Image Alt Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "related-carousel",
     "title": "Related Carousel",
     "fields": [
