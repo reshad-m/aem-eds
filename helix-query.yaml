@@ -46,20 +46,17 @@ indices:
     target: /our-people-index.json
     properties:
       image:
-        select: head > meta[property="og:image"]
-        value: attribute(el, "content")
-      imageAlt:
-        select: head > meta[property="og:image:alt"]
-        value: attribute(el, "content")
+        select: "main div.profile-block > div > div > picture > img"
+        value: attribute(el, "src")
       name:
-        select: "main div.profile-block > div div:nth-child(2) p:nth-child(1)"
+        select: "main div.profile-block > div:nth-child(2) div p:nth-child(1)"
         value: textContent(el)
       jobRole:
-        select: "main div.profile-block > div div:nth-child(2) p:nth-child(2)"
+        select: "main div.profile-block > div:nth-child(2) div p:nth-child(2)"
         value: textContent(el)
       socialLinks:
-        select: "main div.profile-block > div div:nth-child(3) p:nth-child(1)"
+        select: "main div.profile-block > div:nth-child(3) div"
         value: textContent(el)
       phone:
-        select: "main div.profile-block > div div:nth-child(4) p:nth-child(2)"
-        value: textContent(el)
+        select: "main div.profile-block > div:nth-child(4) div"
+        value: textContent(el)  
