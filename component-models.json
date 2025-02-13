@@ -772,7 +772,7 @@
         "name": "uri",
         "label": "Video",
         "validation": {
-          "rootPath": "/content/dam/rsm-eds"
+          "rootPath": "/content/dam/rsm-eds/video/"
         }
       },
       {
@@ -806,6 +806,18 @@
         "name": "placeholder_imageAlt",
         "value": "",
         "label": "Placeholder Image Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "aem-tag",
+        "name": "author",
+        "label": "Select Author(s)",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/authors"
       }
     ]
   }
