@@ -1,0 +1,72 @@
+{
+    "definitions": [
+      {
+        "title": "Profile Block",
+        "id": "profile-block",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/block/v1/block",
+              "template": {
+                "name": "Profile Block",
+                "model": "profile-block",
+                "image": "/content/dam/rsm-eds/profile-placeholder.png",
+                "inquiry_category": "inquiry-categories:new-business-enquiry"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "profile-block",
+        "fields": [
+          {
+            "component": "reference",
+            "name": "image",
+            "label": "Profile Image",
+            "valueType": "string",
+            "multi": false,
+            "required": true
+          },
+          {
+            "component": "text",
+            "name": "profileInfo_name",
+            "label": "Name",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "text",
+            "name": "profileInfo_jobRole",
+            "label": "Job Title",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "text",
+            "name": "contact_phone",
+            "label": "Phone Number(s)",
+            "valueType": "string",
+            "description": "Enter one or more phone numbers, separated by commas.",
+            "placeholder": "+44 (0) XXX XXX XXXX"
+          },
+          {
+            "component": "richtext",
+            "name": "link_socialLinks",
+            "label": "Social Links"
+          },
+          {
+            "component": "aem-tag",
+            "name": "inquiry_category",
+            "label": "Enquiry Category",
+            "description": "Only the first tag will be used. “Defaults to New Business Enquiry” if nothing selected",
+            "valueType": "string",
+            "rootPath": "/content/cq:tags/inquiry-categories"
+          }
+        ]
+      }
+    ],
+    "filters": []
+  }
