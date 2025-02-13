@@ -770,7 +770,10 @@
         "component": "aem-content",
         "valueType": "string",
         "name": "uri",
-        "label": "Video"
+        "label": "Video",
+        "validation": {
+          "rootPath": "/content/dam/rsm-eds"
+        }
       },
       {
         "component": "multiselect",
