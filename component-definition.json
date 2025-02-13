@@ -187,7 +187,7 @@
                 "template": {
                   "name": "CTA Block",
                   "model": "cta-block",
-                  "image": "/content/dam/cta-placeholder.png",
+                  "image": "/content/dam/rsm-eds/cta-placeholder.png",
                   "imageAlt": "Add descriptive text about the background image",
                   "heading_eyebrow": "Add small heading text here",
                   "heading_main": "Add your main heading here",

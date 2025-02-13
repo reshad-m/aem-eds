@@ -24,7 +24,7 @@
       "related-carousel",
       "article-cards",
       "featured-block",
-      "cta-block"
+      "cta-blocks"
     ]
   },
   {
@@ -46,6 +46,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "cta-blocks",
+    "components": [
+      "cta-block"
     ]
   },
   {
