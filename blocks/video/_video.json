@@ -27,7 +27,7 @@
           "name": "uri",
           "label": "Video",
           "validation": {
-            "rootPath": "/content/dam/rsm-eds"
+            "rootPath": "/content/dam/rsm-eds/video"
           }
         },
         {
