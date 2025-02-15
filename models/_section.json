@@ -55,7 +55,8 @@
         "cta-blocks",
         "multi-link-block",
         "video",
-        "authors"
+        "authors",
+        "quote-block"
       ]
     }
   ]

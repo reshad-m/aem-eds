@@ -755,6 +755,67 @@
     ]
   },
   {
+    "id": "quote-block",
+    "title": "Quote Block",
+    "description": "A component to display a quote with author information",
+    "fields": [
+      {
+        "component": "container",
+        "label": "Quote Content",
+        "name": "quote_content",
+        "valueType": "string",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "richtext",
+            "name": "quote_text",
+            "label": "Quote Text",
+            "valueType": "string",
+            "required": true,
+            "description": "The main quote text to be displayed"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "label": "Author Information",
+        "name": "author_info",
+        "valueType": "string",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "reference",
+            "name": "profile_image",
+            "label": "Profile Image",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "text",
+            "name": "profile_imageAlt",
+            "label": "Image Alt Text",
+            "valueType": "string",
+            "description": "Alt text should be First Name + Last Name"
+          },
+          {
+            "component": "text",
+            "name": "profile_name",
+            "label": "Name",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "text",
+            "name": "profile_title",
+            "label": "Title",
+            "valueType": "string",
+            "description": "Author's job title or role"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "related-carousel",
     "title": "Related Carousel",
     "fields": [
