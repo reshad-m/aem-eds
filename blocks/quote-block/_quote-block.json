@@ -20,7 +20,6 @@
         {
             "id": "quote-block",
             "title": "Quote Block",
-            "description": "A component to display a quote with author information",
             "fields": [
               {
                 "component": "reference",
@@ -43,7 +42,7 @@
                 "valueType": "string"
               },
               {
-                "component": "richtext",
+                "component": "text",
                 "name": "content_text",
                 "label": "Quote Text",
                 "valueType": "string",
