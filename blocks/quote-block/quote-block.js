@@ -28,42 +28,32 @@ export default function decorate(block) {
     }
 
     // Create content container
-    const paragraphs = contentSection.querySelectorAll('p');
-    if (paragraphs.length) {
+    const [name, title, quote] = contentSection.querySelectorAll('p');
+    if (name && title && quote) {
       const contentWrapper = document.createElement('div');
       contentWrapper.className = 'quote-content';
 
-      // First two paragraphs are name and title
+      // Author info
       const authorWrapper = document.createElement('div');
       authorWrapper.className = 'quote-author';
 
-      if (paragraphs[0]) {
-        const name = document.createElement('h3');
-        name.textContent = paragraphs[0].textContent;
-        authorWrapper.appendChild(name);
-      }
+      const nameHeading = document.createElement('h3');
+      nameHeading.textContent = name.textContent;
+      authorWrapper.appendChild(nameHeading);
 
-      if (paragraphs[1]) {
-        const title = document.createElement('p');
-        title.textContent = paragraphs[1].textContent;
-        authorWrapper.appendChild(title);
-      }
+      const titlePara = document.createElement('p');
+      titlePara.textContent = title.textContent;
+      authorWrapper.appendChild(titlePara);
 
       contentWrapper.appendChild(authorWrapper);
 
-      // Remaining paragraphs form the quote
-      if (paragraphs.length > 2) {
-        const quoteText = Array.from(paragraphs)
-          .slice(2)
-          .map((p) => p.textContent)
-          .filter(Boolean)
-          .join(' ');
-
-        const quote = document.createElement('blockquote');
-        quote.className = 'quote-text';
-        quote.innerHTML = `<p>${quoteText}</p>`;
-        contentWrapper.appendChild(quote);
-      }
+      // Quote text
+      const quoteBlock = document.createElement('blockquote');
+      quoteBlock.className = 'quote-text';
+      const quotePara = document.createElement('p');
+      quotePara.textContent = quote.textContent;
+      quoteBlock.appendChild(quotePara);
+      contentWrapper.appendChild(quoteBlock);
 
       blockWrapper.appendChild(contentWrapper);
     }
