@@ -760,58 +760,31 @@
     "description": "A component to display a quote with author information",
     "fields": [
       {
-        "component": "container",
-        "label": "Quote Content",
-        "name": "quote_content",
+        "component": "reference",
+        "name": "image",
+        "label": "Author Image",
         "valueType": "string",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "richtext",
-            "name": "quote_text",
-            "label": "Quote Text",
-            "valueType": "string",
-            "required": true,
-            "description": "The main quote text to be displayed"
-          }
-        ]
+        "required": true
       },
       {
-        "component": "container",
-        "label": "Author Information",
-        "name": "author_info",
+        "component": "text",
+        "name": "content_name",
+        "label": "Name",
         "valueType": "string",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "reference",
-            "name": "profile_image",
-            "label": "Profile Image",
-            "valueType": "string",
-            "required": true
-          },
-          {
-            "component": "text",
-            "name": "profile_imageAlt",
-            "label": "Image Alt Text",
-            "valueType": "string",
-            "description": "Alt text should be First Name + Last Name"
-          },
-          {
-            "component": "text",
-            "name": "profile_name",
-            "label": "Name",
-            "valueType": "string",
-            "required": true
-          },
-          {
-            "component": "text",
-            "name": "profile_title",
-            "label": "Title",
-            "valueType": "string",
-            "description": "Author's job title or role"
-          }
-        ]
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "content_role",
+        "label": "Role",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "content_text",
+        "label": "Quote Text",
+        "valueType": "string",
+        "required": true
       }
     ]
   },
