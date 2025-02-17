@@ -759,24 +759,72 @@
     "title": "Quote Block",
     "fields": [
       {
+        "component": "boolean",
+        "name": "enableManualEntry",
+        "label": "Enable manual entry of author",
+        "description": "Select the author from the 'Our People' list or enable the toggle for manual entry.",
+        "valueType": "boolean",
+        "default": false
+      },
+      {
+        "component": "aem-tag",
+        "name": "author",
+        "label": "Select Author",
+        "valueType": "string",
+        "rootPath": "/content/cq:tags/our-people",
+        "required": true,
+        "condition": {
+          "===": [
+            {
+              "var": "enableManualEntry"
+            },
+            false
+          ]
+        }
+      },
+      {
         "component": "reference",
         "name": "image",
         "label": "Profile Image",
         "valueType": "string",
-        "required": true
+        "required": true,
+        "condition": {
+          "===": [
+            {
+              "var": "enableManualEntry"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "text",
         "name": "content_name",
         "label": "Name",
         "valueType": "string",
-        "required": true
+        "required": true,
+        "condition": {
+          "===": [
+            {
+              "var": "enableManualEntry"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "text",
         "name": "content_role",
         "label": "Title",
-        "valueType": "string"
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "enableManualEntry"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "text",
