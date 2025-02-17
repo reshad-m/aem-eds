@@ -761,7 +761,7 @@
       {
         "component": "reference",
         "name": "image",
-        "label": "Author Image",
+        "label": "Profile Image",
         "valueType": "string",
         "required": true
       },
@@ -775,7 +775,7 @@
       {
         "component": "text",
         "name": "content_role",
-        "label": "Role",
+        "label": "Title",
         "valueType": "string"
       },
       {
