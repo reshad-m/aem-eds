@@ -888,6 +888,33 @@
     ]
   },
   {
+    "id": "subscription-block",
+    "title": "Subscription Block",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text_title",
+        "label": "Title",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "text_description",
+        "label": "Text",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Background Image",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "text-with-icons",
     "fields": [
       {

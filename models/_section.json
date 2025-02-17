@@ -56,7 +56,8 @@
         "multi-link-block",
         "video",
         "authors",
-        "quote-block"
+        "quote-block",
+        "subscription-block"
       ]
     }
   ]

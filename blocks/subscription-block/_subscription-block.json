@@ -1,0 +1,49 @@
+{
+    "definitions": [
+      {
+        "title": "Subscription Block",
+        "id": "subscription-block",
+        "plugins": {
+          "xwalk": {
+            "page": {
+              "resourceType": "core/franklin/components/block/v1/block",
+              "template": {
+                "name": "Subscription Block",
+                "model": "subscription-block"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "models": [
+      {
+        "id": "subscription-block",
+        "title": "Subscription Block",
+        "fields": [
+          {
+            "component": "text",
+            "name": "text_title",
+            "label": "Title",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "richtext",
+            "name": "text_description",
+            "label": "Text",
+            "valueType": "string",
+            "required": true
+          },
+          {
+            "component": "reference",
+            "name": "image",
+            "label": "Background Image",
+            "valueType": "string",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "filters": []
+  }
