@@ -39,7 +39,7 @@
           "name": "author",
           "label": "Select Author",
           "valueType": "string",
-          "rootPath": "/content/cq:tags/our-people",
+          "rootPath": "/content/cq:tags/authors",
           "required": true,
           "condition": {
             "===": [
