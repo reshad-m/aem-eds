@@ -10,6 +10,7 @@
             "template": {
               "name": "Quote Block",
               "model": "quote-block",
+              "enableManualEntry": false,
               "image": "/content/dam/rsm-eds/profile-placeholder.png",
               "content_name": "Name",
               "content_role": "Title",
