@@ -1,0 +1,97 @@
+.subscription-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+    background-color: #0093d0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .subscription-block.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .subscription-block-content {
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-white, #fff);
+  }
+  
+  .subscription-block-image {
+    line-height: 0;
+  }
+  
+  .subscription-block-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .subscription-block p {
+    margin: 0 0 1.5rem;
+  }
+  
+  .subscription-block p:first-of-type {
+    font-size: var(--heading-font-size-l, 2.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  
+  .subscription-block p:nth-of-type(2) {
+    font-size: var(--body-font-size-m, 1.125rem);
+    line-height: 1.5;
+  }
+  
+  .subscription-block p:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  .subscription-block .button.primary {
+    display: inline-block;
+    background-color: var(--background-color, #fff);
+    color: #0093d0;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 900px) {
+    .subscription-block {
+      grid-template-columns: 1fr;
+    }
+    
+    .subscription-block-content {
+      padding: 3rem 2rem;
+    }
+    
+    .subscription-block-image {
+      min-height: 300px;
+    }
+    
+    .subscription-block p:first-of-type {
+      font-size: var(--heading-font-size-m, 2rem);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .subscription-block-content {
+      padding: 2rem 1.5rem;
+    }
+    
+    .subscription-block p:first-of-type {
+      font-size: var(--heading-font-size-s, 1.75rem);
+    }
+    
+    .subscription-block p:nth-of-type(2) {
+      font-size: var(--body-font-size-s, 1rem);
+    }
+    
+    .subscription-block-image {
+      min-height: 250px;
+    }
+  }
