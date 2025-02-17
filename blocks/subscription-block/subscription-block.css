@@ -60,7 +60,7 @@
     font-weight: 600;
   }
   
-  @media (max-width: 900px) {
+  @media (width <= 900px) {
     .subscription-block {
       grid-template-columns: 1fr;
     }
@@ -78,7 +78,7 @@
     }
   }
   
-  @media (max-width: 600px) {
+  @media (width <= 600px) {
     .subscription-block-content {
       padding: 2rem 1.5rem;
     }
