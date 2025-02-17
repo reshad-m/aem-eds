@@ -215,54 +215,6 @@
     ]
   },
   {
-    "id": "profile-block",
-    "fields": [
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Profile Image",
-        "valueType": "string",
-        "multi": false,
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "profileInfo_name",
-        "label": "Name",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "profileInfo_jobRole",
-        "label": "Job Title",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "contact_phone",
-        "label": "Phone Number(s)",
-        "valueType": "string",
-        "description": "Enter one or more phone numbers, separated by commas.",
-        "placeholder": "+44 (0) XXX XXX XXXX"
-      },
-      {
-        "component": "richtext",
-        "name": "link_socialLinks",
-        "label": "Social Links"
-      },
-      {
-        "component": "aem-tag",
-        "name": "inquiry_category",
-        "label": "Enquiry Category",
-        "description": "Only the first tag will be used. “Defaults to New Business Enquiry” if nothing selected",
-        "valueType": "string",
-        "rootPath": "/content/cq:tags/inquiry-categories"
-      }
-    ]
-  },
-  {
     "id": "cta-block",
     "fields": [
       {
