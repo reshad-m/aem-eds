@@ -46,7 +46,7 @@
         },
         {
           "component": "text",
-          "name": "contact_phone",
+          "name": "profileInfo_phone",
           "label": "Phone Number(s)",
           "valueType": "string",
           "description": "Enter one or more phone numbers, separated by commas.",

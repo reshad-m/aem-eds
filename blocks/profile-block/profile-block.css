@@ -1,0 +1,139 @@
+.profile-block-container {
+  padding-top: 4rem;
+}
+
+.profile-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 1.875rem;
+  padding-bottom: 1.25rem;
+  border-top: 1px solid var(--rsm-light-grey);
+  border-bottom: 1px solid var(--rsm-light-grey);
+}
+
+.profile-block .profile {
+  width: 100%;
+  max-width: var(--content-max-width, 840px);
+}
+
+.profile-block .profile-top {
+  display: flex;
+  margin-bottom: 0.9375rem;
+  align-items: flex-end;
+}
+
+.profile-block .profile-image {
+  max-width: 100px;
+}
+
+.profile-block .profile-image img {
+  vertical-align: bottom;
+}
+
+.profile-block .profile-content {
+  flex: 1;
+  min-width: 0;
+  padding-left: 1.875rem;
+}
+
+.profile-block .profile-name {
+  margin: 0 0 0.25rem;
+  font-size: var(--heading-font-size-l);
+  line-height: 1.35;
+  font-weight: normal;
+}
+
+.profile-block .profile-role {
+  margin: 0 0 0.25rem;
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.profile-block .profile-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.profile-block .link.tertiary {
+  flex-wrap: wrap;
+  white-space: nowrap;
+  color: var(--rsm-dark-grey);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.profile-block .button {
+  width: 100%;
+}
+
+.profile-block .button:not(:last-child) {
+  margin-block-end: 0.625rem;
+}
+
+.profile-block a:is(.link) span.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.profile-block .button:hover .icon {
+  filter: brightness(0) invert(1);
+}
+
+@media (width >=900px) {
+  .profile-block .profile {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    position: relative;
+    padding-left: 198px;
+    min-height: 168px;
+  }
+
+  .profile-block .profile-top {
+    margin-bottom: 1.25rem;
+    width: 100%;
+  }
+
+  .profile-block .profile-content {
+    padding-left: 0;
+  }
+
+  .profile-block .profile-name {
+    line-height: 1.2083;
+  }
+
+  .profile-block .profile-image {
+    max-width: 168px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+
+  .profile-block .link.tertiary {
+    font-size: 0.875rem;
+  }
+
+  .profile-block a:is(.link) span.icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .profile-block .button {
+    width: auto;
+  }
+
+
+  .profile-block .button:not(:last-child) {
+    margin-right: 0.625rem;
+    margin-bottom: 0;
+  }
+
+  .profile-block .profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.625rem;
+    width: 100%;
+  }
+}
