@@ -58,5 +58,5 @@ indices:
         select: "main div.profile-block > div:nth-child(2) div p:nth-child(3)"
         value: textContent(el)        
       socialLinks:
-        select: "main div.profile-block > div:nth-child(3) div"
+        select: "main div.profile-block > div:nth-child(3) div a"
         value: textContent(el)
