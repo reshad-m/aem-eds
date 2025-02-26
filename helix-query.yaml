@@ -59,4 +59,4 @@ indices:
         value: textContent(el)        
       socialLinks:
         select: "main div.profile-block > div:nth-child(3) div a"
-        value: attribute(el, "href")
+        value: join(",", map(attribute(el, "href")))
