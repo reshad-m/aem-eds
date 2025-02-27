@@ -57,7 +57,8 @@
         "video",
         "authors",
         "quote-block",
-        "subscription-block"
+        "subscription-block",
+        "custom-asset-one"
       ]
     }
   ]
