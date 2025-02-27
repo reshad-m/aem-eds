@@ -15,7 +15,7 @@
     },
     "assetWidthRange": {
         "minWidth": 0,
-        "maxWidth": 1000
+        "maxWidth": 10
     },
     "additionalFilters": {
         "mimeType": "image/*"
