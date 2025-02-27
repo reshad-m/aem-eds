@@ -947,7 +947,7 @@
         "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://main--xwalk-test-gems--githubusername.hlx.page/tools/assets-selector/image.config.json",
+        "configUrl": "https://author-p33329-e1178938.adobeaemcloud.com/content/reshad-eds-site/home/image-config.json",
         "valueType": "string"
       },
       {
