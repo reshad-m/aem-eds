@@ -947,7 +947,7 @@
         "component": "custom-asset-namespace:custom-asset",
         "name": "image",
         "label": "Image",
-        "configUrl": "https://author-p33329-e1178938.adobeaemcloud.com/content/reshad-eds-site/home/image-config.json",
+        "configUrl": "config/image-config.json",
         "valueType": "string"
       },
       {

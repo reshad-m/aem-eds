@@ -1,0 +1,23 @@
+{
+    "repoNames": [
+        "author-p33329-e1178938.adobeaemcloud.com"
+    ],
+    "aemTierType": [
+        "author"
+    ],
+    "fileTypes": {
+        "images": [
+            "jpg",
+            "jpeg",
+            "png",
+            "gif"
+        ]
+    },
+    "assetWidthRange": {
+        "minWidth": 0,
+        "maxWidth": 1000
+    },
+    "additionalFilters": {
+        "mimeType": "image/*"
+    }
+}
