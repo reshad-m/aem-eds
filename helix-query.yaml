@@ -60,3 +60,6 @@ indices:
       socialLinks:
         select: "main div.profile-block > div:nth-child(3) div a"
         value: attribute(el, "href")
+      enquiryCategory:
+        select: "main div.profile-block > div:nth-child(4) div"
+        value: textContent(el)
