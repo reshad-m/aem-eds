@@ -185,16 +185,13 @@
                 "template": {
                   "name": "CTA Block",
                   "model": "cta-block",
-                  "image": "/content/dam/rsm-eds/cta-placeholder.png",
-                  "imageAlt": "Add descriptive text about the background image",
-                  "heading_eyebrow": "Add small heading text here",
-                  "heading_main": "Add your main heading here",
+                  "image_desktop": "/content/dam/rsm-eds/cta-placeholder.png",
+                  "image_mobile": "/content/dam/rsm-eds/cta-placeholder.png",
+                  "heading_main": "Main Heading",
                   "heading_mainType": "h2",
-                  "description": "Add your descriptive text here.",
-                  "cta_link": "Add call-to-action text and specify your button/link type.",
                   "isFullWidth": false,
-                  "enableGradient": true,
-                  "isDarkTheme": true
+                  "enableGradient": false,
+                  "isDarkTheme": false
                 }
               }
             }

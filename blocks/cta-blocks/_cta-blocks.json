@@ -25,16 +25,13 @@
             "template": {
               "name": "CTA Block",
               "model": "cta-block",
-              "image": "/content/dam/rsm-eds/cta-placeholder.png",
-              "imageAlt": "Add descriptive text about the background image",
-              "heading_eyebrow": "Add small heading text here",
-              "heading_main": "Add your main heading here",
+              "image_desktop": "/content/dam/rsm-eds/cta-placeholder.png",
+              "image_mobile": "/content/dam/rsm-eds/cta-placeholder.png",
+              "heading_main": "Main Heading",
               "heading_mainType": "h2",
-              "description": "Add your descriptive text here.",
-              "cta_link": "Add call-to-action text and specify your button/link type.",
               "isFullWidth": false,
-              "enableGradient": true,
-              "isDarkTheme": true
+              "enableGradient": false,
+              "isDarkTheme": false
             }
           }
         }
@@ -56,7 +53,7 @@
         {
           "component": "text",
           "name": "image_desktopAlt",
-          "label": "Background Desktop Image Alt Text",
+          "label": "Desktop Image Alt Text",
           "valueType": "string"
         },
         {
@@ -64,19 +61,18 @@
           "name": "image_mobile",
           "label": "Background Mobile",
           "valueType": "string",
-          "multi": false,
-          "required": true
+          "multi": false
         },
         {
           "component": "text",
           "name": "image_mobileAlt",
-          "label": "Background Mobile Image Alt Text",
+          "label": "Mobile Image Alt Text",
           "valueType": "string"
         },
         {
           "component": "text",
           "name": "heading_eyebrow",
-          "label": "Small Heading (Above Main)",
+          "label": "Small Heading",
           "valueType": "string"
         },
         {
@@ -106,26 +102,26 @@
         {
           "component": "boolean",
           "name": "boolean_isFullWidth",
-          "label": "Make block full width",
+          "label": "Toggle Full Width",
           "valueType": "boolean",
           "default": false,
-          "description": "Toggle to switch between half width (default) and full width"
+          "description": "Switch on to show CTA full width, off for half width"
         },
         {
           "component": "boolean",
           "name": "boolean_enableGradient",
-          "label": "Enable Gradient Overlay",
+          "label": "Toggle Gradient Overlay",
           "valueType": "boolean",
-          "default": true,
-          "description": "Toggle to enable/disable gradient overlay on the background image"
+          "default": false,
+          "description": "Switch on for overlay over the background image, off for no overlay"
         },
         {
           "component": "boolean",
           "name": "boolean_isDarkTheme",
-          "label": "Use Dark Theme",
+          "label": "Toggle Dark Theme",
           "valueType": "boolean",
-          "default": true,
-          "description": "Toggle between dark theme (default) and light theme"
+          "default": false,
+          "description": "Switch on for dark theme, off for light theme"
         }
       ]
     }
