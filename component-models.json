@@ -219,16 +219,30 @@
     "fields": [
       {
         "component": "reference",
-        "name": "image",
-        "label": "Background Image",
+        "name": "image_desktop",
+        "label": "Background Desktop",
         "valueType": "string",
         "multi": false,
         "required": true
       },
       {
         "component": "text",
-        "name": "imageAlt",
-        "label": "Background Image Alt Text",
+        "name": "image_desktopAlt",
+        "label": "Background Desktop Image Alt Text",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image_mobile",
+        "label": "Background Mobile",
+        "valueType": "string",
+        "multi": false,
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "image_mobileAlt",
+        "label": "Background Mobile Image Alt Text",
         "valueType": "string"
       },
       {
@@ -252,18 +266,18 @@
       },
       {
         "component": "richtext",
-        "name": "description",
+        "name": "text_description",
         "label": "Description Text",
         "valueType": "string"
       },
       {
         "component": "richtext",
-        "name": "cta_link",
+        "name": "text_link",
         "label": "CTA Link"
       },
       {
         "component": "boolean",
-        "name": "isFullWidth",
+        "name": "boolean_isFullWidth",
         "label": "Make block full width",
         "valueType": "boolean",
         "default": false,
@@ -271,7 +285,7 @@
       },
       {
         "component": "boolean",
-        "name": "enableGradient",
+        "name": "boolean_enableGradient",
         "label": "Enable Gradient Overlay",
         "valueType": "boolean",
         "default": true,
@@ -279,11 +293,34 @@
       },
       {
         "component": "boolean",
-        "name": "isDarkTheme",
+        "name": "boolean_isDarkTheme",
         "label": "Use Dark Theme",
         "valueType": "boolean",
         "default": true,
         "description": "Toggle between dark theme (default) and light theme"
+      }
+    ]
+  },
+  {
+    "id": "custom-asset-one",
+    "fields": [
+      {
+        "component": "custom-asset-namespace:custom-asset",
+        "name": "image",
+        "label": "Image",
+        "configUrl": "https://author-p33329-e1178938.adobeaemcloud.com/content/reshad-eds-site/home/image-config.json",
+        "valueType": "string"
+      },
+      {
+        "component": "custom-asset-namespace:custom-asset-mimetype",
+        "valueType": "string",
+        "name": "imageMimeType"
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text",
+        "valueType": "string"
       }
     ]
   },
@@ -937,29 +974,6 @@
         "label": "Select Author(s)",
         "valueType": "string",
         "rootPath": "/content/cq:tags/authors"
-      }
-    ]
-  },
-  {
-    "id": "custom-asset-one",
-    "fields": [
-      {
-        "component": "custom-asset-namespace:custom-asset",
-        "name": "image",
-        "label": "Image",
-        "configUrl": "config/image-config.json",
-        "valueType": "string"
-      },
-      {
-        "component": "custom-asset-namespace:custom-asset-mimetype",
-        "valueType": "string",
-        "name": "imageMimeType"
-      },
-      {
-        "component": "text",
-        "name": "imageAlt",
-        "label": "Alt Text",
-        "valueType": "string"
       }
     ]
   }

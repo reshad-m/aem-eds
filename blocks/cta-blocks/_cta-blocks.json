@@ -47,16 +47,30 @@
       "fields": [
         {
           "component": "reference",
-          "name": "image",
-          "label": "Background Image",
+          "name": "image_desktop",
+          "label": "Background Desktop",
           "valueType": "string",
           "multi": false,
           "required": true
         },
         {
           "component": "text",
-          "name": "imageAlt",
-          "label": "Background Image Alt Text",
+          "name": "image_desktopAlt",
+          "label": "Background Desktop Image Alt Text",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "image_mobile",
+          "label": "Background Mobile",
+          "valueType": "string",
+          "multi": false,
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "image_mobileAlt",
+          "label": "Background Mobile Image Alt Text",
           "valueType": "string"
         },
         {
@@ -80,18 +94,18 @@
         },
         {
           "component": "richtext",
-          "name": "description",
+          "name": "text_description",
           "label": "Description Text",
           "valueType": "string"
         },
         {
           "component": "richtext",
-          "name": "cta_link",
+          "name": "text_link",
           "label": "CTA Link"
         },
         {
           "component": "boolean",
-          "name": "isFullWidth",
+          "name": "boolean_isFullWidth",
           "label": "Make block full width",
           "valueType": "boolean",
           "default": false,
@@ -99,7 +113,7 @@
         },
         {
           "component": "boolean",
-          "name": "enableGradient",
+          "name": "boolean_enableGradient",
           "label": "Enable Gradient Overlay",
           "valueType": "boolean",
           "default": true,
@@ -107,7 +121,7 @@
         },
         {
           "component": "boolean",
-          "name": "isDarkTheme",
+          "name": "boolean_isDarkTheme",
           "label": "Use Dark Theme",
           "valueType": "boolean",
           "default": true,

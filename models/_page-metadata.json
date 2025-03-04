@@ -1,16 +1,16 @@
 {
-    "models": [
+  "models": [
+    {
+      "id": "page-metadata",
+      "fields": [
         {
-            "id": "page-metadata",
-            "fields": [
-                {
-                    "component": "aem-tag",
-                    "name": "author",
-                    "label": "Select Author(s)",
-                    "valueType": "string",
-                    "rootPath": "/content/cq:tags/authors"
-                }
-            ]
+          "component": "aem-tag",
+          "name": "author",
+          "label": "Select Author(s)",
+          "valueType": "string",
+          "rootPath": "/content/cq:tags/authors"
         }
-    ]
+      ]
+    }
+  ]
 }
