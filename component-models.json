@@ -907,15 +907,12 @@
     "id": "text-with-icons",
     "fields": [
       {
-        "component": "multiselect",
+        "component": "text",
         "name": "style",
         "label": "Style",
-        "options": [
-          {
-            "name": "Text with icons",
-            "value": "text-with-icons"
-          }
-        ]
+        "valueType": "string",
+        "value": "text-with-icons",
+        "hidden": true
       }
     ]
   },
