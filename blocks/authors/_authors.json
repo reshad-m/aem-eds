@@ -22,10 +22,11 @@
       "fields": [
         {
           "component": "aem-tag",
-          "name": "authors",
+          "name": "authorsSelect",
           "label": "Select Author(s)",
           "valueType": "string",
-          "rootPath": "/content/cq:tags/authors"
+          "rootPath": "/content/cq:tags/authors",
+          "required": true
         }
       ]
     }
