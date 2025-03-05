@@ -72,7 +72,7 @@ function createAuthorProfile(author, placeholders = {}) {
   contactButton.className = 'button secondary';
   contactButton.href = `${CONTACT_US}?etype=${inquiryTag}&profile=${author.name}`;
   const contactAuthorKey = toCamelCase('Contact Author');
-  const contactTemplate = placeholders[contactAuthorKey] || `Contact {name}`;
+  const contactTemplate = placeholders[contactAuthorKey] || 'Contact {name}';
   const contactText = contactTemplate.replace('{name}', firstName);
   contactButton.innerHTML = `
     <span class="icon icon-mail"></span>
