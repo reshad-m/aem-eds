@@ -1,4 +1,4 @@
-import { createOptimizedPicture, fetchPlaceholders } from '../../scripts/aem.js';
+import { createOptimizedPicture, fetchPlaceholders, toCamelCase } from '../../scripts/aem.js';
 import { findByPathEnd } from '../../scripts/fetch-index.js';
 
 const PEOPLE_INDEX_PATH = 'our-people-index';
@@ -49,7 +49,7 @@ function createAuthorProfile(author, placeholders = {}) {
     const viewProfileLink = document.createElement('a');
     viewProfileLink.className = 'link tertiary';
     viewProfileLink.href = author.path;
-    const viewProfileText = placeholders.viewProfile || 'View profile';
+    const viewProfileText = placeholders[toCamelCase('View profile')] || 'View sprofile';
     viewProfileLink.innerHTML = `
       ${viewProfileText}
       <span class="icon icon-right"></span>
@@ -71,9 +71,12 @@ function createAuthorProfile(author, placeholders = {}) {
   const contactButton = document.createElement('a');
   contactButton.className = 'button secondary';
   contactButton.href = `${CONTACT_US}?etype=${inquiryTag}&profile=${author.name}`;
+  const contactAuthorKey = toCamelCase('Contact Author');
+  const contactTemplate = placeholders[contactAuthorKey] || `Contact {name}`;
+  const contactText = contactTemplate.replace('{name}', firstName);
   contactButton.innerHTML = `
     <span class="icon icon-mail"></span>
-    Contact ${firstName}
+    ${contactText}
   `;
   contactWrapper.appendChild(contactButton);
 
