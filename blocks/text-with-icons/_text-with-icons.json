@@ -40,8 +40,8 @@
     {
       "id": "text-with-icons",
       "components": [
-        "text",
         "title",
+        "text",
         "columns"
       ]
     }
