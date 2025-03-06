@@ -27,6 +27,10 @@
             {
               "name": "Highlight",
               "value": "highlight"
+            },
+            {
+              "name": "Text with icons",
+              "value": "text-icons"
             }
           ]
         }
