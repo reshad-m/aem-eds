@@ -19,15 +19,15 @@
   display: block;
 }
 
-.section.text-with-icons .columns > div {
+.section.text-icons .columns > div {
   align-items: flex-start;
 }
 
-.section.text-with-icons .columns > div > div {
+.section.text-icons .columns > div > div {
   margin-bottom: 1.5rem;
 }
 
-.section.text-with-icons .columns > div > div > p:first-of-type:has(picture) {
+.section.text-icons .columns > div > div > p:first-of-type:has(picture) {
   width: 100px;
   height: 100px;
   margin: 0;
