@@ -19,6 +19,20 @@
   display: block;
 }
 
+.section.text-with-icons .columns > div {
+  align-items: flex-start;
+}
+
+.section.text-with-icons .columns > div > div {
+  margin-bottom: 1.5rem;
+}
+
+.section.text-with-icons .columns > div > div > p:first-of-type:has(picture) {
+  width: 100px;
+  height: 100px;
+  margin: 0;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
@@ -29,9 +43,5 @@
   .columns > div > div {
     flex: 1;
     order: unset;
-  }
-
-  .section.text-with-icons  .columns > div {
-    align-items: flex-start;
   }
 }
