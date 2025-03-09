@@ -30,7 +30,8 @@
       "authors",
       "quote-block",
       "subscription-block",
-      "custom-asset-one"
+      "custom-asset-one",
+      "testimonials"
     ]
   },
   {
@@ -64,6 +65,12 @@
     "id": "feature-tabs",
     "components": [
       "feature-tab"
+    ]
+  },
+  {
+    "id": "testimonials",
+    "components": [
+      "testimonial"
     ]
   },
   {

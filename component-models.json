@@ -908,6 +908,47 @@
     ]
   },
   {
+    "id": "testimonial",
+    "fields": [
+      {
+        "component": "text",
+        "name": "testimonial_heading",
+        "label": "Heading",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "testimonial_headingType",
+        "label": "Heading Type",
+        "valueType": "string",
+        "value": "h3",
+        "hidden": true
+      },
+      {
+        "component": "richtext",
+        "name": "testimonial_testimonial",
+        "label": "Testimonial",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "testimonial_author",
+        "label": "Author",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "testimonial_jobRole",
+        "label": "Job Title",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
     "id": "text-with-icons",
     "fields": [
       {
