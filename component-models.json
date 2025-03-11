@@ -881,6 +881,18 @@
     ]
   },
   {
+    "id": "search",
+    "fields": [
+      {
+        "component": "text",
+        "name": "search",
+        "value": "",
+        "label": "Search",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "subscription-block",
     "title": "Subscription Block",
     "fields": [
