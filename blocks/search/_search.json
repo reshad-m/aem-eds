@@ -26,6 +26,13 @@
           "value": "",
           "label": "Search",
           "valueType": "string"
+        },
+        {
+          "component": "aem-tag",
+          "label": "Facets",
+          "name": "facets",
+          "valueType": "string",
+          "rootPath": "/content/cq:tags"
         }
       ]
     }
