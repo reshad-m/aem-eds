@@ -1,70 +1,78 @@
 {
-    "definitions": [
-      {
-        "title": "Featured Block",
-        "id": "featured-block",
-        "plugins": {
-          "xwalk": {
-            "page": {
-              "resourceType": "core/franklin/components/block/v1/block",
-              "template": {
-                "name": "Featured Block",
-                "model": "featured-block",
-                "enableAutoPopulate": true,
-                "articlesCount": 4,
-                "startingPage": 0
-              }
+  "definitions": [
+    {
+      "title": "Featured Block",
+      "id": "featured-block",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Featured Block",
+              "model": "featured-block",
+              "enableAutoPopulate": true,
+              "number_articlesCount": 4,
+              "number_startingPage": 0
             }
           }
         }
       }
-    ],
-    "models": [
-      {
-        "id": "featured-block",
-        "title": "Featured Block",
-        "fields": [
-          {
-            "component": "boolean",
-            "name": "enableAutoPopulate",
-            "label": "Toggle Auto-Populate",
-            "valueType": "boolean",
-            "default": true,
-            "description": "Populates Component with pages from the same section"
-          },
-          {
-            "component": "text",
-            "name": "indexSource",
-            "label": "Index Source",
-            "description": "When not auto-populating use this source for pages",
-            "condition": { "===": [{ "var": "enableAutoPopulate" }, false] }
-          },
-          {
-            "component": "number",
-            "name": "articlesCount",
-            "label": "Number of Articles",
-            "default": 4,
-            "min": 1,
-            "max": 6
-          },
-          {
-            "component": "number",
-            "name": "startingPage",
-            "label": "Starting Page",
-            "description": "Start the articles at this page of the results",
-            "default": 0,
-            "min": 0
-          },
-          {
-            "component": "aem-tag",
-            "label": "Filter by Tags",
-            "description": "Filter pages using these tags",
-            "name": "tags",
-            "valueType": "string",
-            "rootPath": "/content/cq:tags/news"
-          }
-        ]
-      }
-    ],
-    "filters": []
-  }
+    }
+  ],
+  "models": [
+    {
+      "id": "featured-block",
+      "title": "Featured Block",
+      "fields": [
+        {
+          "component": "boolean",
+          "name": "enableAutoPopulate",
+          "label": "Toggle Auto-Populate",
+          "valueType": "boolean",
+          "default": true,
+          "description": "Populates Component with pages from the same section"
+        },
+        {
+          "component": "text",
+          "name": "indexSource",
+          "label": "Index Source",
+          "valueType": "string",
+          "description": "When not auto-populating use this source for pages",
+          "condition": { "===": [{ "var": "enableAutoPopulate" }, false] }
+        },
+        {
+          "component": "number",
+          "name": "number_articlesCount",
+          "label": "Number of Articles",
+          "default": 4,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "component": "number",
+          "name": "number_startingPage",
+          "label": "Starting Page",
+          "description": "Start the articles at this page of the results",
+          "default": 0,
+          "min": 0
+        },
+        {
+          "component": "aem-tag",
+          "label": "Filter by Tags",
+          "description": "Filter pages using these tags",
+          "name": "filter_tags",
+          "valueType": "string",
+          "rootPath": "/content/cq:tags/news"
+        },
+        {
+          "component": "aem-content",
+          "name": "filter_featuredPage",
+          "label": "Featured Page",
+          "valueType": "string",
+          "description": "Enter the page name of the page you wish to move to the top of the list"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

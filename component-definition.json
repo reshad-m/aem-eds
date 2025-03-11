@@ -256,8 +256,8 @@
                   "name": "Featured Block",
                   "model": "featured-block",
                   "enableAutoPopulate": true,
-                  "articlesCount": 4,
-                  "startingPage": 0
+                  "number_articlesCount": 4,
+                  "number_startingPage": 0
                 }
               }
             }

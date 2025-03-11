@@ -401,6 +401,7 @@
         "component": "text",
         "name": "indexSource",
         "label": "Index Source",
+        "valueType": "string",
         "description": "When not auto-populating use this source for pages",
         "condition": {
           "===": [
@@ -413,7 +414,7 @@
       },
       {
         "component": "number",
-        "name": "articlesCount",
+        "name": "number_articlesCount",
         "label": "Number of Articles",
         "default": 4,
         "min": 1,
@@ -421,7 +422,7 @@
       },
       {
         "component": "number",
-        "name": "startingPage",
+        "name": "number_startingPage",
         "label": "Starting Page",
         "description": "Start the articles at this page of the results",
         "default": 0,
@@ -431,9 +432,16 @@
         "component": "aem-tag",
         "label": "Filter by Tags",
         "description": "Filter pages using these tags",
-        "name": "tags",
+        "name": "filter_tags",
         "valueType": "string",
         "rootPath": "/content/cq:tags/news"
+      },
+      {
+        "component": "aem-content",
+        "name": "filter_featuredPage",
+        "label": "Featured Page",
+        "valueType": "string",
+        "description": "Enter the page name of the page you wish to move to the top of the list"
       }
     ]
   },
