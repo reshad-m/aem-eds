@@ -191,7 +191,7 @@
 
 /* Highlight search terms */
 .search mark {
-  background-color: rgba(255, 255, 0, 0.4);
+  background-color: rgb(255 255 0 / 40%);
   padding: 0 2px;
 }
 
@@ -257,7 +257,7 @@
   display: none;
 }
 
-@media (max-width: 800px) {
+@media (width <= 800px) {
   .search-container {
     flex-direction: column;
   }
@@ -297,4 +297,112 @@
     flex-wrap: wrap;
     justify-content: flex-start;
   }
+}
+
+/* Search Pagination Styles */
+.search-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.pagination-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--dark-color, #333);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: var(--body-font-size-s, 14px);
+  min-width: 44px;
+  height: 44px;
+}
+
+.pagination-nav.prev {
+  margin-right: 0.5rem;
+}
+
+.pagination-nav.next {
+  margin-left: 0.5rem;
+}
+
+.pagination-nav:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.pagination-nav:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pagination-page {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--dark-color, #333);
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: var(--body-font-size-s, 14px);
+}
+
+.pagination-page.active {
+  background-color: var(--dark-color, #333);
+  color: white;
+  font-weight: bold;
+}
+
+.pagination-page:hover:not(.active) {
+  background-color: #f0f0f0;
+}
+
+.pagination-ellipsis {
+  margin: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+}
+
+/* Mobile Responsiveness */
+@media (width <= 600px) {
+  .pagination-nav span {
+    display: none;
+  }
+  
+  .pagination-nav.prev::before {
+    content: "←";
+  }
+  
+  .pagination-nav.next::before {
+    content: "→";
+  }
+  
+  .pagination-page {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .search-pagination {
+    flex-wrap: wrap;
+  }
+}
+
+.search a.button:any-link, button {
+ color: black;
 }
