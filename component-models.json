@@ -904,6 +904,27 @@
         "name": "facets",
         "valueType": "string",
         "rootPath": "/content/cq:tags"
+      },
+      {
+        "component": "select",
+        "name": "searchCategory",
+        "label": "Search Category",
+        "valueType": "string",
+        "value": "main",
+        "options": [
+          {
+            "name": "Main",
+            "value": "main"
+          },
+          {
+            "name": "News",
+            "value": "news"
+          },
+          {
+            "name": "Our People",
+            "value": "our-people"
+          }
+        ]
       }
     ]
   },
