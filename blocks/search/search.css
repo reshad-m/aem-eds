@@ -49,6 +49,11 @@
   margin-bottom: 1.5rem;
 }
 
+/* Facet Styling */
+.facet-group {
+  margin-bottom: 1.5rem;
+}
+
 .search.top .facet-groups {
   display: flex;
   flex-wrap: wrap;
@@ -59,10 +64,7 @@
   min-width: 200px;
 }
 
-/* Facet Styling */
-.facet-group {
-  margin-bottom: 1.5rem;
-}
+
 
 .facet-group h3 {
   font-size: var(--body-font-size-s);
@@ -405,4 +407,137 @@
 
 .search a.button:any-link, button {
  color: black;
+}
+
+
+/* Base search results styles */
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main search results (default) */
+.search-results-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  gap: 24px;
+}
+
+.search-results-main > li {
+  border: 1px solid #dadada;
+}
+
+/* News search results */
+.search-results-news {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.news-result-item {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #dadada;
+}
+
+.news-result-item .search-result-image {
+  flex: 0 0 200px;
+}
+
+.news-result-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.news-result-date, .news-result-author {
+  font-size: var(--body-font-size-xs);
+  color: var(--dark-color);
+}
+
+.news-result-description {
+  margin-top: 8px;
+}
+
+/* People search results */
+.search-results-our-people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.people-result-item {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #dadada;
+  height: 100%;
+}
+
+.people-result-image {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.people-result-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.people-result-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.people-result-name {
+  font-size: var(--body-font-size-m);
+  font-weight: bold;
+  margin: 0;
+}
+
+.people-result-role {
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
+  margin-bottom: 8px;
+}
+
+.people-result-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--body-font-size-s);
+}
+
+.people-result-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+
+/* Responsive adjustments */
+@media (width <= 768px) {
+  .news-result-item {
+    flex-direction: column;
+  }
+  
+  .news-result-item .search-result-image {
+    flex: auto;
+    width: 100%;
+  }
 }

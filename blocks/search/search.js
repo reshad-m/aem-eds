@@ -14,6 +14,19 @@ window.searchState = {
   currentConfig: null,
 };
 
+// Get search fields by category
+function getSearchFieldsByCategory(category) {
+  switch (category) {
+    case 'news':
+      return ['title', 'description', 'author', 'tags'];
+    case 'our-people':
+      return ['name', 'jobRole', 'enquiryCategory'];
+    case 'main':
+    default:
+      return ['title', 'description', 'path'];
+  }
+}
+
 function findNextHeading(el) {
   let preceedingEl = el.parentElement.previousElement || el.parentElement.parentElement;
   let h = 'H2';
@@ -79,6 +92,7 @@ function getFacetDisplayName(facetName) {
     authors: 'Authors',
     contentType: 'Content Type',
     year: 'Year',
+    'inquiry-categories': 'Inquiry Categories',
   };
   return displayNames[facetName] || facetName;
 }
@@ -100,15 +114,23 @@ function compareFound(hit1, hit2) {
   return hit1.minIdx - hit2.minIdx;
 }
 
-function filterData(searchTerms, data) {
+function filterData(searchTerms, data, config) {
+  if (!searchTerms || searchTerms.length === 0) return data;
+
+  // Get the search fields based on category
+  const searchFields = getSearchFieldsByCategory(config.searchCategory);
+
   const foundInHeader = [];
   const foundInMeta = [];
 
   data.forEach((result) => {
     let minIdx = -1;
 
+    // Check primary fields (header/title)
     searchTerms.forEach((term) => {
-      const idx = (result.header || result.title || '').toLowerCase().indexOf(term);
+      const titleField = config.searchCategory === 'our-people' ? 'name' : 'title';
+      const content = (result.header || result[titleField] || '').toLowerCase();
+      const idx = content.indexOf(term.toLowerCase());
       if (idx < 0) return;
       if (minIdx < 0 || idx < minIdx) minIdx = idx;
     });
@@ -118,9 +140,12 @@ function filterData(searchTerms, data) {
       return;
     }
 
-    const metaContents = `${result.title || ''} ${result.description || ''} ${(result.path || '').split('/').pop()}`.toLowerCase();
+    // Build meta content string based on category-specific fields
+    const metaParts = searchFields.map((field) => result[field] || '').filter(Boolean);
+    const metaContents = metaParts.join(' ').toLowerCase();
+
     searchTerms.forEach((term) => {
-      const idx = metaContents.indexOf(term);
+      const idx = metaContents.indexOf(term.toLowerCase());
       if (idx < 0) return;
       if (minIdx < 0 || idx < minIdx) minIdx = idx;
     });
@@ -248,11 +273,33 @@ function toggleFilter(facetName, value) {
   }
 }
 
-function applyFilters(data, activeFilters) {
+function applyFilters(data, activeFilters, config) {
   if (Object.keys(activeFilters).length === 0) {
     return data; // No filters active
   }
 
+  // For different categories, we need to check different fields
+  if (config.searchCategory === 'our-people') {
+    return data.filter((item) => {
+      // For people, check the enquiryCategory field
+      if (!item.enquiryCategory) return false;
+
+      const categoryParts = item.enquiryCategory.split(',').map((t) => t.trim());
+
+      // Check if item matches ANY of the filter categories
+      return Object.entries(activeFilters).some(([facetName, values]) => {
+        if (!values || values.length === 0) return false;
+
+        // Check if item matches any value in this category
+        return values.some((value) => {
+          const searchFor = `${facetName}:${value}`.toLowerCase().trim();
+          return categoryParts.some((cat) => cat.toLowerCase().trim() === searchFor);
+        });
+      });
+    });
+  }
+
+  // For news or main categories, use tags
   return data.filter((item) => {
     // If we don't have tags, we can't match tag-based filters
     if (!item.tags || typeof item.tags !== 'string') {
@@ -289,6 +336,27 @@ function generateFacets(data, config) {
 
   // Count occurrences for each facet value
   data.forEach((item) => {
+    // Special handling for people category
+    if (config.searchCategory === 'our-people' && item.enquiryCategory) {
+      const categoryParts = item.enquiryCategory.split(',').map((t) => t.trim());
+
+      categoryParts.forEach((cat) => {
+        if (!cat) return;
+
+        const colonIndex = cat.indexOf(':');
+        if (colonIndex > 0) {
+          const category = cat.substring(0, colonIndex);
+          const value = cat.substring(colonIndex + 1);
+
+          if (facets[category] && value) {
+            facets[category].set(value, (facets[category].get(value) || 0) + 1);
+          }
+        }
+      });
+
+      return;
+    }
+
     // Process tags specially since they're in a comma-separated string
     if (item.tags && typeof item.tags === 'string') {
       const tagParts = item.tags.split(',').map((t) => t.trim());
@@ -534,7 +602,8 @@ function createPagination(currentPage, totalPages, onPageChange) {
   return paginationContainer;
 }
 
-function renderResult(result, searchTerms, titleTag) {
+// Render functions for different categories
+function renderMainResult(result, searchTerms, titleTag) {
   const li = document.createElement('li');
   const a = document.createElement('a');
   a.href = result.path;
@@ -562,6 +631,157 @@ function renderResult(result, searchTerms, titleTag) {
     a.append(description);
   }
   li.append(a);
+  return li;
+}
+
+function renderNewsResult(result, searchTerms, titleTag) {
+  const li = document.createElement('li');
+  const newsLink = document.createElement('a'); // Changed variable name from 'a' to 'newsLink'
+  newsLink.href = result.path;
+  newsLink.className = 'news-result-item';
+
+  // News article image
+  if (result.image) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'search-result-image';
+    const pic = createOptimizedPicture(result.image, '', false, [{ width: '375' }]);
+    wrapper.append(pic);
+    newsLink.append(wrapper);
+  }
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'news-result-content';
+
+  // Title
+  if (result.title) {
+    const title = document.createElement(titleTag);
+    title.className = 'search-result-title';
+    title.textContent = result.title;
+    highlightTextElements(searchTerms, [title]);
+    contentDiv.appendChild(title);
+  }
+
+  // Publication date
+  if (result.publishedTime) {
+    const dateDiv = document.createElement('div');
+    dateDiv.className = 'news-result-date';
+    const date = new Date(result.publishedTime);
+    dateDiv.textContent = date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+    contentDiv.appendChild(dateDiv);
+  }
+
+  // Author info
+  if (result.author) {
+    const authorDiv = document.createElement('div');
+    authorDiv.className = 'news-result-author';
+    // Remove "authors:" prefix if present
+    const authorNames = result.author.split(',')
+      .map((a) => a.trim().replace(/^authors:/, ''));
+    authorDiv.textContent = `By ${authorNames.join(', ')}`;
+    contentDiv.appendChild(authorDiv);
+  }
+
+  // Description
+  if (result.description) {
+    const description = document.createElement('p');
+    description.className = 'news-result-description';
+    description.textContent = result.description;
+    highlightTextElements(searchTerms, [description]);
+    contentDiv.appendChild(description);
+  }
+
+  newsLink.appendChild(contentDiv);
+  li.appendChild(newsLink);
+  return li;
+}
+
+function renderPeopleResult(result, searchTerms, titleTag) {
+  const li = document.createElement('li');
+  const personLink = document.createElement('a'); // Changed variable name from 'a' to 'personLink'
+  personLink.href = result.path;
+  personLink.className = 'people-result-item';
+
+  // Profile image
+  if (result.image) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'people-result-image';
+    const pic = createOptimizedPicture(result.image, result.name || '', false, [{ width: '200' }]);
+    wrapper.append(pic);
+    personLink.append(wrapper);
+  }
+
+  const contentDiv = document.createElement('div');
+  contentDiv.className = 'people-result-content';
+
+  // Name
+  if (result.name) {
+    const name = document.createElement(titleTag);
+    name.className = 'people-result-name';
+    name.textContent = result.name;
+    highlightTextElements(searchTerms, [name]);
+    contentDiv.appendChild(name);
+  }
+
+  // Job role
+  if (result.jobRole) {
+    const roleDiv = document.createElement('div');
+    roleDiv.className = 'people-result-role';
+    roleDiv.textContent = result.jobRole;
+    highlightTextElements(searchTerms, [roleDiv]);
+    contentDiv.appendChild(roleDiv);
+  }
+
+  // Phone number
+  if (result.phone) {
+    const phoneDiv = document.createElement('div');
+    phoneDiv.className = 'people-result-phone';
+    const phoneIcon = document.createElement('span');
+    phoneIcon.className = 'icon icon-phone';
+    phoneDiv.appendChild(phoneIcon);
+    const phoneText = document.createElement('span');
+    phoneText.textContent = result.phone;
+    phoneDiv.appendChild(phoneText);
+    contentDiv.appendChild(phoneDiv);
+  }
+
+  // Social links if present
+  if (result.socialLinks) {
+    const socialDiv = document.createElement('div');
+    socialDiv.className = 'people-result-social';
+
+    result.socialLinks.split(',').forEach((link) => {
+      if (link.includes('linkedin')) {
+        const linkedinLink = document.createElement('a');
+        linkedinLink.href = link.trim();
+        linkedinLink.className = 'social-link linkedin';
+        linkedinLink.setAttribute('target', '_blank');
+        linkedinLink.setAttribute('rel', 'noopener noreferrer');
+        const icon = document.createElement('span');
+        icon.className = 'icon icon-linkedin';
+        linkedinLink.appendChild(icon);
+        socialDiv.appendChild(linkedinLink);
+      } else if (link.includes('x.com') || link.includes('twitter')) {
+        const twitterLink = document.createElement('a');
+        twitterLink.href = link.trim();
+        twitterLink.className = 'social-link twitter';
+        twitterLink.setAttribute('target', '_blank');
+        twitterLink.setAttribute('rel', 'noopener noreferrer');
+        const icon = document.createElement('span');
+        icon.className = 'icon icon-twitter';
+        twitterLink.appendChild(icon);
+        socialDiv.appendChild(twitterLink);
+      }
+    });
+
+    contentDiv.appendChild(socialDiv);
+  }
+
+  personLink.appendChild(contentDiv);
+  li.appendChild(personLink);
   return li;
 }
 
@@ -626,15 +846,29 @@ function updateSearchUI(
   resultCount.textContent = resultCountText;
   mainContent.appendChild(resultCount);
 
-  // Create results container
+  // Create results container with category-specific class
   const resultsContainer = document.createElement('ul');
-  resultsContainer.className = 'search-results';
+  resultsContainer.className = `search-results search-results-${config.searchCategory}`;
   resultsContainer.dataset.h = findNextHeading(block);
 
   if (results.length) {
     resultsContainer.classList.remove('no-results');
+
+    // Use the appropriate renderer based on category
+    const renderFunction = (() => {
+      switch (config.searchCategory) {
+        case 'news':
+          return renderNewsResult;
+        case 'our-people':
+          return renderPeopleResult;
+        case 'main':
+        default:
+          return renderMainResult;
+      }
+    })();
+
     results.forEach((result) => {
-      const li = renderResult(result, searchTerms, resultsContainer.dataset.h);
+      const li = renderFunction(result, searchTerms, resultsContainer.dataset.h);
       resultsContainer.appendChild(li);
     });
   } else {
@@ -664,7 +898,7 @@ function updateSearchUI(
   decorateIcons(mainContent);
 }
 
-// Updated fetchData function to properly handle pagination
+// Updated fetchData function to properly handle pagination and category-specific sources
 async function fetchData(source, options = {}) {
   const { limit = 5, offset = 0, searchTerm = '' } = options;
 
@@ -706,7 +940,7 @@ async function fetchData(source, options = {}) {
   }
 }
 
-// Modified handleSearch function to properly handle pagination
+// Modified handleSearch function to properly handle pagination and category-specific search
 async function handleSearch(e, block, config) {
   const searchValue = e.target ? e.target.value : e;
 
@@ -760,11 +994,11 @@ async function handleSearch(e, block, config) {
   }
 
   // Apply filters
-  let filteredResults = applyFilters(data, activeFilters);
+  let filteredResults = applyFilters(data, activeFilters, config);
 
   // Apply search term filtering if needed
   if (searchTerms.length > 0) {
-    filteredResults = filterData(searchTerms, filteredResults);
+    filteredResults = filterData(searchTerms, filteredResults, config);
   }
 
   // For search with terms, we need to handle pagination client-side
@@ -852,14 +1086,13 @@ function searchBox(block, config) {
 export default async function decorate(block) {
   const placeholders = await fetchPlaceholders();
 
-  // Extract source and tags from block content
-  const [indexSourceDiv, tagsDiv] = [...block.children];
+  // Extract source, tags, and category from block content
+  const [indexSourceDiv, tagsDiv, categoryDiv] = [...block.children];
 
   // Get index source
   const source = indexSourceDiv.querySelector('a[href]')
     ? indexSourceDiv.querySelector('a[href]').href
     : '/query-index.json';
-    // : 'blocks/search/dummy-data.json';
 
   // Extract tag categories from tagsDiv
   const tagCategories = [];
@@ -886,14 +1119,31 @@ export default async function decorate(block) {
     });
   }
 
+  // Get search category, default to 'main' if not specified
+  const searchCategory = categoryDiv && categoryDiv.textContent
+    ? categoryDiv.textContent.trim().toLowerCase()
+    : 'main';
+
+  // Determine the correct index source based on category
+  let categorySource = source;
+  if (searchCategory === 'news') {
+    categorySource = source.replace('query-index.json', 'news-index.json');
+  } else if (searchCategory === 'our-people') {
+    categorySource = source.replace('query-index.json', 'our-people-index.json');
+  }
+
   // Config object for search
   const config = {
-    source,
+    source: categorySource,
     placeholders,
-    facets: tagCategories, // Use the extracted tag categories as facets
+    facets: searchCategory === 'our-people' ? ['inquiry-categories'] : tagCategories,
     facetLayout: 'sidebar',
     showFilterCount: true,
+    searchCategory, // Add the search category to config
   };
+
+  // Add the search category as a class to the block
+  block.classList.add(`search-category-${searchCategory}`);
 
   // Clear block content
   block.innerHTML = '';
