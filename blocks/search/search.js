@@ -534,7 +534,46 @@ function createPagination(currentPage, totalPages, onPageChange) {
   return paginationContainer;
 }
 
-function updateSearchUI(block, config, results, searchTerms, facets, activeFilters, pagination = {}) {
+function renderResult(result, searchTerms, titleTag) {
+  const li = document.createElement('li');
+  const a = document.createElement('a');
+  a.href = result.path;
+  if (result.image) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'search-result-image';
+    const pic = createOptimizedPicture(result.image, '', false, [{ width: '375' }]);
+    wrapper.append(pic);
+    a.append(wrapper);
+  }
+  if (result.title) {
+    const title = document.createElement(titleTag);
+    title.className = 'search-result-title';
+    const link = document.createElement('a');
+    link.href = result.path;
+    link.textContent = result.title;
+    highlightTextElements(searchTerms, [link]);
+    title.append(link);
+    a.append(title);
+  }
+  if (result.description) {
+    const description = document.createElement('p');
+    description.textContent = result.description;
+    highlightTextElements(searchTerms, [description]);
+    a.append(description);
+  }
+  li.append(a);
+  return li;
+}
+
+function updateSearchUI(
+  block,
+  config,
+  results,
+  searchTerms,
+  facets,
+  activeFilters,
+  pagination = {},
+) {
   const {
     currentPage = 1, totalPages = 1, totalResults = 0, onPageChange,
   } = pagination;
@@ -623,37 +662,6 @@ function updateSearchUI(block, config, results, searchTerms, facets, activeFilte
   // Decorate icons for the new content
   decorateIcons(facetsUI);
   decorateIcons(mainContent);
-}
-
-function renderResult(result, searchTerms, titleTag) {
-  const li = document.createElement('li');
-  const a = document.createElement('a');
-  a.href = result.path;
-  if (result.image) {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'search-result-image';
-    const pic = createOptimizedPicture(result.image, '', false, [{ width: '375' }]);
-    wrapper.append(pic);
-    a.append(wrapper);
-  }
-  if (result.title) {
-    const title = document.createElement(titleTag);
-    title.className = 'search-result-title';
-    const link = document.createElement('a');
-    link.href = result.path;
-    link.textContent = result.title;
-    highlightTextElements(searchTerms, [link]);
-    title.append(link);
-    a.append(title);
-  }
-  if (result.description) {
-    const description = document.createElement('p');
-    description.textContent = result.description;
-    highlightTextElements(searchTerms, [description]);
-    a.append(description);
-  }
-  li.append(a);
-  return li;
 }
 
 // Updated fetchData function to properly handle pagination
