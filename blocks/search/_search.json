@@ -10,6 +10,7 @@
             "template": {
               "name": "Search",
               "model": "search",
+              "enableFacets": true,
               "searchCategory": "main"
             }
           }
@@ -33,7 +34,7 @@
           "name": "enableFacets",
           "label": "Facets Status",
           "valueType": "boolean",
-          "default": true,
+          "value": true,
           "description": "Toggle on to enable facets in search results, and toggle off to disable them."
         },
         {
