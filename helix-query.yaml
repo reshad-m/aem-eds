@@ -77,8 +77,8 @@ indices:
         value: textContent(el)
   maps:
     include:
-      - "/locations/**"
-    target: /maps-index.json
+      - "/offices/**"
+    target: /offices-index.json
     properties:
       locationName:
         select: "main div.map > div:nth-child(1) > div"
