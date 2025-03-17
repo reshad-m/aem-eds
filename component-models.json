@@ -933,11 +933,27 @@
         "valueType": "string"
       },
       {
+        "component": "boolean",
+        "name": "enableFacets",
+        "label": "Facets Status",
+        "valueType": "boolean",
+        "default": true,
+        "description": "Toggle on to enable facets in search results, and toggle off to disable them."
+      },
+      {
         "component": "aem-tag",
         "label": "Facets",
         "name": "facets",
         "valueType": "string",
-        "rootPath": "/content/cq:tags"
+        "rootPath": "/content/cq:tags",
+        "condition": {
+          "===": [
+            {
+              "var": "enableFacets"
+            },
+            true
+          ]
+        }
       },
       {
         "component": "select",
