@@ -75,3 +75,20 @@ indices:
       enquiryCategory:
         select: "main div.profile-block > div:nth-child(4) div"
         value: textContent(el)
+  maps:
+    include:
+      - "/locations/**"
+    target: /maps-index.json
+    properties:
+      locationName:
+        select: "main div.map > div:nth-child(1) > div"
+        value: textContent(el)
+      address:
+        select: "main div.map > div:nth-child(2) > div"
+        value: textContent(el)
+      coordinates:
+        select: "main div.map > div:nth-child(3) > div"
+        value: textContent(el)
+      contact:
+        select: "main div.map > div:nth-child(4) > div"
+        value: textContent(el)
