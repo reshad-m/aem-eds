@@ -663,6 +663,40 @@
     ]
   },
   {
+    "id": "map",
+    "fields": [
+      {
+        "component": "text",
+        "name": "locationName",
+        "label": "Location Name",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "address",
+        "label": "Address",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "coordinates",
+        "label": "Coordinates",
+        "valueType": "string",
+        "required": true,
+        "description": "Format: latitude,longitude (e.g. 51.5074,-0.1278)"
+      },
+      {
+        "component": "text",
+        "name": "contact",
+        "label": "Contact Number",
+        "valueType": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "multi-link-block",
     "title": "Multi-link Block",
     "fields": [
