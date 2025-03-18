@@ -809,17 +809,34 @@ function updateSearchUI(
     searchContainer.innerHTML = '';
   }
 
-  // Create facets UI
-  const facetsUI = createFacetsUI(facets, activeFilters, config);
-
   // Create main content area
   const mainContent = document.createElement('div');
   mainContent.className = 'search-main';
 
-  // Create active filters UI
-  const activeFiltersUI = createActiveFiltersUI(activeFilters);
-  if (activeFiltersUI) {
-    mainContent.appendChild(activeFiltersUI);
+  // Only create and add facets UI if facets are enabled
+  if (config.enableFacets) {
+    // Create facets UI
+    const facetsUI = createFacetsUI(facets, activeFilters, config);
+
+    // Create active filters UI
+    const activeFiltersUI = createActiveFiltersUI(activeFilters);
+    if (activeFiltersUI) {
+      mainContent.appendChild(activeFiltersUI);
+    }
+
+    // Add facets to container
+    searchContainer.appendChild(facetsUI);
+
+    // Add facet layout class
+    block.classList.add(config.facetLayout || 'sidebar');
+  } else {
+    // If facets are disabled, use a full-width layout
+    block.classList.add('no-facets');
+
+    // Clear any existing URL filter parameters when facets are disabled
+    if (Object.keys(activeFilters).length > 0) {
+      clearAllFilters();
+    }
   }
 
   // Add result count
@@ -881,29 +898,32 @@ function updateSearchUI(
   mainContent.appendChild(resultsContainer);
 
   // Add pagination if we have more than one page
+  // Add pagination if we have more than one page
   if (totalPages > 1 && onPageChange) {
     const paginationUI = createPagination(currentPage, totalPages, onPageChange);
     mainContent.appendChild(paginationUI);
   }
 
-  // Add elements to container
-  searchContainer.appendChild(facetsUI);
+  // Add main content to container
   searchContainer.appendChild(mainContent);
 
-  // Add facet layout class
-  block.classList.add(config.facetLayout || 'sidebar');
-
-  // Decorate icons for the new content
-  decorateIcons(facetsUI);
+  // Decorate icons for the content
   decorateIcons(mainContent);
+  if (config.enableFacets) {
+    decorateIcons(searchContainer.querySelector('.search-facets'));
+  }
 }
 
-// Updated fetchData function to properly handle pagination and category-specific sources
 async function fetchData(source, options = {}) {
-  const { limit = 5, offset = 0, searchTerm = '' } = options;
+  const {
+    limit = 5, offset = 0, searchTerm = '', enableFacets = false,
+  } = options;
 
-  // If we have a search term, fetch the entire dataset
-  if (searchTerm && searchTerm.length >= 3) {
+  // Determine if we need the full dataset
+  const needFullData = enableFacets || (searchTerm && searchTerm.length >= 3);
+
+  // If we need the full dataset (for facets or search)
+  if (needFullData) {
     try {
       const response = await fetch(source);
       if (!response.ok) {
@@ -915,13 +935,17 @@ async function fetchData(source, options = {}) {
         return { data: [], total: 0 };
       }
 
-      return { data: json.data, total: json.data.length };
+      return {
+        data: json.data,
+        total: json.data.length,
+      };
     } catch (error) {
+      console.error('Error fetching full dataset:', error);
       return { data: [], total: 0 };
     }
   }
 
-  // Otherwise, use paginated fetching
+  // Otherwise, use paginated fetching for performance
   const indexPath = source.split('/').pop();
   const indexName = indexPath.split('.')[0];
 
@@ -936,11 +960,11 @@ async function fetchData(source, options = {}) {
       total: json.total || json.data.length,
     };
   } catch (error) {
+    console.error('Error fetching paginated data:', error);
     return { data: [], total: 0 };
   }
 }
 
-// Modified handleSearch function to properly handle pagination and category-specific search
 async function handleSearch(e, block, config) {
   const searchValue = e.target ? e.target.value : e;
 
@@ -977,71 +1001,89 @@ async function handleSearch(e, block, config) {
   const searchTerms = searchValue.toString().toLowerCase().split(/\s+/).filter((term) => !!term);
 
   // Get active filters
-  const activeFilters = getActiveFiltersFromURL();
+  const activeFilters = config.enableFacets ? getActiveFiltersFromURL() : {};
 
   // Calculate offset for pagination
   const offset = (page - 1) * itemsPerPage;
 
-  // Fetch data based on whether we have a search term
+  // Fetch data based on whether we need full dataset or paginated data
   const { data, total } = await fetchData(config.source, {
     limit: itemsPerPage,
     offset,
-    searchTerm: searchValue && searchValue.length >= 3 ? searchValue : '',
+    searchTerm: searchValue,
+    enableFacets: config.enableFacets,
   });
 
   if (!data || !Array.isArray(data)) {
     return;
   }
 
-  // Apply filters
-  let filteredResults = applyFilters(data, activeFilters, config);
+  let allResults = data;
+  let displayResults = data;
 
-  // Apply search term filtering if needed
-  if (searchTerms.length > 0) {
-    filteredResults = filterData(searchTerms, filteredResults, config);
-  }
+  // For search terms or facets we need to handle pagination client-side
+  if (searchTerms.length > 0 || config.enableFacets) {
+    // Apply filters if facets are enabled
+    if (config.enableFacets) {
+      allResults = applyFilters(data, activeFilters, config);
+    }
 
-  // For search with terms, we need to handle pagination client-side
-  let paginatedResults = filteredResults;
-  let totalResults = total;
+    // Apply search term filtering if needed
+    if (searchTerms.length > 0) {
+      allResults = filterData(searchTerms, allResults, config);
+    }
 
-  if (searchTerms.length > 0 || Object.keys(activeFilters).length > 0) {
-    // For search terms or filters, we need to calculate total from filtered results
-    totalResults = filteredResults.length;
+    // Calculate total for pagination
+    const totalResults = allResults.length;
 
-    // Apply client-side pagination for search terms
+    // Apply client-side pagination
     const startIndex = (page - 1) * itemsPerPage;
-    paginatedResults = filteredResults.slice(startIndex, startIndex + itemsPerPage);
+    displayResults = allResults.slice(startIndex, startIndex + itemsPerPage);
+
+    // Generate facets from all data
+    const facets = config.enableFacets ? generateFacets(data, config) : {};
+
+    // Calculate pagination info
+    const totalPages = Math.max(1, Math.ceil(totalResults / itemsPerPage));
+
+    // Update the UI with client-side pagination
+    updateSearchUI(block, config, displayResults, searchTerms, facets, activeFilters, {
+      currentPage: page,
+      totalPages,
+      totalResults,
+      onPageChange: (newPage) => {
+        // Update page in URL
+        searchParams.set('page', newPage.toString());
+        const url = new URL(window.location.href);
+        url.search = searchParams.toString();
+        window.history.replaceState({}, '', url.toString());
+
+        // Handle page change with current search state
+        handleSearch(searchValue, block, config);
+      },
+    });
+  } else {
+    // Simple case: No search term and no facets - using server-side pagination
+    const facets = {};
+    const totalPages = Math.max(1, Math.ceil(total / itemsPerPage));
+
+    // Update the UI with server-side pagination
+    updateSearchUI(block, config, displayResults, searchTerms, facets, activeFilters, {
+      currentPage: page,
+      totalPages,
+      totalResults: total,
+      onPageChange: (newPage) => {
+        // Update page in URL
+        searchParams.set('page', newPage.toString());
+        const url = new URL(window.location.href);
+        url.search = searchParams.toString();
+        window.history.replaceState({}, '', url.toString());
+
+        // Fetch new page of results
+        handleSearch(searchValue, block, config);
+      },
+    });
   }
-
-  // Generate facets from all available data
-  const facets = generateFacets(data, config);
-
-  // Calculate pagination info
-  const totalPages = Math.max(1, Math.ceil(totalResults / itemsPerPage));
-
-  // Update the UI
-  updateSearchUI(block, config, paginatedResults, searchTerms, facets, activeFilters, {
-    currentPage: page,
-    totalPages,
-    totalResults,
-    onPageChange: (newPage) => {
-      // Update page in URL
-      searchParams.set('page', newPage.toString());
-
-      // Update URL
-      const url = new URL(window.location.href);
-      url.search = searchParams.toString();
-      window.history.replaceState({}, '', url.toString());
-
-      // Call handleSearch with the current search term
-      if (window.searchState.currentSearchTerm) {
-        handleSearch(window.searchState.currentSearchTerm, block, config);
-      } else {
-        handleSearch('', block, config);
-      }
-    },
-  });
 }
 
 function searchIcon() {
@@ -1086,8 +1128,13 @@ function searchBox(block, config) {
 export default async function decorate(block) {
   const placeholders = await fetchPlaceholders();
 
-  // Extract source, tags, and category from block content
-  const [indexSourceDiv, tagsDiv, categoryDiv] = [...block.children];
+  // Extract source, facets status, tags, and category from block content
+  const [indexSourceDiv, facetsStatusDiv, tagsDiv, categoryDiv] = [...block.children];
+
+  // Get enable/disable facet status
+  const enableFacets = facetsStatusDiv && facetsStatusDiv.textContent
+    ? facetsStatusDiv.textContent.trim().toLowerCase() === 'true'
+    : true; // Default to true if not specified
 
   // Get index source
   const source = indexSourceDiv.querySelector('a[href]')
@@ -1139,11 +1186,15 @@ export default async function decorate(block) {
     facets: searchCategory === 'our-people' ? ['inquiry-categories'] : tagCategories,
     facetLayout: 'sidebar',
     showFilterCount: true,
-    searchCategory, // Add the search category to config
+    searchCategory,
+    enableFacets, // Add the enableFacets flag to config
   };
 
   // Add the search category as a class to the block
   block.classList.add(`search-category-${searchCategory}`);
+
+  // Add class based on facet status
+  block.classList.add(enableFacets ? 'facets-enabled' : 'facets-disabled');
 
   // Clear block content
   block.innerHTML = '';
@@ -1167,7 +1218,7 @@ export default async function decorate(block) {
     input.value = searchParams.get('q') || '';
     input.dispatchEvent(new Event('input'));
   } else {
-    // No search term, just show first page of results
+  // No search term, just show first page of results
     handleSearch('', block, config);
   }
 }
