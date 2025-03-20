@@ -6,7 +6,7 @@
     "/content/reshad-eds-site/news-index:/news-index.json",
     "/content/reshad-eds-site/offices-index:/offices-index.json",
     "/content/reshad-eds-site/placeholders:/placeholders.json",
-    "/content/reshad-eds-site/search/search-fields-by-category:/search/search-fields-by-category.json"
+    "/content/reshad-eds-site/search-fields-by-category:/search-fields-by-category.json"
   ],
   "includes": [
     "/content/reshad-eds-site/"
