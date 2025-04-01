@@ -213,6 +213,21 @@
           }
         },
         {
+          "title": "External Content",
+          "id": "external-content",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "External Content",
+                  "model": "external-content"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Feature Tabs",
           "id": "feature-tabs",
           "plugins": {

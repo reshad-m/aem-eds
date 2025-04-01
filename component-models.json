@@ -329,6 +329,26 @@
     ]
   },
   {
+    "id": "external-content",
+    "fields": [
+      {
+        "component": "text",
+        "label": "Url",
+        "name": "url",
+        "description": "Provide Url of the content",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "label": "Width",
+        "name": "width",
+        "description": "Maximum display width of the content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "feature-tab",
     "fields": [
       {
