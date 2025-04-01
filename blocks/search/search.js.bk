@@ -1125,100 +1125,105 @@ function searchBox(block, config) {
   return box;
 }
 
-export default async function decorate(block) {
-  const placeholders = await fetchPlaceholders();
-
-  // Extract source, facets status, tags, and category from block content
-  const [indexSourceDiv, facetsStatusDiv, tagsDiv, categoryDiv] = [...block.children];
-
-  // Get enable/disable facet status
-  const enableFacets = facetsStatusDiv && facetsStatusDiv.textContent
-    ? facetsStatusDiv.textContent.trim().toLowerCase() === 'true'
-    : true; // Default to true if not specified
-
-  // Get index source
-  const source = indexSourceDiv.querySelector('a[href]')
-    ? indexSourceDiv.querySelector('a[href]').href
-    : '/query-index.json';
-
-  // Extract tag categories from tagsDiv
-  const tagCategories = [];
-  if (tagsDiv) {
-    const tagsText = tagsDiv.textContent.trim();
-    // Parse tags like "news:,authors:,news:not-for-profit,news:tax"
-    const tagParts = tagsText.split(',').map((t) => t.trim());
-
-    // Group tags by category
-    tagParts.forEach((tag) => {
-      if (!tag) return;
-
-      // Check if tag has category format (category:value)
-      const colonIndex = tag.indexOf(':');
-      if (colonIndex > 0) {
-        const category = tag.substring(0, colonIndex);
-        const value = tag.substring(colonIndex + 1);
-
-        // If it's just a category marker with no value, add it to our list
-        if (!value && !tagCategories.includes(category)) {
-          tagCategories.push(category);
-        }
-      }
-    });
-  }
-
-  // Get search category, default to 'main' if not specified
-  const searchCategory = categoryDiv && categoryDiv.textContent
-    ? categoryDiv.textContent.trim().toLowerCase()
-    : 'main';
-
-  // Determine the correct index source based on category
-  let categorySource = source;
-  if (searchCategory === 'news') {
-    categorySource = source.replace('query-index.json', 'news-index.json');
-  } else if (searchCategory === 'our-people') {
-    categorySource = source.replace('query-index.json', 'our-people-index.json');
-  }
-
-  // Config object for search
-  const config = {
-    source: categorySource,
-    placeholders,
-    facets: searchCategory === 'our-people' ? ['inquiry-categories'] : tagCategories,
-    facetLayout: 'sidebar',
-    showFilterCount: true,
-    searchCategory,
-    enableFacets, // Add the enableFacets flag to config
-  };
-
-  // Add the search category as a class to the block
-  block.classList.add(`search-category-${searchCategory}`);
-
-  // Add class based on facet status
-  block.classList.add(enableFacets ? 'facets-enabled' : 'facets-disabled');
-
-  // Clear block content
-  block.innerHTML = '';
-
-  // Create search box
-  const searchBoxElement = searchBox(block, config);
-
-  // Create container for facets and results
-  const searchContainer = document.createElement('div');
-  searchContainer.className = 'search-container';
-
-  block.appendChild(searchBoxElement);
-  block.appendChild(searchContainer);
-
-  // Decorate icons for search box
-  decorateIcons(searchBoxElement);
-
-  // If we have a search query or filters, perform search
-  if (searchParams.get('q') || Object.keys(getActiveFiltersFromURL()).length > 0) {
-    const input = block.querySelector('input');
-    input.value = searchParams.get('q') || '';
-    input.dispatchEvent(new Event('input'));
-  } else {
-  // No search term, just show first page of results
-    handleSearch('', block, config);
-  }
+export default async function decorate(block)
+{
+  console.log(block);
 }
+// {
+//   const placeholders = await fetchPlaceholders();
+  
+
+//   // Extract source, facets status, tags, and category from block content
+//   const [indexSourceDiv, facetsStatusDiv, tagsDiv, categoryDiv] = [...block.children];
+
+//   // Get enable/disable facet status
+//   const enableFacets = facetsStatusDiv && facetsStatusDiv.textContent
+//     ? facetsStatusDiv.textContent.trim().toLowerCase() === 'true'
+//     : true; // Default to true if not specified
+
+//   // Get index source
+//   const source = indexSourceDiv.querySelector('a[href]')
+//     ? indexSourceDiv.querySelector('a[href]').href
+//     : '/query-index.json';
+
+//   // Extract tag categories from tagsDiv
+//   const tagCategories = [];
+//   if (tagsDiv) {
+//     const tagsText = tagsDiv.textContent.trim();
+//     // Parse tags like "news:,authors:,news:not-for-profit,news:tax"
+//     const tagParts = tagsText.split(',').map((t) => t.trim());
+
+//     // Group tags by category
+//     tagParts.forEach((tag) => {
+//       if (!tag) return;
+
+//       // Check if tag has category format (category:value)
+//       const colonIndex = tag.indexOf(':');
+//       if (colonIndex > 0) {
+//         const category = tag.substring(0, colonIndex);
+//         const value = tag.substring(colonIndex + 1);
+
+//         // If it's just a category marker with no value, add it to our list
+//         if (!value && !tagCategories.includes(category)) {
+//           tagCategories.push(category);
+//         }
+//       }
+//     });
+//   }
+
+//   // Get search category, default to 'main' if not specified
+//   const searchCategory = categoryDiv && categoryDiv.textContent
+//     ? categoryDiv.textContent.trim().toLowerCase()
+//     : 'main';
+
+//   // Determine the correct index source based on category
+//   let categorySource = source;
+//   if (searchCategory === 'news') {
+//     categorySource = source.replace('query-index.json', 'news-index.json');
+//   } else if (searchCategory === 'our-people') {
+//     categorySource = source.replace('query-index.json', 'our-people-index.json');
+//   }
+
+//   // Config object for search
+//   const config = {
+//     source: categorySource,
+//     placeholders,
+//     facets: searchCategory === 'our-people' ? ['inquiry-categories'] : tagCategories,
+//     facetLayout: 'sidebar',
+//     showFilterCount: true,
+//     searchCategory,
+//     enableFacets, // Add the enableFacets flag to config
+//   };
+
+//   // Add the search category as a class to the block
+//   block.classList.add(`search-category-${searchCategory}`);
+
+//   // Add class based on facet status
+//   block.classList.add(enableFacets ? 'facets-enabled' : 'facets-disabled');
+
+//   // Clear block content
+//   block.innerHTML = '';
+
+//   // Create search box
+//   const searchBoxElement = searchBox(block, config);
+
+//   // Create container for facets and results
+//   const searchContainer = document.createElement('div');
+//   searchContainer.className = 'search-container';
+
+//   block.appendChild(searchBoxElement);
+//   block.appendChild(searchContainer);
+
+//   // Decorate icons for search box
+//   decorateIcons(searchBoxElement);
+
+//   // If we have a search query or filters, perform search
+//   if (searchParams.get('q') || Object.keys(getActiveFiltersFromURL()).length > 0) {
+//     const input = block.querySelector('input');
+//     input.value = searchParams.get('q') || '';
+//     input.dispatchEvent(new Event('input'));
+//   } else {
+//   // No search term, just show first page of results
+//     handleSearch('', block, config);
+//   }
+// }
