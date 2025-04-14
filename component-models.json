@@ -1038,14 +1038,14 @@
     "fields": [
       {
         "component": "text",
-        "name": "testimonial_heading",
+        "name": "heading",
         "label": "Heading",
         "valueType": "string",
         "value": ""
       },
       {
         "component": "text",
-        "name": "testimonial_headingType",
+        "name": "headingType",
         "label": "Heading Type",
         "valueType": "string",
         "value": "h3",
@@ -1053,21 +1053,21 @@
       },
       {
         "component": "richtext",
-        "name": "testimonial_testimonial",
+        "name": "testimonial",
         "label": "Testimonial",
         "valueType": "string",
         "value": ""
       },
       {
         "component": "text",
-        "name": "testimonial_author",
+        "name": "author",
         "label": "Author",
         "valueType": "string",
         "value": ""
       },
       {
         "component": "text",
-        "name": "testimonial_jobRole",
+        "name": "jobRole",
         "label": "Job Title",
         "valueType": "string",
         "value": ""
