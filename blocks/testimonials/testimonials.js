@@ -17,13 +17,13 @@ export default async function decorate(block) {
       testimonial.appendChild(content);
       container.appendChild(testimonial);
     });
-
+    console.log('Block:', block);
+    console.log('Container:', container);
     block.textContent = '';
     block.append(...container.children);
     await loadCSS(`${window.hlx.codeBasePath}/styles/common/carousel.css`);
     await decorateSlider(block);
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log('Failed to initialize testimonials carousel');
   }
 }
