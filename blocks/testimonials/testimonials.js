@@ -8,18 +8,11 @@ function restructureTestimonials(block) {
     moveInstrumentation(slide, wrapper);
 
     const divs = [...slide.children];
-    divs.forEach((div, index) => {
+    divs.forEach((div) => {
       const children = [...div.children];
-      if (index === 0) {
-        // first div contains the heading
-        children.forEach((child) => wrapper.append(child));
-      } else {
-        // other divs contain paragraphs
-        children.forEach((child) => wrapper.append(child));
-      }
+      children.forEach((child) => wrapper.append(child));
     });
 
-    // Clear original and add new structure
     slide.innerHTML = '';
     slide.append(wrapper);
   });
