@@ -11,6 +11,8 @@ export default async function decorate(block) {
       moveInstrumentation(row, testimonial);
       [...row.children].forEach((div) => {
         content.appendChild(div.firstElementChild);
+        moveInstrumentation(div, content);
+
       });
       testimonial.appendChild(content);
       container.appendChild(testimonial);
