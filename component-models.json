@@ -478,7 +478,6 @@
         "name": "classes",
         "label": "Full Width",
         "description": "Select if the fragment should be full width.",
-        "value": "",
         "options": [
           {
             "name": "Full Width",
