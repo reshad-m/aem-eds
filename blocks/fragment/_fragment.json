@@ -26,26 +26,18 @@
           "label": "Reference"
         },
         {
-        "component": "multiselect",
-        "name": "classes",
-        "value": "",
-        "label": "Select Heading Text Background and Banner Overlay",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Title Background Green",
-            "value": "title-bg-green"
-          },
-          {
-            "name": "Title Background Blue",
-            "value": "title-bg-blue"
-          },
-          {
-            "name": "Title Background Midnight Blue",
-            "value": "title-bg-midnight-blue"
-          }
-        ]
-      }
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Style",
+          "valueType": "string",
+          "value": "",
+          "options": [
+            {
+              "name": "Full Width",
+              "value": "full-width"
+            }
+          ]
+        }
       ]
     }
   ],

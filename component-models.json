@@ -476,21 +476,13 @@
       {
         "component": "multiselect",
         "name": "classes",
-        "value": "",
-        "label": "Select Heading Text Background and Banner Overlay",
+        "label": "Style",
         "valueType": "string",
+        "value": "",
         "options": [
           {
-            "name": "Title Background Green",
-            "value": "title-bg-green"
-          },
-          {
-            "name": "Title Background Blue",
-            "value": "title-bg-blue"
-          },
-          {
-            "name": "Title Background Midnight Blue",
-            "value": "title-bg-midnight-blue"
+            "name": "Full Width",
+            "value": "full-width"
           }
         ]
       }
