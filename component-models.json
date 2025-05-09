@@ -472,6 +472,14 @@
         "component": "aem-content",
         "name": "reference",
         "label": "Reference"
+      },
+      {
+        "component": "boolean",
+        "name": "isFullWidth",
+        "label": "Full Width",
+        "description": "If toggled on, the fragment will be full width.",
+        "valueType": "boolean",
+        "value": false
       }
     ]
   },
