@@ -474,12 +474,17 @@
         "label": "Reference"
       },
       {
-        "component": "boolean",
+        "component": "select",
         "name": "classes",
         "label": "Full Width",
-        "description": "If toggled on, the fragment will be full width.",
-        "valueType": "boolean",
-        "value": false
+        "description": "Select if the fragment should be full width.",
+        "value": "",
+        "options": [
+          {
+            "name": "Full Width",
+            "value": "full-width"
+          }
+        ]
       }
     ]
   },

@@ -288,7 +288,7 @@
                 "template": {
                   "name": "Fragment",
                   "model": "fragment",
-                  "isFullWidth": false
+                  "classes": ""
                 }
               }
             }
