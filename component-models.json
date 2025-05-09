@@ -474,33 +474,23 @@
         "label": "Reference"
       },
       {
-        "component": "select",
+        "component": "multiselect",
         "name": "classes",
-        "label": "Title Type",
+        "value": "",
+        "label": "Select Heading Text Background and Banner Overlay",
+        "valueType": "string",
         "options": [
           {
-            "name": "h1",
-            "value": "h1"
+            "name": "Title Background Green",
+            "value": "title-bg-green"
           },
           {
-            "name": "h2",
-            "value": "h2"
+            "name": "Title Background Blue",
+            "value": "title-bg-blue"
           },
           {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
+            "name": "Title Background Midnight Blue",
+            "value": "title-bg-midnight-blue"
           }
         ]
       }
