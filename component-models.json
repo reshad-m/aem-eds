@@ -475,7 +475,7 @@
       },
       {
         "component": "boolean",
-        "name": "style",
+        "name": "classes",
         "label": "Full Width",
         "description": "If toggled on, the fragment will be full width.",
         "valueType": "boolean",
